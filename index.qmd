@@ -1,0 +1,21 @@
+---
+title: "SFC6006"
+---
+
+# Bienvenue !
+
+Bienvenue au module d'analyse de données en R du cours SFC6006 !
+
+L'ensemble des ressources pour les cours se trouvent sur ce site web.
+
+## License
+
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a><br />L'ensemble de ce site est sous license a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>.
+
+
+## Acknowledements {.unnumbered}
+
+Une partie du cours proposé ici est adapté du matériel proposé par [Data Science in a Box](https://datasciencebox.org/).
+
+
+This website is built with [Quarto](https://quarto.org).

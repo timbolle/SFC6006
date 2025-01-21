@@ -1,0 +1,24 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "SFC6006"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - text: Labs
+        menu:
+          - href: labs/Semaine1.qmd
+            text: Semaine 1
+      - about.qmd
+
+format:
+  html:
+    theme: sandstone
+    css: website-styles.scss
+    toc: true
+
+bibliography: template/references.bib
+csl: template/apa-fr.csl

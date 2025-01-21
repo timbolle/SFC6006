@@ -1,0 +1,408 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "SFC6006",
+    "section": "",
+    "text": "Bienvenue au module d’analyse de données en R du cours SFC6006 !\nL’ensemble des ressources pour les cours se trouvent sur ce site web.\n\n\nL’ensemble de ce site est sous license a Creative Commons Attribution-ShareAlike 4.0 International.\n\n\n\nUne partie du cours proposé ici est adapté du matériel proposé par Data Science in a Box.\nThis website is built with Quarto."
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "SFC6006",
+    "section": "",
+    "text": "L’ensemble de ce site est sous license a Creative Commons Attribution-ShareAlike 4.0 International."
+  },
+  {
+    "objectID": "index.html#acknowledements",
+    "href": "index.html#acknowledements",
+    "title": "SFC6006",
+    "section": "",
+    "text": "Une partie du cours proposé ici est adapté du matériel proposé par Data Science in a Box.\nThis website is built with Quarto."
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#objectifs",
+    "href": "slides/01 - tidyverse.html#objectifs",
+    "title": "01 - Introduction",
+    "section": "Objectifs",
+    "text": "Objectifs\nÊtre capable de manipuler des données et de les visualiser avec R (SFC1018)\nÈtre capable de mettre en oeuvre des méthodes de traitement statistique des données avec R (SFC6008)\nÊtre capable de réaliser un projet de traitement de données de A à Z en R."
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#méthode",
+    "href": "slides/01 - tidyverse.html#méthode",
+    "title": "01 - Introduction",
+    "section": "Méthode",
+    "text": "Méthode\n\n(Wickham et al., 2023)"
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#ressources",
+    "href": "slides/01 - tidyverse.html#ressources",
+    "title": "01 - Introduction",
+    "section": "Ressources",
+    "text": "Ressources\n\n\n\n(Wickham et al., 2023)\n\n\n(Kuhn and Silge, 2022)"
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#bibliography",
+    "href": "slides/01 - tidyverse.html#bibliography",
+    "title": "01 - Introduction",
+    "section": "Bibliography",
+    "text": "Bibliography\n\n\nKuhn, M. and Silge, J. (2022). Tidy modeling with R: A framework for modeling in the tidyverse. O’Reilly Media.\n\n\nWickham, H. and Bryan, J. (2023). R Packages: Organize, Test, Document, and Share Your Code (2nd edition). O’Reilly Media.\n\n\nWickham, H., Çetinkaya-Rundel, M. and Grolemund, G. (2023). R for Data Science (2nd ed.). O’Reilly Media, Inc.\n\n\n\n\n\n\nSFC6006 | Tim Bollé"
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#les-outils",
+    "href": "slides/01 - tidyverse.html#les-outils",
+    "title": "01 - Introduction",
+    "section": "Les outils",
+    "text": "Les outils\n\nDéveloppement:\n\nR\nRStudio\ntidyverse\ntidymodels\nR Markdown\n\n\n\nGestion et collaboration:\n\nGit\nGitHub"
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#objectifs-1",
+    "href": "slides/01 - tidyverse.html#objectifs-1",
+    "title": "01 - Introduction",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\nAnalyser des données\nAnalyser des données de manière répétable\nAnalyser des données de manière répétable, avec des outils de programmation modernes\nAnalyser des données de manière répétable et collaborative, avec des outils de programmation modernes"
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#répétabilité",
+    "href": "slides/01 - tidyverse.html#répétabilité",
+    "title": "01 - Introduction",
+    "section": "Répétabilité",
+    "text": "Répétabilité\n\nQue signifie conduire une analyse de donnée de manière répétable ?\n\nÀ court-terme:\n\nPouvons nous reproduire les tableaux et les figures à partir des données\nEst-ce que le code fait ce que nous voulons ?\nPouvons-nous reconstruire pourquoi et comment nous avons obtenus les résultats\n\nÀ long-terme:\n\nPeut-on réutiliser le code pour d’autres données ?\nPeut-on réutiliser le code pour faire autre chose ?"
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#les-outils-de-la-répérabilité",
+    "href": "slides/01 - tidyverse.html#les-outils-de-la-répérabilité",
+    "title": "01 - Introduction",
+    "section": "Les outils de la répérabilité",
+    "text": "Les outils de la répérabilité\nScriptability \\(\\rightarrow\\) R\nDocumentation et communication \\(\\rightarrow\\) R Markdown\nGestion et collaboration \\(\\rightarrow\\) Git/GitHub"
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#r-et-rstudio",
+    "href": "slides/01 - tidyverse.html#r-et-rstudio",
+    "title": "01 - Introduction",
+    "section": "R et RStudio",
+    "text": "R et RStudio\n\n\n\n\nR est un language de programmation open-source\nR est un environnement pour faire des calculs statistiques et de la visualisation\nDe nombreuses autres applications sont disponibles grâce à des packages\n\n\n\n\nRStudio est un IDE (Environnement de Développement Intégré)\nC’est une interface pour R\nPas nécessaire pour coder en R mais tellement pratique !"
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#rstudio-tour",
+    "href": "slides/01 - tidyverse.html#rstudio-tour",
+    "title": "01 - Introduction",
+    "section": "RStudio tour",
+    "text": "RStudio tour"
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#r-packages",
+    "href": "slides/01 - tidyverse.html#r-packages",
+    "title": "01 - Introduction",
+    "section": "R packages",
+    "text": "R packages\nLes packages sont les building blocks de la reproductibilité. Ils contiennent de nombreuses fonctions réutilisables, de la documentation et données de test (Wickham and Bryan, 2023)\nNous allons en utiliser quelques une mais vous verrez que c’est tout une philosophie !"
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#tidyverse",
+    "href": "slides/01 - tidyverse.html#tidyverse",
+    "title": "01 - Introduction",
+    "section": "Tidyverse",
+    "text": "Tidyverse\n\n\n\n\ntidyverse.org\nLe Tidyverse est une collection de packages développés pour faire de la data science\nIl y a une philophie et une grammaire commune à tous ces packages, que nous allons apprendre."
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#tidymodels",
+    "href": "slides/01 - tidyverse.html#tidymodels",
+    "title": "01 - Introduction",
+    "section": "Tidymodels",
+    "text": "Tidymodels\n\n\n\n\ntidymodels.org\nTidymodels est une collection de packages pour créer de modèles de machine learning, en gardant la logique du Tidyverse."
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#r-markdown",
+    "href": "slides/01 - tidyverse.html#r-markdown",
+    "title": "01 - Introduction",
+    "section": "R Markdown",
+    "text": "R Markdown\n\n\nrmarkdown.rstudio.com\nR Markdown permet d’écrire des documents avec du code intégré (extension en .Rmd).\nVa permettre de documenter et de communiquer directement nos analyses de données !\n\n\nReproductible: À chaque fois qu’on génère le document, tout est exécuté depuis le début\nSyntaxe simple pour avoir des documents de qualité\nLe document se découpe en zones de texte et blocks de code"
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#r-markdown-1",
+    "href": "slides/01 - tidyverse.html#r-markdown-1",
+    "title": "01 - Introduction",
+    "section": "R Markdown",
+    "text": "R Markdown"
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#r-markdown---aide",
+    "href": "slides/01 - tidyverse.html#r-markdown---aide",
+    "title": "01 - Introduction",
+    "section": "R Markdown - Aide",
+    "text": "R Markdown - Aide\n\n\nCheatsheetHelp &gt; Cheatsheet\n\n\nMarkdown Quick ReferenceHelp &gt; Markdown Quick Reference"
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#les-outils-1",
+    "href": "slides/01 - tidyverse.html#les-outils-1",
+    "title": "01 - Introduction",
+    "section": "Les outils",
+    "text": "Les outils\n\nDéveloppement:\n\nR\nRStudio\ntidyverse\nR Markdown\n\n\n\nGestion et collaboration:\n\nGit\nGitHub"
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#git-et-github",
+    "href": "slides/01 - tidyverse.html#git-et-github",
+    "title": "01 - Introduction",
+    "section": "Git et GitHub",
+    "text": "Git et GitHub\n\n\n\n\n\n\n\n\nGit est un outil de gestion de version\n\nComme le track changes sur Word\n\nTrès populaire dans le monde de la programmation\n\n\n\n\n\n\n\n\nGitHub est un plateforme de stockage de repo Git\n\nComme un Onedrive/Dropbox pour Git\n\nNous allons essayer de l’utiliser pour… tout !"
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#pourquoi-la-gestion-de-version",
+    "href": "slides/01 - tidyverse.html#pourquoi-la-gestion-de-version",
+    "title": "01 - Introduction",
+    "section": "Pourquoi la gestion de version ?",
+    "text": "Pourquoi la gestion de version ?\n\nPhD Comics"
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#fonctionnement",
+    "href": "slides/01 - tidyverse.html#fonctionnement",
+    "title": "01 - Introduction",
+    "section": "Fonctionnement",
+    "text": "Fonctionnement"
+  },
+  {
+    "objectID": "slides/01 - tidyverse.html#mise-en-place",
+    "href": "slides/01 - tidyverse.html#mise-en-place",
+    "title": "01 - Introduction",
+    "section": "Mise en place",
+    "text": "Mise en place\nGit peut être utilisé depuis le terminal de commande\n\nUtilisation plus avancée\nNous pouvons normalement tout faire depuis R Studio\n\nGithub:\n\nCréez un compte avec votre adresse UQTR\nVérifiez votre adresse courriel"
+  },
+  {
+    "objectID": "labs/Semaine1.html",
+    "href": "labs/Semaine1.html",
+    "title": "Semaine1",
+    "section": "",
+    "text": "En janvier 2017, Buzzfeed a publié un article sur pourquoi les lauréats du prix Nobel montrent que l’immigration est si importante pour la science américaine.\nVous pouvez lire l’article ici. Dans l’article, ils montrent que bien que la plupart des lauréats vivants du prix Nobel en sciences soient basés aux États-Unis, beaucoup d’entre eux sont nés dans d’autres pays. C’est une des raisons pour lesquelles le monde scientifique dit que l’immigration est vitale pour le progrès. Dans ce lab, nous travaillerons avec les données de cet article pour recréer certaines de leurs visualisations ainsi qu’explorer de nouvelles questions."
+  },
+  {
+    "objectID": "labs/Semaine1.html#échauffement",
+    "href": "labs/Semaine1.html#échauffement",
+    "title": "Semaine1",
+    "section": "Échauffement",
+    "text": "Échauffement\nAvant d’introduire les données, commençons par quelques exercices simples.\n\nMettez à jour le YAML, en changeant le nom de l’auteur par le vôtre, et knit le document.\nCommittez vos modifications avec un message de commit. Assurez vous que les fichiers .Rmd et .md sont bien ajoutés au commit.\nPushez vos modifications sur GitHub.\nAllez dans votre dépôt sur GitHub et confirmez que vos modifications sont visibles dans vos fichiers Rmd et md."
+  },
+  {
+    "objectID": "labs/Semaine1.html#packages",
+    "href": "labs/Semaine1.html#packages",
+    "title": "Semaine1",
+    "section": "Packages",
+    "text": "Packages\nNous utiliserons le package tidyverse pour une grande partie de la manipulation des données.\n\nlibrary(tidyverse)\n\nS’il n’est pas déjà installé, vous pouvez le faire avec la commande install.packages(\"tidyverse\"). Cette commande n’est nécaisse qu’une seule fois."
+  },
+  {
+    "objectID": "labs/Semaine1.html#données",
+    "href": "labs/Semaine1.html#données",
+    "title": "Semaine1",
+    "section": "Données",
+    "text": "Données\nLe jeu de données pour cet exercice se trouve sous forme de fichier CSV (valeurs séparées par des virgules) dans le dossier data de votre dépôt. Vous pouvez les charger avec la fonction read_csv:\nLes descriptions des variables sont les suivantes :\n\nid: Numéro d’identification\nfirstname: Prénom du lauréat\nsurname: Nom de famille\nyear: Année de remise du prix\ncategory: Catégorie du prix\naffiliation: Affiliation du lauréat\ncity: Ville du lauréat l’année du prix\ncountry: Pays du lauréat l’année du prix\nborn_date: Date de naissance du lauréat\ndied_date: Date de décès du lauréat\ngender: Sexe du lauréat\nborn_city: Ville de naissance du lauréat\nborn_country: Pays de naissance du lauréat\nborn_country_code: Code du pays de naissance du lauréat\ndied_city: Ville de décès du lauréat\ndied_country: Pays de décès du lauréat\ndied_country_code: Code du pays de décès du lauréat\noverall_motivation: Motivation générale pour la reconnaissance\nshare: Nombre d’autres lauréats avec lesquels le prix est partagé\nmotivation: Motivation pour la reconnaissance\n\nDans quelques cas, le nom de la ville/pays a changé après la réception du prix par le lauréat (par exemple, en 1975, la Bosnie-Herzégovine s’appelait la République fédérative socialiste de Yougoslavie). Dans ces cas, les variables ci-dessous reflètent un nom différent de leurs homologues sans le suffixe `_original`.\n\nborn_country_original\nborn_city_original\ndied_country_original\ndied_city_original\ncity_original\ncountry_original"
+  },
+  {
+    "objectID": "labs/Semaine1.html#la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix",
+    "href": "labs/Semaine1.html#la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix",
+    "title": "Semaine1",
+    "section": "“La plupart des lauréats vivants du prix Nobel étaient basés aux États-Unis lorsqu’ils ont remporté leurs prix”",
+    "text": "“La plupart des lauréats vivants du prix Nobel étaient basés aux États-Unis lorsqu’ils ont remporté leurs prix”\n… dit l’article de Buzzfeed. Voyons si c’est vrai.\nTout d’abord, nous allons créer une nouvelle variable pour identifier si le lauréat vivait aux États-Unis lorsqu’il a remporté son prix. Pour cela, nous utiliserons la fonction mutate(). Créez une nouvelle colonne country_us qui sera égale à \"USA\" si le country est égal à “USA” et à \"Other\" sinon. Pour cela, pensez à utiliser la fonction if_else dans votre mutate.\nNous voudrons ensuite transformer cette colonne en facteur, ce qui est toujours utile lorsqu’on travaille avec des données catégoriques. Pour cela, vous pouvez utiliser la fonction fct_relvel() en précisant la colonne à mettre en facteur et le nom des niveaux (ici “USA” en premier et “Other” en deuxième).\n\nExercice 3\nPour la suite de l’exercice, nous limiterons notre analyse aux catégories suivantes : Physique, Médecine, Chimie et Économie.\nCréez un nouveau data frame appelé nobel_living_science qui filtre pour les catégories suivantes : Physique, Médecine, Chimie et Économie.\nPour cela, vous pouvez tester si category est dans le vecteur c(\"Physics\", \"Medicine\", \"Chemistry\", \"Economics\"). Profitez-en également pour transformer cette colonne en facteurs également, en les ordonant par ordre alphabétique.\n\n\nExercice 4\nPour le prochain exercice, travaillez avec le data frame nobel_living_science que nous avons créé ci-dessus.\nCréez un graphique à barres avec des facets visualisant la relation entre la catégorie du prix Nobel et si le lauréat était aux États-Unis lorsqu’il l’a remporté.\nPour rappel, les graphiques peuvent être créés de la forme:\n\nnobel_living_science %&gt;%\n  ggplot(aes(...)) +\n    geom_XXX(...)\n\nPar exemple,\n\nnobel_living_science %&gt;%\n  ggplot(aes(x=country_us, fill = country_us)) +\n  geom_bar() +\n   labs(x = \"Pays de résidence\",                 # On met à jour les labels\n       y = \"Nombre de lauréats\",\n       title = \"Pays de résidence des lauréats vivants du prix Nobel\",\n       subtitle = \"Selon si le pays de résidence correspond aux USA ou non\",\n       fill = \"Pays du lauréat\")\n\n\n\n\n\n\n\n\nPour créer des facettes selon les catégories, vous pouvez ajouter la fonction facet_wrap. Votre visualisation doit avoir:\n\nVotre visualisation doit être facettée par catégorie.\nPour chaque facette, vous devez avoir deux barres, une pour les gagnants aux États-Unis et une pour les autres.\nInversez les coordonnées pour que les barres soient horizontales, pas verticales.\n\n\n\n\n\n\n\n\n\n\nInterprétez votre visualisation et commentez le titre de Buzzfeed en regardant s’il est soutenu par les données.\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit."
+  },
+  {
+    "objectID": "labs/Semaine1.html#mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays",
+    "href": "labs/Semaine1.html#mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays",
+    "title": "Semaine1",
+    "section": "“Mais parmi ces lauréats du prix Nobel basés aux États-Unis, beaucoup sont nés dans d’autres pays”",
+    "text": "“Mais parmi ces lauréats du prix Nobel basés aux États-Unis, beaucoup sont nés dans d’autres pays”\n\nExercice 5\nCréez une nouvelle variable appelée born_country_us qui a la valeur \"USA\" si le lauréat est né aux États-Unis, et \"Other\" sinon. Combien de gagnants sont nés aux États-Unis ?\n\n\nExercice 6\nAjoutez une deuxième variable à votre visualisation de l’exercice 4 basée sur si le lauréat est né aux États-Unis ou non. D’après votre visualisation, les données semblent-elles soutenir l’affirmation de Buzzfeed ? Expliquez votre raisonnement en 1-2 phrases.\n\nVotre visualisation finale doit contenir une facette pour chaque catégorie.\nDans chaque facette, il doit y avoir une barre pour savoir si le lauréat a remporté le prix aux États-Unis ou non.\nChaque barre doit avoir des segments pour savoir si le lauréat est né aux États-Unis ou non.\n\n\n\n\n\n\n\n\n\n\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit."
+  },
+  {
+    "objectID": "labs/Semaine1.html#doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis",
+    "href": "labs/Semaine1.html#doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis",
+    "title": "Semaine1",
+    "section": "D’où viennent les lauréats nés à l’étranger qui ont remporté leur prix aux États-Unis ?",
+    "text": "D’où viennent les lauréats nés à l’étranger qui ont remporté leur prix aux États-Unis ?\n\nExercice 7\nDans un seul pipeline, filtrez pour les lauréats qui ont remporté leur prix aux États-Unis, mais qui sont nés en dehors des États-Unis, puis créez un tableau de fréquence (avec la fonction count()) pour leur pays de naissance (born_country) et arrangez le data frame résultant par ordre décroissant du nombre d’observations pour chaque pays. Quel pays est le plus commun ?\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\nMaintenant, relisez votre rapport pour vous assurer que vous avez répondu à toutes les questions et que tous vos blocs de code R sont correctement étiquetés."
+  },
+  {
+    "objectID": "slides/00 - Intro.html",
+    "href": "slides/00 - Intro.html",
+    "title": "01 - Introduction",
+    "section": "",
+    "text": "Être capable de manipuler des données et de les visualiser avec R (SFC1018)\nÈtre capable de mettre en oeuvre des méthodes de traitement statistique des données avec R (SFC6008)\nÊtre capable de réaliser un projet de traitement de données de A à Z en R.\n\n\n\n\n\n\n(Wickham et al., 2023)\n\n\n\n\n\n\n\n\n(Wickham et al., 2023)\n\n\n(Kuhn and Silge, 2022)"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#objectifs",
+    "href": "slides/00 - Intro.html#objectifs",
+    "title": "01 - Introduction",
+    "section": "Objectifs",
+    "text": "Objectifs\nÊtre capable de manipuler des données et de les visualiser avec R (SFC1018)\nÈtre capable de mettre en oeuvre des méthodes de traitement statistique des données avec R (SFC6008)\nÊtre capable de réaliser un projet de traitement de données de A à Z en R."
+  },
+  {
+    "objectID": "slides/00 - Intro.html#méthode",
+    "href": "slides/00 - Intro.html#méthode",
+    "title": "01 - Introduction",
+    "section": "Méthode",
+    "text": "Méthode\n\n(Wickham et al., 2023)"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#ressources",
+    "href": "slides/00 - Intro.html#ressources",
+    "title": "01 - Introduction",
+    "section": "Ressources",
+    "text": "Ressources\n\n\n\n(Wickham et al., 2023)\n\n\n(Kuhn and Silge, 2022)"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#les-outils",
+    "href": "slides/00 - Intro.html#les-outils",
+    "title": "01 - Introduction",
+    "section": "Les outils",
+    "text": "Les outils\n\nDéveloppement:\n\nR\nRStudio\ntidyverse\ntidymodels\nR Markdown\n\n\n\nGestion et collaboration:\n\nGit\nGitHub"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#objectifs-1",
+    "href": "slides/00 - Intro.html#objectifs-1",
+    "title": "01 - Introduction",
+    "section": "Objectifs",
+    "text": "Objectifs\n\n\nAnalyser des données\nAnalyser des données de manière répétable\nAnalyser des données de manière répétable, avec des outils de programmation modernes\nAnalyser des données de manière répétable et collaborative, avec des outils de programmation modernes"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#répétabilité",
+    "href": "slides/00 - Intro.html#répétabilité",
+    "title": "01 - Introduction",
+    "section": "Répétabilité",
+    "text": "Répétabilité\n\nQue signifie conduire une analyse de donnée de manière répétable ?\n\nÀ court-terme:\n\nPouvons nous reproduire les tableaux et les figures à partir des données\nEst-ce que le code fait ce que nous voulons ?\nPouvons-nous reconstruire pourquoi et comment nous avons obtenus les résultats\n\nÀ long-terme:\n\nPeut-on réutiliser le code pour d’autres données ?\nPeut-on réutiliser le code pour faire autre chose ?"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#les-outils-de-la-répérabilité",
+    "href": "slides/00 - Intro.html#les-outils-de-la-répérabilité",
+    "title": "01 - Introduction",
+    "section": "Les outils de la répérabilité",
+    "text": "Les outils de la répérabilité\nScriptability \\(\\rightarrow\\) R\nDocumentation et communication \\(\\rightarrow\\) R Markdown\nGestion et collaboration \\(\\rightarrow\\) Git/GitHub"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#r-et-rstudio",
+    "href": "slides/00 - Intro.html#r-et-rstudio",
+    "title": "01 - Introduction",
+    "section": "R et RStudio",
+    "text": "R et RStudio\n\n\n\n\nR est un language de programmation open-source\nR est un environnement pour faire des calculs statistiques et de la visualisation\nDe nombreuses autres applications sont disponibles grâce à des packages\n\n\n\n\nRStudio est un IDE (Environnement de Développement Intégré)\nC’est une interface pour R\nPas nécessaire pour coder en R mais tellement pratique !"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#rstudio-tour",
+    "href": "slides/00 - Intro.html#rstudio-tour",
+    "title": "01 - Introduction",
+    "section": "RStudio tour",
+    "text": "RStudio tour"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#r-packages",
+    "href": "slides/00 - Intro.html#r-packages",
+    "title": "01 - Introduction",
+    "section": "R packages",
+    "text": "R packages\nLes packages sont les building blocks de la reproductibilité. Ils contiennent de nombreuses fonctions réutilisables, de la documentation et données de test (Wickham and Bryan, 2023)\nNous allons en utiliser quelques une mais vous verrez que c’est tout une philosophie !"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#tidyverse",
+    "href": "slides/00 - Intro.html#tidyverse",
+    "title": "01 - Introduction",
+    "section": "Tidyverse",
+    "text": "Tidyverse\n\n\n\n\ntidyverse.org\nLe Tidyverse est une collection de packages développés pour faire de la data science\nIl y a une philophie et une grammaire commune à tous ces packages, que nous allons apprendre."
+  },
+  {
+    "objectID": "slides/00 - Intro.html#tidymodels",
+    "href": "slides/00 - Intro.html#tidymodels",
+    "title": "01 - Introduction",
+    "section": "Tidymodels",
+    "text": "Tidymodels\n\n\n\n\ntidymodels.org\nTidymodels est une collection de packages pour créer de modèles de machine learning, en gardant la logique du Tidyverse."
+  },
+  {
+    "objectID": "slides/00 - Intro.html#r-markdown",
+    "href": "slides/00 - Intro.html#r-markdown",
+    "title": "01 - Introduction",
+    "section": "R Markdown",
+    "text": "R Markdown\n\n\nrmarkdown.rstudio.com\nR Markdown permet d’écrire des documents avec du code intégré (extension en .Rmd).\nVa permettre de documenter et de communiquer directement nos analyses de données !\n\n\nReproductible: À chaque fois qu’on génère le document, tout est exécuté depuis le début\nSyntaxe simple pour avoir des documents de qualité\nLe document se découpe en zones de texte et blocks de code"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#r-markdown-1",
+    "href": "slides/00 - Intro.html#r-markdown-1",
+    "title": "01 - Introduction",
+    "section": "R Markdown",
+    "text": "R Markdown"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#r-markdown---aide",
+    "href": "slides/00 - Intro.html#r-markdown---aide",
+    "title": "01 - Introduction",
+    "section": "R Markdown - Aide",
+    "text": "R Markdown - Aide\n\n\nCheatsheetHelp &gt; Cheatsheet\n\n\nMarkdown Quick ReferenceHelp &gt; Markdown Quick Reference"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#les-outils-1",
+    "href": "slides/00 - Intro.html#les-outils-1",
+    "title": "01 - Introduction",
+    "section": "Les outils",
+    "text": "Les outils\n\nDéveloppement:\n\nR\nRStudio\ntidyverse\nR Markdown\n\n\n\nGestion et collaboration:\n\nGit\nGitHub"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#git-et-github",
+    "href": "slides/00 - Intro.html#git-et-github",
+    "title": "01 - Introduction",
+    "section": "Git et GitHub",
+    "text": "Git et GitHub\n\n\n\n\n\n\n\n\nGit est un outil de gestion de version\n\nComme le track changes sur Word\n\nTrès populaire dans le monde de la programmation\n\n\n\n\n\n\n\n\nGitHub est un plateforme de stockage de repo Git\n\nComme un Onedrive/Dropbox pour Git\n\nNous allons essayer de l’utiliser pour… tout !"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#pourquoi-la-gestion-de-version",
+    "href": "slides/00 - Intro.html#pourquoi-la-gestion-de-version",
+    "title": "01 - Introduction",
+    "section": "Pourquoi la gestion de version ?",
+    "text": "Pourquoi la gestion de version ?\n\nPhD Comics"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#fonctionnement",
+    "href": "slides/00 - Intro.html#fonctionnement",
+    "title": "01 - Introduction",
+    "section": "Fonctionnement",
+    "text": "Fonctionnement"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#mise-en-place",
+    "href": "slides/00 - Intro.html#mise-en-place",
+    "title": "01 - Introduction",
+    "section": "Mise en place",
+    "text": "Mise en place\nGit peut être utilisé depuis le terminal de commande\n\nUtilisation plus avancée\nNous pouvons normalement tout faire depuis R Studio\n\nGithub:\n\nCréez un compte avec votre adresse UQTR\nVérifiez votre adresse courriel"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#bibliographie",
+    "href": "slides/00 - Intro.html#bibliographie",
+    "title": "01 - Introduction",
+    "section": "Bibliographie",
+    "text": "Bibliographie\n\n\nKuhn, M. and Silge, J. (2022). Tidy modeling with R: A framework for modeling in the tidyverse. O’Reilly Media.\n\n\nWickham, H. and Bryan, J. (2023). R Packages: Organize, Test, Document, and Share Your Code (2nd edition). O’Reilly Media.\n\n\nWickham, H., Çetinkaya-Rundel, M. and Grolemund, G. (2023). R for Data Science (2nd ed.). O’Reilly Media, Inc.\n\n\n\n\n\n\nSFC6006 | Tim Bollé"
+  },
+  {
+    "objectID": "labs/Semaine1.html#exploration-de-données",
+    "href": "labs/Semaine1.html#exploration-de-données",
+    "title": "Semaine1",
+    "section": "Exploration de données",
+    "text": "Exploration de données\nCombien d’observations et combien de variables y a-t-il dans le jeu de données ? Que représente chaque ligne ?"
+  },
+  {
+    "objectID": "labs/Semaine1.html#sélection-de-données",
+    "href": "labs/Semaine1.html#sélection-de-données",
+    "title": "Semaine1",
+    "section": "Sélection de données",
+    "text": "Sélection de données\nIl y a quelques observations dans ce jeu de données que nous exclurons de notre analyse pour correspondre aux résultats de Buzzfeed.\nPour rappel, les différents verbes du tidyverse permettent de manipuler les données:\n\nselect: Sélectionner une colonne\narrange: Ordonner les lignes\nslice: Sélectionner des lignes (par les index)\nfilter: Sélectionner des lignes selon des critères\ndistinct: Filtrer les lignes uniques\nmutate: Ajout de nouvelles variables\nsummarise: Réduire variables en valeurs\ngroup_by: Regrouper des observations selon une variable\n\nCountez le nombre de valeur NA pour la colonne. Pour cela, vous pouvez utiliser les fonctions filter, is.na et count.\nQuelles sont les valeurs possibles pour la variable gender ? La valeur org signifie qu’une organisation a gagné le prix Nobel.\nNous allons maintenant vouloir sélectionner seulement les entrées qui ont toutes les valeur nécessaire, c’est-à-dire des personnes vivantes dont on connait le pays d’origine.\nCréez un nouveau data frame appelé nobel_living qui filtre pour\n\nles lauréats pour lesquels country est disponible\nles lauréats qui sont des personnes par opposition aux organisations (les organisations sont désignées par org dans la variable gender)\nles lauréats vivant, c’est-à-dire les entrées dont la died_date est NA\n\nVérifiez que vous obtenez bien un data frame avec 228 observations après avoir filtré les données.\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit."
+  },
+  {
+    "objectID": "labs/Semaine1.html#analyse-de-données",
+    "href": "labs/Semaine1.html#analyse-de-données",
+    "title": "Semaine1",
+    "section": "Analyse de données",
+    "text": "Analyse de données\n\n“La plupart des lauréats vivants du prix Nobel étaient basés aux États-Unis lorsqu’ils ont remporté leurs prix”\n… dit l’article de Buzzfeed. Voyons si c’est vrai.\nTout d’abord, nous allons créer une nouvelle variable pour identifier si le lauréat vivait aux États-Unis lorsqu’il a remporté son prix. Pour cela, nous utiliserons la fonction mutate(). Créez une nouvelle colonne country_us qui sera égale à \"USA\" si le country est égal à “USA” et à \"Other\" sinon. Pour cela, pensez à utiliser la fonction if_else dans votre mutate.\nNous voudrons ensuite transformer cette colonne en facteur, ce qui est toujours utile lorsqu’on travaille avec des données catégoriques. Pour cela, vous pouvez utiliser la fonction fct_relvel() en précisant la colonne à mettre en facteur et le nom des niveaux (ici “USA” en premier et “Other” en deuxième).\nPour la suite de l’exercice, nous limiterons notre analyse aux catégories suivantes : Physique, Médecine, Chimie et Économie.\nCréez un nouveau data frame appelé nobel_living_science qui filtre pour les catégories suivantes : Physique, Médecine, Chimie et Économie.\nPour cela, vous pouvez tester si category est dans le vecteur c(\"Physics\", \"Medicine\", \"Chemistry\", \"Economics\"). Profitez-en également pour transformer cette colonne en facteurs également, en les ordonant par ordre alphabétique.\nPour le prochain exercice, travaillez avec le data frame nobel_living_science que nous avons créé ci-dessus.\nCréez un graphique à barres avec des facets visualisant la relation entre la catégorie du prix Nobel et si le lauréat était aux États-Unis lorsqu’il l’a remporté.\nPour rappel, les graphiques peuvent être créés de la forme:\n\nnobel_living_science %&gt;%\n  ggplot(aes(...)) +\n    geom_XXX(...)\n\nPar exemple,\n\nnobel_living_science %&gt;%\n  ggplot(aes(x=country_us, fill = country_us)) +\n  geom_bar() +\n   labs(x = \"Pays de résidence\",                 # On met à jour les labels\n       y = \"Nombre de lauréats\",\n       title = \"Pays de résidence des lauréats vivants du prix Nobel\",\n       subtitle = \"Selon si le pays de résidence correspond aux USA ou non\",\n       fill = \"Pays du lauréat\")\n\n\n\n\n\n\n\n\nPour créer des facettes selon les catégories, vous pouvez ajouter la fonction facet_wrap. Votre visualisation doit avoir:\n\nVotre visualisation doit être facettée par catégorie.\nPour chaque facette, vous devez avoir deux barres, une pour les gagnants aux États-Unis et une pour les autres.\nInversez les coordonnées pour que les barres soient horizontales, pas verticales.\n\n\n\n\n\n\n\n\n\n\nInterprétez votre visualisation et commentez le titre de Buzzfeed en regardant s’il est soutenu par les données.\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\n“Mais parmi ces lauréats du prix Nobel basés aux États-Unis, beaucoup sont nés dans d’autres pays”\nCréez une nouvelle variable appelée born_country_us qui a la valeur \"USA\" si le lauréat est né aux États-Unis, et \"Other\" sinon. Combien de gagnants sont nés aux États-Unis ?\nAjoutez une deuxième variable à votre visualisation de l’exercice 4 basée sur si le lauréat est né aux États-Unis ou non. D’après votre visualisation, les données semblent-elles soutenir l’affirmation de Buzzfeed ? Expliquez votre raisonnement en 1-2 phrases.\n\nVotre visualisation finale doit contenir une facette pour chaque catégorie.\nDans chaque facette, il doit y avoir une barre pour savoir si le lauréat a remporté le prix aux États-Unis ou non.\nChaque barre doit avoir des segments pour savoir si le lauréat est né aux États-Unis ou non.\n\n\n\n\n\n\n\n\n\n\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\nD’où viennent les lauréats nés à l’étranger qui ont remporté leur prix aux États-Unis ?\nDans un seul pipeline, filtrez pour les lauréats qui ont remporté leur prix aux États-Unis, mais qui sont nés en dehors des États-Unis, puis créez un tableau de fréquence (avec la fonction count()) pour leur pays de naissance (born_country) et arrangez le data frame résultant par ordre décroissant du nombre d’observations pour chaque pays. Quel pays est le plus commun ?\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\nMaintenant, relisez votre rapport pour vous assurer que vous avez répondu à toutes les questions et que tous vos blocs de code R sont correctement étiquetés."
+  },
+  {
+    "objectID": "labs/Semaine1.html#analyse-et-visualisation-de-données",
+    "href": "labs/Semaine1.html#analyse-et-visualisation-de-données",
+    "title": "Semaine1",
+    "section": "Analyse et visualisation de données",
+    "text": "Analyse et visualisation de données\n\n“La plupart des lauréats vivants du prix Nobel étaient basés aux États-Unis lorsqu’ils ont remporté leurs prix”\n… dit l’article de Buzzfeed. Voyons si c’est vrai.\nTout d’abord, nous allons créer une nouvelle variable pour identifier si le lauréat vivait aux États-Unis lorsqu’il a remporté son prix. Pour cela, nous utiliserons la fonction mutate(). Créez une nouvelle colonne country_us qui sera égale à \"USA\" si le country est égal à “USA” et à \"Other\" sinon. Pour cela, pensez à utiliser la fonction if_else dans votre mutate.\nNous voudrons ensuite transformer cette colonne en facteur, ce qui est toujours utile lorsqu’on travaille avec des données catégoriques. Pour cela, vous pouvez utiliser la fonction fct_relvel() en précisant la colonne à mettre en facteur et le nom des niveaux (ici “USA” en premier et “Other” en deuxième).\nPour la suite de l’exercice, nous limiterons notre analyse aux catégories suivantes : Physique, Médecine, Chimie et Économie.\nCréez un nouveau data frame appelé nobel_living_science qui filtre pour les catégories suivantes : Physique, Médecine, Chimie et Économie.\nPour cela, vous pouvez tester si category est dans le vecteur c(\"Physics\", \"Medicine\", \"Chemistry\", \"Economics\"). Profitez-en également pour transformer cette colonne en facteurs également, en les ordonant par ordre alphabétique.\nPour le prochain exercice, travaillez avec le data frame nobel_living_science que nous avons créé ci-dessus.\nCréez un graphique à barres avec des facets visualisant la relation entre la catégorie du prix Nobel et si le lauréat était aux États-Unis lorsqu’il l’a remporté.\nPour rappel, les graphiques peuvent être créés de la forme:\n\nnobel_living_science %&gt;%\n  ggplot(aes(...)) +\n    geom_XXX(...)\n\nPar exemple,\n\nnobel_living_science %&gt;%\n  ggplot(aes(x=country_us, fill = country_us)) +\n  geom_bar() +\n   labs(x = \"Pays de résidence\",                 # On met à jour les labels\n       y = \"Nombre de lauréats\",\n       title = \"Pays de résidence des lauréats vivants du prix Nobel\",\n       subtitle = \"Selon si le pays de résidence correspond aux USA ou non\",\n       fill = \"Pays du lauréat\")\n\n\n\n\n\n\n\n\nPour créer des facettes selon les catégories, vous pouvez ajouter la fonction facet_wrap. Votre visualisation doit avoir:\n\nVotre visualisation doit être facettée par catégorie.\nPour chaque facette, vous devez avoir deux barres, une pour les gagnants aux États-Unis et une pour les autres.\nInversez les coordonnées pour que les barres soient horizontales, pas verticales.\n\n\n\n\n\n\n\n\n\n\nInterprétez votre visualisation et commentez le titre de Buzzfeed en regardant s’il est soutenu par les données.\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\n“Mais parmi ces lauréats du prix Nobel basés aux États-Unis, beaucoup sont nés dans d’autres pays”\nCréez une nouvelle variable appelée born_country_us qui a la valeur \"USA\" si le lauréat est né aux États-Unis, et \"Other\" sinon. Combien de gagnants sont nés aux États-Unis ?\nAjoutez une deuxième variable à votre visualisation de l’exercice 4 basée sur si le lauréat est né aux États-Unis ou non. D’après votre visualisation, les données semblent-elles soutenir l’affirmation de Buzzfeed ? Expliquez votre raisonnement en 1-2 phrases.\n\nVotre visualisation finale doit contenir une facette pour chaque catégorie.\nDans chaque facette, il doit y avoir une barre pour savoir si le lauréat a remporté le prix aux États-Unis ou non.\nChaque barre doit avoir des segments pour savoir si le lauréat est né aux États-Unis ou non.\n\n\n\n\n\n\n\n\n\n\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\nD’où viennent les lauréats nés à l’étranger qui ont remporté leur prix aux États-Unis ?\nDans un seul pipeline, filtrez pour les lauréats qui ont remporté leur prix aux États-Unis, mais qui sont nés en dehors des États-Unis, puis créez un tableau de fréquence (avec la fonction count()) pour leur pays de naissance (born_country) et arrangez le data frame résultant par ordre décroissant du nombre d’observations pour chaque pays. Quel pays est le plus commun ?\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\nMaintenant, relisez votre rapport pour vous assurer que vous avez répondu à toutes les questions et que tous vos blocs de code R sont correctement étiquetés."
+  }
+]

@@ -1,0 +1,282 @@
+---
+title: "01 - Introduction"
+subtitle: "SFC6006 - Sujets de pointe"
+author: "Tim Bollé"
+date: "2025-01-21"
+date-format: long
+footer: "SFC6006 | Tim Bollé"
+license: "CC BY-SA"
+bibliography: ../template/references.bib
+csl: ../template/apa-fr.csl
+execute: 
+  eval: true
+  echo: true
+  output: true
+  warning: false
+format: 
+  revealjs:
+    theme: [dark, ../template/slide-uqtr.scss]
+    logo: ../template/h-UQTR-r.png
+    slide-number: true
+    width: 1350
+    height: 900
+    scrollable: true
+---
+
+
+# Introduction
+
+## Objectifs
+
+Être capable de manipuler des données et de les visualiser avec R (SFC1018)
+
+Ètre capable de mettre en oeuvre des méthodes de traitement statistique des données avec R (SFC6008)
+
+Être capable de réaliser un projet de traitement de données de A à Z en R.
+
+## Méthode
+
+![[@wickhamDataScience2023]](figs/data-science-process.png)
+
+## Ressources
+
+::: columns
+::: {.column width="50%"}
+![](figs/r4ds.jpg){width="70%"}
+
+[@wickhamDataScience2023]
+:::
+
+::: {.column width="50%"}
+![](figs/tidymodels-with-r.png){width="70%"}
+
+[@kuhnTidyModelingFramework2022]
+
+:::
+:::
+
+# Outils
+
+## Les outils
+
+:::{.light-red}
+Développement:
+
+- R
+- RStudio
+- tidyverse
+- tidymodels
+- R Markdown
+:::
+:::{.gray}
+Gestion et collaboration:
+
+- Git
+- GitHub
+:::
+
+## Objectifs
+
+::: {.incremental}
+- Analyser des données
+- Analyser des données de manière `répétable`
+- Analyser des données de manière répétable, avec des `outils de programmation modernes`
+- Analyser des données de manière répétable et `collaborative`, avec des outils de programmation modernes
+:::
+
+
+## Répétabilité
+
+:::{.question .no-spacing}
+Que signifie conduire une analyse de donnée de manière répétable ?
+:::
+
+À court-terme:
+
+- Pouvons nous reproduire les tableaux et les figures à partir des données
+- Est-ce que le code fait ce que nous voulons ?
+- Pouvons-nous reconstruire pourquoi et comment nous avons obtenus les résultats
+
+À long-terme:
+
+- Peut-on réutiliser le code pour d'autres données ?
+- Peut-on réutiliser le code pour faire autre chose ?
+
+## Les outils de la répérabilité
+
+*Scriptability* $\rightarrow$ R
+
+Documentation et communication $\rightarrow$ R Markdown
+
+Gestion et collaboration $\rightarrow$ Git/GitHub
+
+
+## R et RStudio
+
+::: columns
+:::{.column width="50%"}
+![](figs/R_logo.png){width="30%"}
+
+- R est un language de programmation `open-source`
+- R est un environnement pour faire des `calculs statistiques` et de la `visualisation`
+- De nombreuses autres applications sont disponibles grâce à des *`packages`*
+:::
+
+:::{.column width="50%"}
+![](figs/Rstudio_logo.png){width="60%"}
+
+- RStudio est un [IDE]{.light-red} (Environnement de Développement Intégré)
+- C'est une interface pour R
+- Pas nécessaire pour coder en R mais tellement pratique !
+:::
+:::
+
+
+## RStudio tour
+
+![](figs/Rstudio_tour.png)
+
+
+## R packages
+
+Les packages sont les *building blocks* de la reproductibilité. Ils contiennent de nombreuses fonctions réutilisables, de la documentation et données de test [@wickhamPackagesOrganizeTest2023]
+
+Nous allons en utiliser quelques une mais vous verrez que c'est tout une philosophie !
+
+
+## Tidyverse
+
+::: columns
+::: {.column width="60%"}
+![](figs/tidyverse.png){width="80%"}
+:::
+
+::: {.column width="40%"}
+[[tidyverse.org](https://www.tidyverse.org/){style="color:#f08181;"}]{style="font-size: 1.5em;"}
+
+Le `Tidyverse` est une collection de packages développés pour faire de la data science
+
+Il y a une philophie et une grammaire commune à tous ces packages, que nous allons apprendre.
+:::
+:::
+
+## Tidymodels
+
+::: columns
+::: {.column width="60%"}
+![](figs/tidymodels2.png){width="80%"}
+:::
+
+::: {.column width="40%"}
+[[tidymodels.org](https://www.tidymodels.org/){style="color:#f08181;"}]{style="font-size: 1.5em;"}
+
+`Tidymodels` est une collection de packages pour créer de modèles de machine learning, en gardant la logique du `Tidyverse`.
+:::
+:::
+
+## R Markdown
+
+::: columns
+::: {.column width="60%"}
+
+[[rmarkdown.rstudio.com](https://rmarkdown.rstudio.com/){style="color:#f08181;"}]{style="font-size: 1.5em;"}
+
+`R Markdown` permet d'écrire des documents avec du code intégré (extension en `.Rmd`).
+
+Va permettre de documenter et de communiquer directement nos analyses de données !
+
+::: incremental
+- Reproductible: À chaque fois qu'on génère le document, tout est exécuté depuis le début
+- Syntaxe simple pour avoir des documents de qualité
+- Le document se découpe en zones de texte et blocks de code
+:::
+:::
+
+::: {.column width="40%"}
+![](figs/R-Markdown_logo.png){width="80%"}
+:::
+:::
+
+## R Markdown
+![](figs/R-Markdown_example.png){width="80%"}
+
+## R Markdown - Aide
+
+::: columns
+::: {.column width="40%"}
+Cheatsheet<br/>[Help > Cheatsheet]{.gray-mono}
+
+![](figs/rmd-cheatsheet.png){width="80%"}
+:::
+
+::: {.column width="60%"}
+Markdown Quick Reference<br/>[Help > Markdown Quick Reference]{.gray-mono}
+
+![](figs/md-cheatsheet.jpg){width="60%"}
+:::
+:::
+
+## Les outils
+
+:::{.gray}
+Développement:
+
+- R
+- RStudio
+- tidyverse
+- R Markdown
+:::
+:::{.light-red}
+Gestion et collaboration:
+
+- Git
+- GitHub
+:::
+
+## Git et GitHub
+
+
+::: columns
+:::{.column width="50%"}
+![](figs/git-logo.png){width="30%" fig-align="center"}
+
+- Git est un outil de `gestion de version`
+  - Comme le *track changes* sur Word
+- Très populaire dans le monde de la programmation
+
+:::
+
+:::{.column width="50%"}
+![](figs/github-logo.png){width="30%" fig-align="center"}
+
+- GitHub est un plateforme de stockage de `repo` Git
+  - Comme un Onedrive/Dropbox pour Git
+- Nous allons essayer de l'utiliser pour... tout !
+:::
+:::
+
+## Pourquoi la gestion de version ?
+
+![[PhD Comics](https://phdcomics.com/comics.php?f=1531)](figs/phd_comics_vc.gif)
+
+## Fonctionnement
+
+![](figs/vc-process.png)
+
+## Mise en place
+
+Git peut être utilisé depuis le terminal de commande
+
+- Utilisation plus avancée
+- Nous pouvons normalement tout faire depuis R Studio
+
+Github:
+
+- Créez un compte avec votre adresse UQTR
+- Vérifiez votre adresse courriel
+
+## Bibliographie
+
+::: {#refs}
+:::
+
