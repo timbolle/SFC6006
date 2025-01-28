@@ -471,3 +471,34 @@ lr_auc <- lr_pred %>%
 lr_auc %>% autoplot()
 ```
 
+Nous pouvons également calculer directement l'aire sous la courve en faisant appelle à `yardstick` et à la fonction `roc_auc`
+
+```{r, eval=FALSE}
+lr_pred %>%
+  roc_auc(children, .pred_children)
+```
+
+
+## Deuxième modèle: Random Forest
+
+Cette fois, nous allons faire de la classification avec Random Forest. Vous pouvez utiliser le modèle suivant:
+
+```{r, eval=FALSE}
+cores <- parallel::detectCores() # Nombre de coeur à disposition pour le calcul
+
+rf_mod <- 
+  rand_forest(trees = 1000) %>% 
+  set_engine("ranger", num.threads = cores) %>% 
+  set_mode("classification")
+```
+
+
+**Question 11**: Reproduisez les étapes de préprocessing, d'entrainement et de prédiction avec ce nouveau model. Pour le preprocessing, utilisez simplement les étapes:
+
+- `step_date()` avec la date d'arrivée
+- `step_holiday()` pour déterminer si la date d'arrivée correspond à une période de vacance
+- `step_rm()` pour retirer la date d'arrivée (nous voulons simplement garder l'indication de si cela correspond à une période de vacances)
+
+**Question 12**: Calculez l'aire sous la courbe ROC. Comparez par rapport à celle obtenu pour le premier modèle.
+
+**Question 13**: Faite un graphique contenant les courbes ROC pour les deux modèles. Pour cela, inspirez du code fourni pour la regression logistique pour obtenir un tableau similaire à `lr_auc`, mais contenant les valeurs obtenues avec Random Forest, en indiquant "Random Forest" dans la colonne `model`. Combinez, à l'aide de `bind_rows()` les deux tableaux et utilisez ggplot pour afficher les deux courbes sur un même grahique en changeant la couleur selon le modèle.

@@ -237,6 +237,7 @@ window.Quarto = {
   <li><a href="#entraînement-et-prédiction" id="toc-entraînement-et-prédiction" class="nav-link" data-scroll-target="#entraînement-et-prédiction">Entraînement et Prédiction</a></li>
   <li><a href="#évaluation-du-modèle" id="toc-évaluation-du-modèle" class="nav-link" data-scroll-target="#évaluation-du-modèle">Évaluation du modèle</a></li>
   </ul></li>
+  <li><a href="#deuxième-modèle-random-forest" id="toc-deuxième-modèle-random-forest" class="nav-link" data-scroll-target="#deuxième-modèle-random-forest">Deuxième modèle: Random Forest</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1046,10 +1047,35 @@ Neighborhood_South_and_West_of_Iowa_State_University
 <span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>lr_auc <span class="sc">%&gt;%</span> <span class="fu">autoplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-
-
-
+<p>Nous pouvons également calculer directement l’aire sous la courve en faisant appelle à <code>yardstick</code> et à la fonction <code>roc_auc</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>lr_pred <span class="sc">%&gt;%</span></span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">roc_auc</span>(children, .pred_children)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
+</section>
+<section id="deuxième-modèle-random-forest" class="level2">
+<h2 class="anchored" data-anchor-id="deuxième-modèle-random-forest">Deuxième modèle: Random Forest</h2>
+<p>Cette fois, nous allons faire de la classification avec Random Forest. Vous pouvez utiliser le modèle suivant:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>cores <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">detectCores</span>() <span class="co"># Nombre de coeur à disposition pour le calcul</span></span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>rf_mod <span class="ot">&lt;-</span> </span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rand_forest</span>(<span class="at">trees =</span> <span class="dv">1000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"ranger"</span>, <span class="at">num.threads =</span> cores) <span class="sc">%&gt;%</span> </span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_mode</span>(<span class="st">"classification"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Question 11</strong>: Reproduisez les étapes de préprocessing, d’entrainement et de prédiction avec ce nouveau model. Pour le preprocessing, utilisez simplement les étapes:</p>
+<ul>
+<li><code>step_date()</code> avec la date d’arrivée</li>
+<li><code>step_holiday()</code> pour déterminer si la date d’arrivée correspond à une période de vacance</li>
+<li><code>step_rm()</code> pour retirer la date d’arrivée (nous voulons simplement garder l’indication de si cela correspond à une période de vacances)</li>
+</ul>
+<p><strong>Question 12</strong>: Calculez l’aire sous la courbe ROC. Comparez par rapport à celle obtenu pour le premier modèle.</p>
+<p><strong>Question 13</strong>: Faite un graphique contenant les courbes ROC pour les deux modèles. Pour cela, inspirez du code fourni pour la regression logistique pour obtenir un tableau similaire à <code>lr_auc</code>, mais contenant les valeurs obtenues avec Random Forest, en indiquant “Random Forest” dans la colonne <code>model</code>. Combinez, à l’aide de <code>bind_rows()</code> les deux tableaux et utilisez ggplot pour afficher les deux courbes sur un même grahique en changeant la couleur selon le modèle.</p>
+
+
+
 </section>
 </section>
 
