@@ -12,12 +12,16 @@ website:
         menu:
           - href: labs/Semaine1.qmd
             text: Semaine 1
+          - href: labs/Semaine2.qmd
+            text: Semaine 2
       - about.qmd
 
 format:
   html:
-    theme: sandstone
-    css: website-styles.scss
+    theme: 
+      - sandstone
+      - website-styles.scss
+
     toc: true
 
 bibliography: template/references.bib

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Semaine1 – SFC6006</title>
+<title>Semaine 1 - Data wrangling – SFC6006</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -161,20 +161,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#échauffement" id="toc-échauffement" class="nav-link" data-scroll-target="#échauffement">Échauffement</a></li>
   <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
-  <li><a href="#données" id="toc-données" class="nav-link" data-scroll-target="#données">Données</a></li>
   </ul></li>
+  <li><a href="#les-lauréats-du-prix-nobel" id="toc-les-lauréats-du-prix-nobel" class="nav-link" data-scroll-target="#les-lauréats-du-prix-nobel">Les lauréats du Prix Nobel</a>
+  <ul class="collapse">
+  <li><a href="#données" id="toc-données" class="nav-link" data-scroll-target="#données">Données</a></li>
   <li><a href="#manipulation-de-données" id="toc-manipulation-de-données" class="nav-link" data-scroll-target="#manipulation-de-données">Manipulation de données</a>
   <ul class="collapse">
   <li><a href="#exploration-de-données" id="toc-exploration-de-données" class="nav-link" data-scroll-target="#exploration-de-données">Exploration de données</a></li>
   <li><a href="#sélection-de-données" id="toc-sélection-de-données" class="nav-link" data-scroll-target="#sélection-de-données">Sélection de données</a></li>
-  <li><a href="#analyse-et-visualisation-de-données" id="toc-analyse-et-visualisation-de-données" class="nav-link" data-scroll-target="#analyse-et-visualisation-de-données">Analyse et visualisation de données</a>
-  <ul class="collapse">
-  <li><a href="#la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix" id="toc-la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix" class="nav-link" data-scroll-target="#la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix">“La plupart des lauréats vivants du prix Nobel étaient basés aux États-Unis lorsqu’ils ont remporté leurs prix”</a></li>
-  <li><a href="#mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays" id="toc-mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays" class="nav-link" data-scroll-target="#mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays">“Mais parmi ces lauréats du prix Nobel basés aux États-Unis, beaucoup sont nés dans d’autres pays”</a></li>
-  <li><a href="#doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis" id="toc-doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis" class="nav-link" data-scroll-target="#doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis">D’où viennent les lauréats nés à l’étranger qui ont remporté leur prix aux États-Unis ?</a></li>
-  </ul></li>
+  <li><a href="#analyse-et-visualisation-de-données" id="toc-analyse-et-visualisation-de-données" class="nav-link" data-scroll-target="#analyse-et-visualisation-de-données">Analyse et visualisation de données</a></li>
   </ul></li>
   <li><a href="#intéressé-par-la-façon-dont-buzzfeed-a-réalisé-leurs-visualisations" id="toc-intéressé-par-la-façon-dont-buzzfeed-a-réalisé-leurs-visualisations" class="nav-link" data-scroll-target="#intéressé-par-la-façon-dont-buzzfeed-a-réalisé-leurs-visualisations">Intéressé par la façon dont Buzzfeed a réalisé leurs visualisations ?</a></li>
+  </ul></li>
+  <li><a href="#religion-et-revenu" id="toc-religion-et-revenu" class="nav-link" data-scroll-target="#religion-et-revenu">Religion et revenu</a></li>
   </ul>
 </nav>
     </div>
@@ -183,7 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Semaine1</h1>
+<h1 class="title">Semaine 1 - Data wrangling</h1>
 </div>
 
 
@@ -223,6 +222,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>S’il n’est pas déjà installé, vous pouvez le faire avec la commande <code>install.packages("tidyverse")</code>. Cette commande n’est nécaisse qu’une seule fois.</p>
 </section>
+</section>
+<section id="les-lauréats-du-prix-nobel" class="level1">
+<h1>Les lauréats du Prix Nobel</h1>
 <section id="données" class="level2">
 <h2 class="anchored" data-anchor-id="données">Données</h2>
 <p>Le jeu de données pour cet exercice se trouve sous forme de fichier CSV (valeurs séparées par des virgules) dans le dossier data de votre dépôt. Vous pouvez les charger avec la fonction <code>read_csv</code>:</p>
@@ -259,9 +261,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>country_original</code></li>
 </ul>
 </section>
-</section>
-<section id="manipulation-de-données" class="level1">
-<h1>Manipulation de données</h1>
+<section id="manipulation-de-données" class="level2">
+<h2 class="anchored" data-anchor-id="manipulation-de-données">Manipulation de données</h2>
 <p>Nous allons commencer par jeter un coup d’oeil au tableau que nous avons chargé. Pour cela, nous pouvons utiliser la fonction <code>glimpse()</code></p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -296,12 +297,12 @@ $ country_original      &lt;chr&gt; "Germany", "the Netherlands", "the Netherlan
 </div>
 </div>
 <p>Il est ainsi possible de voir pour chaque colonne, le type de données qui a été détecté lors de l’importation, et un coup d’oeils aux premières valeurs. C’est le moment de repérer si un type ne convient pas.</p>
-<section id="exploration-de-données" class="level2">
-<h2 class="anchored" data-anchor-id="exploration-de-données">Exploration de données</h2>
+<section id="exploration-de-données" class="level3">
+<h3 class="anchored" data-anchor-id="exploration-de-données">Exploration de données</h3>
 <p>Combien d’observations et combien de variables y a-t-il dans le jeu de données ? Que représente chaque ligne ?</p>
 </section>
-<section id="sélection-de-données" class="level2">
-<h2 class="anchored" data-anchor-id="sélection-de-données">Sélection de données</h2>
+<section id="sélection-de-données" class="level3">
+<h3 class="anchored" data-anchor-id="sélection-de-données">Sélection de données</h3>
 <p>Il y a quelques observations dans ce jeu de données que nous exclurons de notre analyse pour correspondre aux résultats de Buzzfeed.</p>
 <p>Pour rappel, les différents verbes du tidyverse permettent de manipuler les données:</p>
 <ul>
@@ -314,7 +315,7 @@ $ country_original      &lt;chr&gt; "Germany", "the Netherlands", "the Netherlan
 <li><code>summarise</code>: Réduire variables en valeurs</li>
 <li><code>group_by</code>: Regrouper des observations selon une variable</li>
 </ul>
-<p>Countez le nombre de valeur <code>NA</code> pour la colonne. Pour cela, vous pouvez utiliser les fonctions <code>filter</code>, <code>is.na</code> et <code>count</code>.</p>
+<p>Countez le nombre de valeur <code>NA</code> pour la colonne <code>country</code>. Pour cela, vous pouvez utiliser les fonctions <code>filter</code>, <code>is.na</code> et <code>count</code>.</p>
 <p>Quelles sont les valeurs possibles pour la variable <code>gender</code> ? La valeur <code>org</code> signifie qu’une organisation a gagné le prix Nobel.</p>
 <p>Nous allons maintenant vouloir sélectionner seulement les entrées qui ont toutes les valeur nécessaire, c’est-à-dire des personnes vivantes dont on connait le pays d’origine.</p>
 <p>Créez un nouveau data frame appelé <code>nobel_living</code> qui filtre pour</p>
@@ -326,10 +327,10 @@ $ country_original      &lt;chr&gt; "Germany", "the Netherlands", "the Netherlan
 <p>Vérifiez que vous obtenez bien un data frame avec 228 observations après avoir filtré les données.</p>
 <p>🧶 ✅ ⬆️ <em>Knit, commit, and push ! N’oubliez pas le message de commit.</em></p>
 </section>
-<section id="analyse-et-visualisation-de-données" class="level2">
-<h2 class="anchored" data-anchor-id="analyse-et-visualisation-de-données">Analyse et visualisation de données</h2>
-<section id="la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix" class="level3">
-<h3 class="anchored" data-anchor-id="la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix">“La plupart des lauréats vivants du prix Nobel étaient basés aux États-Unis lorsqu’ils ont remporté leurs prix”</h3>
+<section id="analyse-et-visualisation-de-données" class="level3">
+<h3 class="anchored" data-anchor-id="analyse-et-visualisation-de-données">Analyse et visualisation de données</h3>
+<section id="la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix" class="level4">
+<h4 class="anchored" data-anchor-id="la-plupart-des-lauréats-vivants-du-prix-nobel-étaient-basés-aux-états-unis-lorsquils-ont-remporté-leurs-prix">“La plupart des lauréats vivants du prix Nobel étaient basés aux États-Unis lorsqu’ils ont remporté leurs prix”</h4>
 <p>… dit l’article de Buzzfeed. Voyons si c’est vrai.</p>
 <p>Tout d’abord, nous allons créer une nouvelle variable pour identifier si le lauréat vivait aux États-Unis lorsqu’il a remporté son prix. Pour cela, nous utiliserons la fonction <code>mutate()</code>. Créez une nouvelle colonne <code>country_us</code> qui sera égale à <code>"USA"</code> si le country est égal à “USA” et à <code>"Other"</code> sinon. Pour cela, pensez à utiliser la fonction <code>if_else</code> dans votre <code>mutate</code>.</p>
 <p>Nous voudrons ensuite transformer cette colonne en facteur, ce qui est toujours utile lorsqu’on travaille avec des données catégoriques. Pour cela, vous pouvez utiliser la fonction <code>fct_relvel()</code> en précisant la colonne à mettre en facteur et le nom des niveaux (ici “USA” en premier et “Other” en deuxième).</p>
@@ -380,8 +381,8 @@ $ country_original      &lt;chr&gt; "Germany", "the Netherlands", "the Netherlan
 <p>Interprétez votre visualisation et commentez le titre de Buzzfeed en regardant s’il est soutenu par les données.</p>
 <p>🧶 ✅ ⬆️ <em>Knit, commit, and push ! N’oubliez pas le message de commit.</em></p>
 </section>
-<section id="mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays" class="level3">
-<h3 class="anchored" data-anchor-id="mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays">“Mais parmi ces lauréats du prix Nobel basés aux États-Unis, beaucoup sont nés dans d’autres pays”</h3>
+<section id="mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays" class="level4">
+<h4 class="anchored" data-anchor-id="mais-parmi-ces-lauréats-du-prix-nobel-basés-aux-états-unis-beaucoup-sont-nés-dans-dautres-pays">“Mais parmi ces lauréats du prix Nobel basés aux États-Unis, beaucoup sont nés dans d’autres pays”</h4>
 <p>Créez une nouvelle variable appelée <code>born_country_us</code> qui a la valeur <code>"USA"</code> si le lauréat est né aux États-Unis, et <code>"Other"</code> sinon. Combien de gagnants sont nés aux États-Unis ?</p>
 <p>Ajoutez une deuxième variable à votre visualisation de l’exercice 4 basée sur si le lauréat est né aux États-Unis ou non. D’après votre visualisation, les données semblent-elles soutenir l’affirmation de Buzzfeed ? Expliquez votre raisonnement en 1-2 phrases.</p>
 <ul>
@@ -400,17 +401,22 @@ $ country_original      &lt;chr&gt; "Germany", "the Netherlands", "the Netherlan
 </div>
 <p>🧶 ✅ ⬆️ <em>Knit, commit, and push ! N’oubliez pas le message de commit.</em></p>
 </section>
-<section id="doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis" class="level3">
-<h3 class="anchored" data-anchor-id="doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis">D’où viennent les lauréats nés à l’étranger qui ont remporté leur prix aux États-Unis ?</h3>
+<section id="doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis" class="level4">
+<h4 class="anchored" data-anchor-id="doù-viennent-les-lauréats-nés-à-létranger-qui-ont-remporté-leur-prix-aux-états-unis">D’où viennent les lauréats nés à l’étranger qui ont remporté leur prix aux États-Unis ?</h4>
 <p>Dans un seul pipeline, filtrez pour les lauréats qui ont remporté leur prix aux États-Unis, mais qui sont nés en dehors des États-Unis, puis créez un tableau de fréquence (avec la fonction <code>count()</code>) pour leur pays de naissance (<code>born_country</code>) et arrangez le data frame résultant par ordre décroissant du nombre d’observations pour chaque pays. Quel pays est le plus commun ?</p>
 <p>🧶 ✅ ⬆️ <em>Knit, commit, and push ! N’oubliez pas le message de commit.</em></p>
 <p>Maintenant, relisez votre rapport pour vous assurer que vous avez répondu à toutes les questions et que tous vos blocs de code R sont correctement étiquetés.</p>
 </section>
 </section>
 </section>
-<section id="intéressé-par-la-façon-dont-buzzfeed-a-réalisé-leurs-visualisations" class="level1">
-<h1>Intéressé par la façon dont Buzzfeed a réalisé leurs visualisations ?</h1>
+<section id="intéressé-par-la-façon-dont-buzzfeed-a-réalisé-leurs-visualisations" class="level2">
+<h2 class="anchored" data-anchor-id="intéressé-par-la-façon-dont-buzzfeed-a-réalisé-leurs-visualisations">Intéressé par la façon dont Buzzfeed a réalisé leurs visualisations ?</h2>
 <p>Les graphiques dans l’article de Buzzfeed sont appelés des graphiques en gaufre (<em>waffle plots</em>). Vous pouvez trouver le code utilisé pour réaliser ces graphiques dans le dépôt GitHub de Buzzfeed (oui, ils en ont un !) <a href="https://buzzfeednews.github.io/2017-01-immigration-and-science/">ici</a>. Vous pouvez essayer de recréer ces graphiques pour le plaisir, mais ce n’est pas une exigence pour ce lab.</p>
+</section>
+</section>
+<section id="religion-et-revenu" class="level1">
+<h1>Religion et revenu</h1>
+<p>Nous allons analyser un jeu de données recenssant</p>
 
 
 </section>

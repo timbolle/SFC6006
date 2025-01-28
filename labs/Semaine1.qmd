@@ -1,5 +1,5 @@
 ---
-title: "Semaine 1"
+title: "Semaine 1 - Data wrangling"
 ---
 
 
@@ -106,7 +106,7 @@ Pour rappel, les différents verbes du tidyverse permettent de manipuler les don
 - `summarise`: Réduire variables en valeurs
 - `group_by`: Regrouper des observations selon une variable
 
-Countez le nombre de valeur `NA` pour la colonne. Pour cela, vous pouvez utiliser les fonctions `filter`, `is.na` et `count`.
+Countez le nombre de valeur `NA` pour la colonne `country`. Pour cela, vous pouvez utiliser les fonctions `filter`, `is.na` et `count`.
 
 Quelles sont les valeurs possibles pour la variable `gender` ? La valeur `org` signifie qu'une organisation a gagné le prix Nobel.
 

@@ -1,0 +1,473 @@
+---
+title: "Semaine 2 - Machine Learning"
+---
+
+```{r include = FALSE}
+knitr::opts_chunk$set(
+  eval = TRUE,
+  out.width = "80%",
+  fig.asp = 0.618,
+  fig.width = 10,
+  dpi = 300
+)
+```
+
+# Introduction
+
+L'objectif de ce lab est de nous familiariser avec la logique derrière le machine learning en utilisant la suite de package `tidymodels`. 
+
+Pour cela, nous allons travailler sur un jeu de données qui contient des informations sur des maisons à vendre dans la ville de Ames, Iowa, USA. Nous allons notament chercher à prédire le prix de vente des maisons en fonction des différentes caractéristiques.
+
+
+# Préparation des données
+
+Nous allons commencer par charger les packages nécessaire à la suite du lab
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(tidymodels)
+```
+
+
+## Chargement des données
+
+
+```{r, message=FALSE, warning=FALSE}
+
+data(ames, package = "modeldata")
+
+dim(ames)
+```
+
+Nous pouvons jeter un coup d'oeil aux données:
+
+```{r, message=FALSE}
+glimpse(ames)
+```
+
+**Question 1**: Faites un historgramme pour représenter les prix de vente des maisons. Faites un deuxième histogramme en utilisant une échelle logarithmique sur le prix.
+
+# Séparation des données
+
+Pour commencer, nous voulons pouvoir répéter les différentes opérations du lab et obtenir les même résultats. Cela est très important dans un contexte de recherche où certaines opérations reponsent sur des tirages aléatoires. Pour cela, nous pouvons utiliser la fonction `set.seed()`
+
+```{r}
+set.seed(42)
+```
+
+Comme souvent en machine learning, nous allons vouloir séparer les données en jeu d'entraînement et de test.
+
+
+```{r}
+splits <- initial_split(ames, prop = .75)
+
+ames_train <- training(splits)
+ames_test <- testing(splits)
+```
+
+L'argument `prop` permet d'indiquer la proportion souhaitée dans le set d'entraînement. 
+
+Dans le cas où les classes qui nous intéressent sont déséquilibrées, il est possible d'indiquer une colonne dans l'argument `strata` pour que les groupes d'entraînement et de test conservent les proportions de cette classe.
+
+
+# Fit de modèles
+
+Ici, nous allons essayer de déterminer le prix de vente des maisons en fonction de leur caractéristiques. Il s'agit donc d'un problème de régression.
+
+## Construction du modèle
+
+Il existe de nombreux packages et fonctions pour faire appel à toute une collection de modèles. `Tidymodels` propose une interface unique à de nombreux modèles. Cela permet d'interagir de manière "unique" avec les modèles et leurs résultats.
+
+L'approche de base pour un modèle consiste à:
+
+- Spécifier le modèle mathématique souhaité.
+- Spécifier le "moteur" ( _engine_ ) à utiliser pour le modèle. Souvent, cela correspond au package dans lequel on retrouve la fonction.
+- Dans certains cas, préciser le mode dans lequel le modèle va être utilisé. De base, si l'on travaille des données numériques, le mode sera *Regression* et si les données sont catégoriques, il sera *Classification*. Il est possible de le préciser explicitement.
+
+Par exemple, pour une regression linéaire, nous pourrions avoir:
+
+```{r}
+linear_reg() %>%
+  set_engine("lm")
+
+linear_reg() %>%
+  set_engine("glmnet")
+```
+
+Nous allons commencer avec une simple regression linéaire (`engine : "lm"`). Nous pouvons définir le modèle:
+
+```{r}
+lm_model <- linear_reg() %>%
+  set_engine("lm")
+```
+
+Nous pourrions également utiliser un Random Forest. Pour cela, nous allons utiliser celui du package `"ranger"` (que vous devrez probablement installer). Il est possible que le modèle que nous souhaitons utiliser ait besoin de paramètres à préciser. Nous pouvons le faire à la définition du modèle:
+
+```{r}
+rf_model <- rand_forest(trees = 1000, min_n = 5) %>%
+  set_engine("ranger") %>%
+  set_mode("regression")
+```
+
+Ici, nous avons préciser directement les arguments `trees` et `min_n`. Nous verrons la semaine prochaine comment tester plusieurs valeurs pour ces hyperparamètres. Nous avons également précisé que nous souhaitons faire du Random Forest en mode régession.
+
+À tout moment, vous pouvez aller consulter la doc des fonctions sur le site de `tidymodels` ou avec la commande `?rand_forest` ou `?linear_reg`.
+
+La liste des différents modèles disponibles peut être consultée dans la [documentation](https://parsnip.tidymodels.org/reference/index.html#models) du package `parsnip` (partie de `tidymodels`)
+
+
+## Entraînement du modèle
+
+Pour entraîner le modèle, il suffit de le `fit` sur des données. Il faut en revanche indiquer via une *formule* ce que nous souhaitons modéliser.
+
+La forme générale pour les formules permet d'indiquer la variable expliquée ( _response_ ou _outcome_ ) en fonction des variables explicatives ( _predictor_ ). En R, les formules sont écrite de la manière `var_expliquee ~ var_explicative`. Pour utiliser toutes les variables comme explicatives, on peut simplement écrire `var_expliquee ~ .`. Pour en savoir plus sur les formules et les possibilités, vous pouvez lire [ce chapitre](https://www.tmwr.org/base-r) [@kuhnTidyModelingFramework2022].
+
+Par exemple, si nous voulons prédire le prix en fonction de la localisation de la maison, nous pouvons indiquer:
+
+```{r}
+lm_fit <- lm_model %>%
+  fit(Sale_Price ~ Longitude + Latitude, data= ames_train)
+```
+
+L'argument `data` indique sur quelles données faire le fit.
+
+Nous pouvons, également entrainer notre modèle de Random Forest:
+
+```{r}
+rf_fit <- rf_model %>%
+  fit(Sale_Price ~ Longitude + Latitude, data= ames_train)
+```
+
+
+## Résultats de l'entrainement
+
+Pour afficher les résultats de l'entraînement, il y a plusieurs manières de faire, selon que nous voulons les afficher ou les visualiser.
+
+Une première approche consiste à extraire les paramètres de fit:
+
+```{r}
+lm_fit %>% extract_fit_engine()
+
+rf_fit %>% extract_fit_engine()
+```
+
+Faite attention que certaines méthodes ne fonctionnent que pour les résultats de certains modèles. Par exemple, la fonction `tidy()` du package `broom` (inclus dans `tidymodels`) permet d'afficher certains résultats pour le résultats de la régrssion linéaire mais pas ceux du Random Forest.
+
+```{r}
+tidy(lm_fit)
+```
+
+Dans ces cas, il ne faut pas hésiter à rechercher un peu dans la doc la meilleure manière d'afficher les résultats.
+
+Il est déjà possible à cette étape d'avoir une idée de la performance du modèle, sur les données d'entrainement. Vous l'avez peut-être vu pour le Random Forest, quand nous affichons les détails du modèle, un $R^2$ est indiqué. Pour les résultats de la régression linéaire, on peut utiliser `glance()`
+
+```{r}
+lm_fit %>% glance()
+```
+
+
+## Faire des prédictions
+
+L'idée de cette étape est d'appliquer le modèle entraîné sur des données, en générale celles de tests. De base, cela se fait via la fonction `predict`:
+
+```{r}
+lm_fit %>% predict(new_data = ames_test)
+```
+
+Comme vous le voyez, nous obtenons une liste de valeur prédite. La colonne contenant celles-ci s'appelle `.pred`.
+
+Il est souvent utile coller les prédictions au tableau des données de test:
+
+```{r}
+lm_pred <- lm_fit %>%
+  predict(new_data = ames_test) %>%
+  bind_cols(ames_test)
+```
+
+Cette fois, nous obtenons un tableau complet, avec les données réelles et les données prédites. Nous pouvons par exemple les visualiser:
+
+```{r}
+lm_pred %>%
+  ggplot(aes(x=.pred, y=Sale_Price)) +
+  geom_point(alpha = .5)
+```
+
+**Question 2**: Faites de même pour le modèle Random Forest ! Que constatez vous ?
+
+
+# Travailler avec des `Workflow`
+
+Souvent, faire du machine learning ne se limite pas à un modèle dont on connait les hyperparamètres, à l'entrainer et à le tester. Il y a souvent des étapes de prétraitement et d'optimisation.
+
+Pour faciliter ces différentes étapes, `Tidymodels` propose l'utilisation de `workflow`, qui va nous aider à enchaîner différentes étapes dans le traitement et la manipulation de modèles. Nous exploiterons un peu plus en détail leur intérêt la semaine prochaine mais commençons par les bases.
+
+Un workflow commence toujours par être initialisé avec `workflow()`. Il est ensuite possible d'y ajouter un modèle (ou plusieurs, voir semaine prochaine) et une formule.
+
+```{r}
+lm_workflow <-
+  workflow() %>%
+  add_model(lm_model)
+
+lm_workflow
+```
+Pour le moment, seul le modèle est présent. Il n'y a pas de prétraitement. Le prétraitement minimal à ajouter est une formule:
+
+```{r}
+lm_workflow <-
+  lm_workflow %>%
+  add_formula(Sale_Price ~ Longitude + Latitude)
+
+lm_workflow
+```
+
+**Question 3**: Créez un workflow `rf_workflow` pour notre random forest.
+
+```{r, echo=FALSE}
+rf_workflow <-
+  workflow() %>%
+  add_model(rf_model) %>%
+  add_formula(Sale_Price ~ Longitude + Latitude)
+```
+
+Une fois le workflow créé, on peut, comme pour un modèle, l'entrainer:
+
+```{r}
+lm_wf_fit <- lm_workflow %>%
+  fit(data = ames_train)
+
+lm_wf_fit
+```
+
+Il est également possible de l'utiliser pour faire nos prédiction:
+
+```{r}
+lm_wf_pred <- lm_wf_fit %>%
+  predict(new_data = ames_test)
+
+lm_wf_pred
+```
+
+Nous verrons plus en détails l'intérêt de ces workflow la semaine prochaine.
+
+# Preprocessing et feature engineering
+
+Dans `Tidymodels`, les opérations de preprocessing et de feature engineering sont faites via des `recipes`.
+
+Dans une recette de base, nous allons définir une formule, élément de base pour définir les variables expliquées et explicatives, ainsi qu'une série de `step_*` qui correspondront à la suite d'opération que nous souhaitons faire sur nos données.
+
+Par exemple, nous pourrions vouloir faire quelque chose comme cela:
+
+```{r}
+rcp_ames <- recipe(Sale_Price ~ Neighborhood + Gr_Liv_Area + Year_Built + Bldg_Type,
+         data = ames_train) %>%
+  step_log(Gr_Liv_Area, base=10) %>%
+  step_other(Neighborhood, threshold = 0.01) %>%
+  step_dummy(all_nominal_predictors())
+
+rcp_ames
+```
+
+Dans cette recette, nous avons:
+
+- Donner la base de la recette avec `recipe()`, dans laquelle nous spécifions la formule à utiliser. Ici nous précisons `data = ames_train`. Il faut noter qu'à cette étape, les données ne sont pas transformées. L'argument `data` permet juste d'indiquer les types des colonnes. Nous aurions pu mettre `data = ames`, les résultats auraient été les mêmes. Ici, nous allons prédire le prix de vente à partir du quartier (`Neighborhood`), de la surface habitable (`Gr_Liv_Area`), de l'année de construction (`Year_Built`) et du type de bâtiment (`Bldg_Type`).
+- `step_log()` permet d'appliquer un log base 10 sur le predictor `Gr_Liv_Area`.
+- `step_other()` permet de regrouper les catégories les moins fréquentes dans une catégorie _"other"_.
+- `step_dummy()` permet de transformer des colonnes en variable _dummy_. Il est possible de lui dire de le faire directement sur toutes les variables qualitatives avec la fonction `all_nominal_predictors()`.
+
+Une fois la recette créée, il est possible de l'ajouter à un `workflow`:
+
+```{r}
+lm_workflow <- workflow() %>%
+  add_model(lm_model) %>%
+  add_recipe(rcp_ames)
+
+lm_workflow
+```
+
+Cette fois, pas besoin d'ajouter une formule car elle est déjà décrite dans la recette.
+
+On peut simplement fit notre workflow:
+
+```{r}
+lm_wf_fit <- lm_workflow %>%
+  fit(data = ames_train)
+
+lm_wf_fit
+```
+
+
+Il est possible de récupérer seulement la recette ou seulement le modèle entrainé:
+
+```{r}
+lm_wf_fit %>% extract_fit_engine()
+
+# Ici le modèle extrait est un "lm", donc nous pouvons appeler tidy() en suivant:
+lm_wf_fit %>% extract_fit_engine() %>% tidy()
+
+# Pour les recettes, la fonction tidy() est toujours disponible
+lm_wf_fit %>% extract_recipe() %>% tidy()
+```
+
+
+
+
+
+
+
+
+
+
+
+Il existe de nombreuses autres `step_*`. Vous pouvez en trouver dans [ce chapitre](https://www.tmwr.org/recipes#example-steps) [@kuhnTidyModelingFramework2022] ou sur le [site](https://recipes.tidymodels.org/reference/index.html) du package `recipe`.
+
+
+# Performance des modèles
+
+Considèrons le modèle suivant:
+
+```{r}
+lm_model <- linear_reg() %>% set_engine("lm")
+
+rcp_ames <- 
+  recipe(Sale_Price ~ Neighborhood + Gr_Liv_Area + Year_Built + Bldg_Type + 
+           Latitude + Longitude, data = ames_train) %>%
+  step_log(Gr_Liv_Area, base = 10) %>% 
+  step_other(Neighborhood, threshold = 0.01) %>% 
+  step_dummy(all_nominal_predictors())
+
+
+lm_wf <- 
+  workflow() %>% 
+  add_model(lm_model) %>% 
+  add_recipe(rcp_ames)
+
+lm_wf_fit <- fit(lm_wf, ames_train)
+```
+
+
+Nous allons vouloir mesurer la performance de notre modèle. Une première approche consiste à comparer les valeurs prédites aux vraies valeurs:
+
+```{r}
+lm_wf_pred <- lm_wf_fit %>%
+  predict(new_data = ames_test) %>%
+  bind_cols(ames_test %>% select(Sale_Price))
+```
+
+
+Nous pouvons plotter les valeurs prédites et les vraies valeurs:
+
+```{r}
+lm_wf_pred %>%
+  ggplot(aes(x=.pred, y=Sale_Price)) +
+  geom_point(alpha=.5) +
+  geom_abline(lty=2, colour = "gray") + 
+  labs(x = "Prix de vente prédit", y= "Prix de vente") +
+  coord_obs_pred() # Pour forcer la même echelle sur x et y
+```
+
+Le package `yardstick`, inclus dans `tidymodels`, proposer une série de fonction pour calculer différentes métriques de performance, souvent sous la forme `function(data, truth, predicted, ...)`.
+
+Par exemple, on peut calculer l'erreur quadratique moyenne (RMSE):
+
+```{r}
+lm_wf_pred %>%
+  rmse(truth = Sale_Price, estimate = .pred)
+```
+
+On peut calculer plusieurs métriques d'un coup en spécifiant une liste de fonction:
+
+```{r}
+# Root Mean Sqared Error, R squared, Mean Absolute error
+lm_metrics <- metric_set(rmse, rsq, mae) 
+
+lm_wf_pred %>%
+  lm_metrics(truth = Sale_Price, estimate = .pred)
+```
+
+Il existe également d'autres fonction selon qu'on fasse de la classification binaire ou multiple. Plus de détails sont disponibles dans [ce chapitre](https://www.tmwr.org/performance) [@kuhnTidyModelingFramework2022] ou sur dans la documentation de [*Yardstick*](https://yardstick.tidymodels.org/reference/index.html)
+
+
+# À vous de jouer !
+
+Dans cette deuxième partie, nous allons faire de la classification
+
+## Les données
+
+Nous allons travailler sur un jeu de données qui contient des informations sur des réservations d'hôtels. Nous allons essayer de prédire si une réservation avait des enfants. Pour cela, nous allons utiliser des méthodes de classification.
+
+```{r, message=FALSE, warning=FALSE}
+library(tidymodels)
+library(readr)
+
+hotels <- 
+  read_csv("https://tidymodels.org/start/case-study/hotels.csv") %>%
+  mutate(across(where(is.character), as.factor))
+
+dim(hotels)
+```
+
+**Question 4**: Déterminez la proportion de réservations qui ont des enfants.
+
+## Séparation des données
+
+**Question 5**: Commencez par fixer un seed et puis divisez les données en un ensemble d'entraînement et un ensemble de test. Utilisez 75% des données pour l'entraînement. Assurez-vous que les proportions de réservations avec enfants sont les mêmes dans les deux ensembles.
+
+## Premier modèle: Régression logistique
+
+### Choix du modèle
+
+**Question 6**: Configurez un modèle de regression logistique en utilisant la fonction `logistic_reg()`. Utilisez la fonction `set_engine()` pour spécifier que vous voulez utiliser la fonction `glm()`. Nous travaillons en mode `Classification`.
+
+
+### Recette
+
+**Question 7**: Créez une recette pour le modèle en utilisant la fonction `recipe()`.
+
+Nous allons utiliser les recettes suivantes:
+
+  - `step_date()`: pour créer les variable de l'année, du mois et du jour de la semaine
+  - `step_holiday()`: pour créer une variable qui indique si la réservation a été faite pendant une période de vacances. Nous vous avons fourni une liste de vacances dans le fichier de réponse (voir ci-dessous). Vous pouvez indiquer d'utiliser cette liste avec `step_holiday(arrival_date, holidays = holidays)`
+  - `step_rm()`: pour supprimer les variables `arrival_date`
+  
+Nous allons également transformer les variables catégorielles en _dummy variables_ et les variables numériques en variables centrées et réduites.
+
+  - `step_dummy()` pour convertir les variables catégorielles (`all_nominal_predictors()`) en variables binaires
+  - `step_zv()` permet d'enlever les variables qui ne contiennent qu'une unique valeur (`all_predictors()`)
+  - `step_normalize()` pour centrer et réduire les variables numériques (`all_numeric_predictors()`)
+
+Pour `step_holiday`, vous pouvez utiliser la liste suivante:
+
+```{r eval=FALSE}
+holidays <- c("AllSouls", "AshWednesday", "ChristmasEve", "Easter", 
+              "ChristmasDay", "GoodFriday", "NewYearsDay", "PalmSunday")
+```
+
+### Création du `workflow`
+
+**Question 8**: Créez un `workflow` en utilisant la fonction `workflow()`. Ajoutez-y la recette et le modèle.
+
+### Entraînement et Prédiction
+
+**Question 9**: Fittez votre modèle
+
+**Question 10**: Prédisez le modèle en utilisant le bloc de code ci-dessous. Expliquez ce qu'il fait !
+
+```{r eval=FALSE}
+lr_pred <- predict(lr_fit, hotel_test) %>%
+  bind_cols(predict(lr_fit, hotel_test, type = "prob")) %>%
+  bind_cols(hotel_test %>% select(children))
+  
+```
+
+### Évaluation du modèle
+
+Nous allons générer une courbe ROC pour évaluer le modèle
+
+```{r, eval=FALSE}
+lr_auc <- lr_pred %>%
+  roc_curve(children, .pred_children) %>%
+  mutate(model = "Logistic Regression")
+
+lr_auc %>% autoplot()
+```
+
