@@ -1,0 +1,465 @@
+---
+title: "Semaine3 - Machine leanring - Suite"
+---
+
+
+```{r include = FALSE}
+knitr::opts_chunk$set(
+  eval = TRUE,
+  out.width = "80%",
+  fig.asp = 0.618,
+  fig.width = 10,
+  dpi = 300
+)
+```
+
+# Introduction
+
+L'objectif de cette semaine est de continuer à explorer les bases du machine learning en R à travers les possibilités offertes par `tidyverse`.
+
+Nous allons notamment parler de:
+
+- Resampling
+- Optimisation d'hyperparamètres
+- Autres fonctionnalités utiles (PCA, GGally, ...)
+
+Nous aurons besoin de plusieurs package pour cette semaine:
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(tidymodels)
+library(GGally)
+
+library(doParallel)
+```
+
+# Resampling
+
+### Données
+
+Nous allons commencer par reprendre les données de la semaine passée. Nous pouvons simplement les charger de la manière suivante:
+
+```{r}
+data(ames, package = "modeldata")
+```
+
+## Modèle simple
+
+La semaine passée, nous avons vu comment entraîner un modèle sur des données d'entrainement et comment tester le modèle sur des données de test.
+
+Séparation du modèle:
+```{r}
+set.seed(42)
+
+splits <- initial_split(ames, prop = .75)
+
+ames_train <- training(splits)
+ames_test <- testing(splits)
+```
+
+Réglage et entrainement du modèle :
+```{r}
+rf_model <- 
+  rand_forest(trees = 1000) %>% 
+  set_engine("ranger") %>% 
+  set_mode("regression")
+
+rf_wflow <- 
+  workflow() %>% 
+  add_formula(
+    Sale_Price ~ Neighborhood + Gr_Liv_Area + Year_Built + Bldg_Type + 
+      Latitude + Longitude) %>% 
+  add_model(rf_model) 
+
+rf_fit <- rf_wflow %>% fit(data = ames_train)
+```
+
+Prédiction et évaluation du modèle:
+```{r}
+rf_pred <- rf_fit %>%
+  predict(new_data = ames_test) %>%
+  bind_cols(ames_test %>% select(Sale_Price))
+
+rf_metrics <- metric_set(rmse, rsq, mae) 
+
+rf_pred %>%
+  rf_metrics(truth = Sale_Price, estimate = .pred)
+```
+
+En général, la régle veut qu'on ne touche pas aux données de test avant l'entrainement final. Maintenant, si nous voulons estimer les performances de notre modèle avant de le faire sur les données de test, il n'est pas rare d'estimer les performances à partir des données d'entrainement. Si nous essayons de mesurer les perfomances à partir des **données d'entrainement**, nous voyons que nos performances estimées sont supérieures à celles obtenues sur les données de test.
+```{r}
+rf_pred_fit <- rf_fit %>%
+  predict(new_data = ames_train) %>%
+  bind_cols(ames_train %>% select(Sale_Price))
+
+rf_metrics <- metric_set(rmse, rsq, mae) 
+
+rf_pred_fit %>%
+  rf_metrics(truth = Sale_Price, estimate = .pred)
+```
+
+C'est ce qu'on appelle de l'*overfitting*. Le modèle est très bon pour prédire les données qu'il a vu (d'entrainement) mais n'est pas très bon pour généraliser (moins bon en tout cas).
+
+Pour éviter cela, nous allons faire du *resampling* ou rééchantillonnage en français. L'idée est de découper le set d'entrainement en plusieurs versions et d'entrainement le modèle sur chaque version. De cette manière, à l'entrainement, le modèle ne voit pas une seule version des données et il sera donc possible d'évaluer directement ses capacités à généraliser.
+
+Il existe plusieurs manières de faire du *resampling*.
+
+## Cross-Validation
+
+Une manière bien connue de faire du resampling est la cross-validation, et notamment la **V-fold cross-validation**. Les données séparées en *V* groupes (les _folds_). Le modèle sera ensuite entraîné *V* fois, en mettant de côté à chaque fois un des groupes.
+
+Nous pouvons ainsi simplement créer les *folds*:
+```{r}
+ames_folds <- vfold_cv(ames_train, v = 10)
+ames_folds
+```
+
+## Validation set
+
+Dans les cas où nous avons beaucoup d'échantillons, nous pouvons directement créer 3 jeux de données: un jeu d'entraînement, un jeu de validation et un jeu de test final. Dans ce cas, la séparation est faite directement avec la fonction `initial_validation_split` au lieu de `initial_split`.
+
+```{r}
+ames_val_split <- initial_validation_split(ames, prop = c(0.6, 0.2))
+ames_val_split
+
+ames_val_train <- training(ames_val_split)
+ames_val_validation <- validation_set(ames_val_split)
+ames_val_test <- testing(ames_val_split)
+```
+
+## Bootstraping
+
+Une autre méthode connue est le **Bootstrapping**, qui fonctionne un peu comme la cross-validation, sans réduire le nombre d'échantillons pour l'entraînement. Pour cela, à chaque itération, des échantillons sont mis de côté pour estimer les performances du modèle mais des échantillons sont tirés aléatoirement parmis les restant, avec remise, pour conserver la même taille de jeu d'entraînement. Cette méthode est particulièrement utile si le jeu de données est faible.
+
+```{r}
+bootstraps(ames_train, times = 5)
+```
+## Estimation des performances
+
+Pour estimer les perfomances du modèle, il faudra faire un fit pour chaque rééchantillonnage.
+
+Pour cela, il faut utiliser la fonction `fit_resamples` à la place de la fonction `fit`.
+
+```{r}
+# Avec une v-fold cross-validation
+ames_folds <- vfold_cv(ames_train, v = 10)
+
+rf_fit_resample <- rf_wflow %>%
+  fit_resamples(resamples = ames_folds)
+
+rf_fit_resample
+```
+
+Dans le résultat, on retrouve un tableau donc chaque ligne correspond à un des *folds*. Les valeurs pour `.metrics` sont des elles-mêmes des tableaux contenant les métriques obtenues pour chaque entrainement. Comme vous le voyez, par défaut, les prédictions ne sont pas toutes retournées. Pour les obtenir, il faut l'indiquer:
+
+```{r}
+rf_fit_resample <- rf_wflow %>%
+  fit_resamples(resamples = ames_folds, 
+                control = control_resamples(save_pred = TRUE))
+
+rf_fit_resample
+```
+
+Pour obtenir les estimations des performances:
+
+```{r}
+# Pour avoir une moyenne sur les folds
+collect_metrics(rf_fit_resample)
+
+# Pour avoir toutes les valeurs
+collect_metrics(rf_fit_resample, summarize = FALSE)
+```
+
+Pour obtenir les prédictions moyennes:
+```{r}
+rf_pred_resample <- collect_predictions(rf_fit_resample, summarize = TRUE)
+
+rf_pred_resample
+```
+
+Faites attention qu'à cette étape, il s'agit des prédictions sur les **données d'entraînement** !
+
+Pour plus d'informations sur le resampling, vous pouvez lire [ce chapitre](https://www.tmwr.org/resampling) [@kuhnTidyModelingFramework2022].
+
+# Optimisation des hyperparamètres
+
+Pour de nombreux modèles, il est possible d'optimiser certains hyperparamètres.
+
+Les paramètres à optimiser dépendront du modèle choisi. Dans cette exemple, nous allons chercher à prédire le prix de diamants à partir de différentes variables.
+
+## Préparation des données
+
+Les données peuvent être chargées directement à partir de R
+
+```{r}
+data("diamonds")
+
+dim(diamonds)
+```
+Nous voyons qu'il y a beaucoup de données. Pour accélerer les calculs dans cet exemple, nous allons prendre seulement 10% du jeu de données, et le séparer en ensemble d'entrainement (70%) et de test (30%). Nous allons faire un rééchantillonnage en *V-folds cross-validation*. Nous allons créer 3 *folds*, valeur en générale non recommandée mais que nous allons choisir pour éviter de complexfier les calculs ici.
+
+```{r}
+diamond_split <- initial_split(diamonds %>% sample_frac(.1), prop = .7, strata = price)
+
+diamond_train <- training(diamond_split)
+diamond_test  <- testing(diamond_split)
+
+diamond_folds <- vfold_cv(diamond_train, v = 3) # habituellement v=10
+```
+
+## Préprocessing
+
+Nous allons prédire le `price` en fonction des autres variables. En regardant l'étendue, nous pouvons voir qu'il pourrait être intéressant d'appliquer le `log()` sur cette colonne.
+
+```{r}
+diamonds %>% 
+  reframe(price_quantile = quantile(price)) # summarise()
+```
+On peut également voir que la relation entre le `log(price)` et le `carat` n'est pas linéaire. 
+
+```{r}
+diamonds %>%
+  sample_frac(.1) %>%
+  mutate(price=log(price)) %>%
+  ggplot(aes(x=carat, y=price)) +
+  geom_point()
+```
+
+Dans les prétraitements, nous pouvons donc effectuer les `step_` suivantes:
+
+```{r}
+rf_recipe <- recipe(price ~ ., data = diamond_train) %>%
+    step_log(price) %>%
+    step_normalize(all_numeric_predictors()) %>%
+    step_dummy(all_nominal_predictors()) %>%
+    step_poly(carat, degree = 2)
+```
+
+## Modèle et choix des paramètres
+
+Pour le modèle, nous allons faire de la regression avec Random Forest. Cette fois, nous allons laisser les paramètres `mtry` et `min_n` de côté pour l'instant pour les estimer à partir des données.
+
+```{r}
+rf_model <- rand_forest(mtry = tune(), trees = 1000, min_n = tune()) %>%
+    set_mode("regression") %>%
+    set_engine("ranger")
+```
+
+Nous pouvons voir l'état de nos paramètres et le range de valeurs par défaut.
+
+```{r}
+rf_param <- extract_parameter_set_dials(rf_model)
+
+rf_param
+
+rf_param %>% extract_parameter_dials("mtry")
+```
+Ici, nous voyons que le paramètre `mtry` n'est pas encore initialisé avec un range de valeurs possibles. C'est normal car ce paramètre se base sur le nombre de colonnes à disposition. Nous pouvons le mettre à jour avec la fonction `finalize()` en lui passant les données preprocessées. Pour cela, nous pouvons appliquer `prep()` (l'équivalent de `fit` mais pour les recettes) et `juice` pour obtenir les données après prétraitement.
+
+```{r}
+diamond_train_juiced <- rf_recipe %>% prep(diamond_train) %>% juice()
+
+rf_param_updated <- rf_model %>% 
+  extract_parameter_set_dials() %>% 
+  finalize(diamond_train_juiced %>% select(-price))
+
+rf_param_updated %>% extract_parameter_dials("mtry")
+```
+Nous voyons que le paramètre `mtry` est maintenant initialisé.
+
+## Tuning des paramètres et Grid_search
+
+Nous pouvons créer une grille de recherche sur nos paramètres à partir de la fonction `grid_regular`. Ici `level` indique le nombre de valeurs que nous allons tester par paramtres. Par exemple, avec `level=3`, nous aurons 3 valeurs possibles pour `mtry` et 3 pour `min_n`.
+
+```{r}
+rf_grid <- rf_param_updated %>%
+  grid_regular(levels = 3)
+
+rf_grid
+```
+
+
+Nous pouvons ensuite créer notre `workflow` comme d'habitude.
+```{r}
+rf_wf <- workflow() %>%
+  add_model(rf_model) %>%
+  add_recipe(rf_recipe)
+```
+
+En revanche, au lieu de `fit` ou de `fit_resample`, nous allons `tune_grid` en lui précisant qu'il doit travailler avec les données rééchantillonnées. Pour chaque rééchantillonnage, il va donc tester toutes les combinaisons de paramètres possible. Cela peut conduire à des longs temps de calculs (c'est pourquoi nous avons réduit le nombre de *folds*, de données et de `levels`). 
+
+L'objectif ici est de trouver la meilleure combinaison de paramètres possible. Nous devons donc également indiquer des métriques pour estimer la performance.
+
+
+La ligne `doParallel::registerDoParallel()` permet de faire travailler R en parallèle sur plusieurs threads.
+
+```{r}
+doParallel::registerDoParallel()
+
+rf_tune <- rf_wf %>%
+  tune_grid(diamond_folds,
+            grid = rf_grid,
+            metrics = metric_set(rmse, rsq, mae))
+```
+
+Une fois la recherche terminée, nous pouvons voir les résultats obtenus avec `autoplot`.
+
+```{r}
+rf_tune %>% autoplot() +
+  scale_color_viridis_d()
+```
+
+Plusieurs fonctions sont à disposition pour accéder aux résultats.
+
+```{r}
+rf_tune %>% collect_metrics()
+
+rf_tune %>% show_best()
+
+rf_tune %>% show_best(metric = "rsq")
+```
+
+## Modèle final
+
+La meilleure combinaison peut être extraite automatiquement selon certains critères avec l'ensemble de fonction `select_*`. Ici, nous prenons la meilleure combinaison de paramptres selon la métrique $R^2$. La fonction `finalize_workflow()` permet ensuite de créer le workflow final avec les paramètres sélectionnés.
+
+```{r}
+rf_best <- rf_tune %>% select_best(metric = "rsq")
+
+rf_final <- rf_wf %>% finalize_workflow(rf_best)
+
+rf_final
+```
+La fonction `last_fit()` permet d'entrainer une dernière fois le modèle sur les données d'entrainement et de tester les perfomances sur les données de test.
+```{r}
+final_pred <- rf_final %>% last_fit(diamond_split)
+```
+
+Nous pouvons finalement voir nos performances finales !
+```{r}
+final_pred %>% collect_metrics()
+```
+
+```{r}
+final_pred %>% 
+  collect_predictions() %>%
+  ggplot(aes(x=price, y=.pred)) + 
+  geom_point()
+```
+
+
+Pour plus d'informations sur le tuning d'hyperparamètres, vous pouvez lire les chapitre [12](https://www.tmwr.org/tuning) et [13](https://www.tmwr.org/grid-search) [@kuhnTidyModelingFramework2022].
+
+
+# PCA
+
+En science forensique, nous faisons souvent des PCA. Dans `tidymodels`, les PCA ne sont pas des modèles de machine learning mais un étape de preprocessing, accessible via `step_pca`.
+
+Pour illustrer, nous allons utiliser le jeu de données `iris`.
+
+```{r}
+data("iris")
+
+iris %>% glimpse()
+```
+
+La PCA peut être faite dans une recette:
+
+```{r}
+iris_pca_recipe <- recipe(Species ~ ., data = iris) %>%
+  step_normalize(all_numeric_predictors()) %>%
+  step_pca(all_predictors()) # tous numérique
+
+iris_pca_recipe
+```
+
+Il est important de `prep` la recette pour que la pca soit effectivement faite.
+
+```{r}
+iris_pca <- iris_pca_recipe %>% prep()
+```
+
+Nous pouvons obtenir le tableau de données avec les valeurs pour les différentes composantes avec `juice()`. 
+
+```{r}
+iris_pca_data <- iris_pca %>% juice()
+
+iris_pca_data
+```
+
+La fonction `ggpairs` du package `GGally` permet de voir rapidement les différentes relations entre les composantes
+
+```{r message=FALSE}
+ggpairs(iris_pca_data, columns = 2:5, aes(colour = Species))
+```
+
+Nous pouvons également faire un scatter plot en fonction de deux composantes souhaitées:
+
+```{r}
+iris_pca_data %>% ggplot(aes(x=PC1, y=PC2, colour = Species)) +
+  geom_point()
+```
+
+Avec la fonction `tidy()` nous pouvons obtenir les mêmes informations sous forme "longue" (tidy). 
+
+```{r}
+iris_pca %>% tidy()
+
+iris_pca_tidy <- iris_pca %>% tidy(2) # 2 car 2e preprocessing
+
+iris_pca_tidy
+```
+
+Cela permet de voir l'influence des différentes variables dans chaque composante.
+
+```{r}
+tmp <- iris_pca_tidy %>%
+  mutate(
+    positive = value > 0,
+    abs_value = abs(value))%>%
+  group_by(component) %>%
+  slice_max(abs_value, n = 8) %>%
+  ungroup() %>%
+  arrange(component, abs_value) %>%
+  mutate(order = row_number())
+
+tmp %>% ggplot(aes(x = order, y = abs_value, fill = positive)) +
+        geom_col() +
+        coord_flip() +
+        facet_wrap( vars(component), scales = "free_y") +
+        scale_x_continuous(
+            breaks = tmp$order,
+            labels = tmp$terms,
+            expand = c(0,0)
+        )  +
+        labs(x = NULL, y = "Absolute value of contribution", fill="Prositive ?")
+```
+
+
+
+Nous pouvons également voir la variance expliquée pour chaque composante...
+```{r}
+pca_variances <- tidy(iris_pca, 2, type = "variance")
+pca_variances
+```
+
+
+Et les visualiser !
+```{r}
+pca_variances %>%
+  filter(terms == "percent variance") %>%
+  ggplot(aes(component, value)) +
+  geom_col() +
+  labs(x = "Principal Components", y = "Variance explained (%)") +
+  theme_minimal()
+```
+
+```{r}
+pca_variances %>%
+  filter(terms == "cumulative percent variance") %>%
+  ggplot(aes(component, value)) +
+  geom_col() +
+  labs(x = "Principal Components", y = "Cumulative variance explained (%)") +
+  theme_minimal()
+```
+

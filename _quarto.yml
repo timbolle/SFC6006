@@ -14,6 +14,8 @@ website:
             text: Semaine 1
           - href: labs/Semaine2.qmd
             text: Semaine 2
+          - href: labs/Semaine3.qmd
+            text: Semaine 3
       - about.qmd
 
 format:
