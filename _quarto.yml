@@ -1,6 +1,10 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - "*.qmd"
+    - "!classroom/"
+  
 
 website:
   title: "SFC6006"
@@ -16,6 +20,8 @@ website:
             text: Semaine 2
           - href: labs/Semaine3.qmd
             text: Semaine 3
+          - href: examen/examen.qmd
+            text: Examen
       - about.qmd
 
 format:

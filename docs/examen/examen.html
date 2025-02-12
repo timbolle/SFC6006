@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Examen – SFC6006</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">SFC6006</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-labs" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Labs</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-labs">    
+        <li>
+    <a class="dropdown-item" href="../labs/Semaine1.html">
+ <span class="dropdown-text">Semaine 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../labs/Semaine2.html">
+ <span class="dropdown-text">Semaine 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../labs/Semaine3.html">
+ <span class="dropdown-text">Semaine 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../examen/examen.html">
+ <span class="dropdown-text">Examen</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#exercice-1---manipulation-de-données-et-régression-60-points" id="toc-exercice-1---manipulation-de-données-et-régression-60-points" class="nav-link" data-scroll-target="#exercice-1---manipulation-de-données-et-régression-60-points">Exercice 1 - Manipulation de données et régression (60 points)</a>
+  <ul class="collapse">
+  <li><a href="#les-données" id="toc-les-données" class="nav-link" data-scroll-target="#les-données">Les données</a></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
+  </ul></li>
+  <li><a href="#exercice-2---manipulation-de-données-et-classification-55-points" id="toc-exercice-2---manipulation-de-données-et-classification-55-points" class="nav-link" data-scroll-target="#exercice-2---manipulation-de-données-et-classification-55-points">Exercice 2 - Manipulation de données et classification (55 points)</a>
+  <ul class="collapse">
+  <li><a href="#les-données-1" id="toc-les-données-1" class="nav-link" data-scroll-target="#les-données-1">Les données</a></li>
+  <li><a href="#questions-1" id="toc-questions-1" class="nav-link" data-scroll-target="#questions-1">Questions</a></li>
+  </ul></li>
+  <li><a href="#exercice-3---exercice-exploratoire-40-points" id="toc-exercice-3---exercice-exploratoire-40-points" class="nav-link" data-scroll-target="#exercice-3---exercice-exploratoire-40-points">Exercice 3 - Exercice exploratoire (40 points)</a>
+  <ul class="collapse">
+  <li><a href="#les-données-2" id="toc-les-données-2" class="nav-link" data-scroll-target="#les-données-2">Les données</a></li>
+  <li><a href="#analyse-exploratoire-20-points" id="toc-analyse-exploratoire-20-points" class="nav-link" data-scroll-target="#analyse-exploratoire-20-points">Analyse exploratoire (20 points)</a></li>
+  <li><a href="#classification-20-points" id="toc-classification-20-points" class="nav-link" data-scroll-target="#classification-20-points">Classification (20 points)</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Examen</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>L’examen se compose de 3 exercices. Pour avoir accès aux données et à la feuille de réponse, vous devrez utiliser GitHub et GitHub classroom.</p>
+<p>Sur le portail de cours, acceptez l’invitation à rejoindre le projet GitHub Classroom pour l’examen.</p>
+<p>Copiez le lien de repo personnel. Cela devrait ressember à <code>Examen-&lt;votre nom d'utilisateur GitHub&gt;</code>.</p>
+<p>Dans RStudio:</p>
+<ul>
+<li>Fichier &gt; Nouveau Projet</li>
+<li>Version Control &gt; Git</li>
+<li>Dans <em>Repository URL</em> : indiquez l’adresse de repo copiée précédemment</li>
+<li>Choisissez un nom pour le dossier qui sera créé</li>
+<li>Choisissez le dossier où créer le projet</li>
+</ul>
+<p>Cela va copier les fichiers présents sur GitHub, et les copier dans le dossier spécifié.</p>
+<p>Dans RStudio, vous devriez voir le fichier .Rmd listé en bas à droite dans la liste de fichier.</p>
+<p>Si vous cliquez maintenant sur le fichier .Rmd, il va apparaitre dans la zone en haut à gauche. Vous pourrez l’éditer et le “Render/Knit” pour voir le résultat final.</p>
+<p>Veuillez noter que ce que vous écrivez dans le fichier Rmd et ce que vous écrivez dans la console ne communiquent pas (il s’agit de deux environnements différents). Si vous voulez utiliser la console (zone en bas à gauche), il faut retaper les commandes du fichier.</p>
+<p>Le type d’output dans le fichier .Rmd est réglé sur <code>github_document</code>. Cela veut dire que lorsque vous allez <em>knit</em> le document, un fichier <code>.md</code> sera généré avec votre rapport.</p>
+<p>C’est ce fichier <code>.md</code> qui sera évalué. Assurez que vous le pushez bien sur Github (il faudra l’inclure dans vos commit) et que son contenu est “propre”. Enlevez les messages indésirables ou non-utiles et assurez-vous que les graphes et images soient correctement rendue depuis GitHub.</p>
+</section>
+<section id="exercice-1---manipulation-de-données-et-régression-60-points" class="level1">
+<h1>Exercice 1 - Manipulation de données et régression (60 points)</h1>
+<section id="les-données" class="level2">
+<h2 class="anchored" data-anchor-id="les-données">Les données</h2>
+<p>Pour cet exercice, nous utiliserons les données d’utilisation des vélos en libre circulation à Washington, D.C. pour 2011 et 2012, avec les données de météo correspondantes. Les données sont disponibles dans le fichier <code>data/bikeshare.csv</code>.</p>
+<p>Les colonnes du jeu de données sont les suivantes:</p>
+<ul>
+<li>dteday: Date</li>
+<li>season: Saison (1:printemps, 2:été, 3:automne, 4:hivers)</li>
+<li>yr: Année (0: 2011, 1:2012)</li>
+<li>mnth: Mois (1 to 12)</li>
+<li>hr: Année (0 to 23)</li>
+<li>holiday: Jour férié ou non</li>
+<li>weekday: Jour de la semaine (0:dimanche, …, 6:samedi)</li>
+<li>workingday: 1 si c’est un jour ouvrable (lundi à vendredi, hors vacances), 0 sinon</li>
+<li>weathersit: Météo
+<ul>
+<li>1: Temps clair, peu de nuages, partiellement couvert</li>
+<li>2: Brouillard et nuageux, brouillard et partiellement nuageux, brouillard</li>
+<li>3: Faible neige, faible pluie et orage, faible pluie et nuageux</li>
+<li>4: Grosse pluie, grèle, tempête, neige et brouillard</li>
+</ul></li>
+<li>temp: Température normalisée en degrés Celsius (<span class="math inline">\(t_min = -8\)</span> et <span class="math inline">\(t_max = +39\)</span>)</li>
+<li>atemp: Température ressentie normalisée en degrés Celsius (<span class="math inline">\(t_min = -16\)</span> et <span class="math inline">\(t_max = +50\)</span>)</li>
+<li>hum: Humidité normalisée (avec comme valeur maximale 100)</li>
+<li>windspeed: Vitesse du vent normalisée en km/h (avec comme valeur maximale 67)</li>
+<li>casual: Nombre d’utilisateurs casuels</li>
+<li>registered: Nombre d’utilisateurs enregistrés (abonnement annuel)</li>
+<li>cnt: Nombre total d’utilisateurs (casual + registered)</li>
+</ul>
+</section>
+<section id="questions" class="level2">
+<h2 class="anchored" data-anchor-id="questions">Questions</h2>
+<ol type="1">
+<li><strong>Question 1 (5 points)</strong> - Recodez la variable <code>season</code> pour en faire un <code>factor</code> avec les niveaux suivants: “printemps”, “été”, “automne”, “hiver”. Assurez vous que le premire niveau soit “printemps”. Recodez les variables <code>holiday</code> et <code>workingday</code> en <code>factor</code> également avec les niveaux “non” et “oui”, avec “non” comme premier niveau. Recodez la variable <code>yr</code> en <code>factor</code> avec les niveaux “2011” et “2012”. Recodez la variable <code>weathersit</code> en <code>factor</code> avec les niveaux suivants: 1 - “Temps clair”, 2 - “Brouillard”, 3 - “Légères précipitations”, et 4 - “Fortes précipitations”.</li>
+</ol>
+<p>Si ce n’est pas déjà le cas, utilisez le package <code>lubridate</code> pour transformer la variable <code>dteday</code> en une variable de type <code>date</code>.</p>
+<ol start="2" type="1">
+<li><p><strong>Question 2 (5 points)</strong> - Calculez les valeurs absolues pour les variables <code>temp</code>, <code>atemp</code>, <code>hum</code> et <code>windspeed</code>, en multipliant les valeurs normalisées par leurs valeurs minimales et maximales.</p></li>
+<li><p><strong>Question 3 (5 points)</strong> - Assurez vous que les variables <code>casual</code> et <code>registered</code> s’additionnent bien pour donner la variable <code>cnt</code>.</p></li>
+</ol>
+<p><em>Indice:</em> Une possibilité est de créer une nouvelle colonne qui contient la valeur <code>TRUE</code> si la somme est égale à <code>cnt</code> et <code>FALSE</code> sinon. Vous pouvez ensuite utiliser cette colonne pour vérifier si la somme est correcte.</p>
+<ol start="4" type="1">
+<li><strong>Question 4 (10 points)</strong> - Recréez le graphique ci-dessous. Une fois que vous avez créé la visualisation, décrivez en un paragraphe ce que vous pensez être le point de cette visualisation.</li>
+</ol>
+<p><img src="figs/rentals.png" class="img-fluid"></p>
+<p>Analysez le graphique et indiquez ce que vous en comprenez.</p>
+<ol start="5" type="1">
+<li><p><strong>Question 5 (10 points)</strong> - Créez un graphique montrant la relation entre le nombre de location de vélos, le faite qu’il s’agisse d’un jour de travail ou non et la saison. Interprétez votre graphique</p></li>
+<li><p><strong>Question 6 (5 points)</strong> - Séparez les données en un ensemble d’entraînement et un ensemble de test. Utilisez 80% des données pour l’entraînement et 20% pour le test. Utilisez un réechantillonnage par Cross-Validation sur les données d’entrainement.</p></li>
+<li><p><strong>Question 7 (10 points)</strong> - Créez deux modèles de régression prédisant le nombre total de locations de vélos à partir de la saison, de l’année, du fait qu’il s’agisse d’un jour de travail ou non, de la météo, de la température, de la température ressentie, de l’humidité et de la vitesse du vent. Pour chacun des modèles, quelle performance est obtenue après entraînement. Quel est le meilleur des deux modèles choisis ?</p></li>
+</ol>
+<p><em>Indice</em>: Pensez à créer une recette dans laquelle vous pourrez créer faire les prétraitement que vous jugez utiles.</p>
+<ol start="8" type="1">
+<li><strong>Question 8 (10 points)</strong> - Appliquez vos deux modèles sur les données de tests. Représentez sur un même graphique les valeurs prédites par chaque modèle en fonction des vraies valeurs.</li>
+</ol>
+</section>
+</section>
+<section id="exercice-2---manipulation-de-données-et-classification-55-points" class="level1">
+<h1>Exercice 2 - Manipulation de données et classification (55 points)</h1>
+<section id="les-données-1" class="level2">
+<h2 class="anchored" data-anchor-id="les-données-1">Les données</h2>
+<p>Pour cet exercice, nous allons utiliser les données sur les passagers du Titanic. Les données sont présentes dans le fichier <code>data/Titanic.csv</code>. L’objectif est de prédire si un passager a survécu ou non au naufrage du Titanic.</p>
+<p>Les colonnes du jeu de données sont les suivantes:</p>
+<ul>
+<li>PassengerId: Identifiant du passager</li>
+<li>Survived: Survie (0 = Non, 1 = Oui)</li>
+<li>Pclass: Classe du passager (1 = 1ère, 2 = 2ème, 3 = 3ème)</li>
+<li>Name: Nom du passager</li>
+<li>Sex: Sexe du passager</li>
+<li>Age: Âge du passager</li>
+<li>SibSp: Nombre de frères et soeurs / époux à bord</li>
+<li>Parch: Nombre de parents / enfants à bord</li>
+<li>Ticket: Numéro du ticket</li>
+<li>Fare: Prix du ticket</li>
+<li>Cabin: Numéro de cabine</li>
+<li>Embarked: Port d’embarquement (C = Cherbourg, Q = Queenstown, S = Southampton)</li>
+</ul>
+</section>
+<section id="questions-1" class="level2">
+<h2 class="anchored" data-anchor-id="questions-1">Questions</h2>
+<ol start="9" type="1">
+<li><p><strong>Question 9 (5 points)</strong> - Recodez la variable <code>Pclass</code> en <code>factor</code> avec les niveaux “1ère”, “2ème” et “3ème”. Recodez la variable <code>Survived</code> en <code>factor</code> avec les niveaux “Non” et “Oui”. Recodez la variable <code>Embarked</code> en <code>factor</code> avec les niveaux “Cherbourg”, “Queenstown” et “Southampton”. Recodez la variable <code>Sex</code> en <code>factor</code> avec les niveaux “Femme” et “Homme”.</p></li>
+<li><p><strong>Question 10 (10 points)</strong> - Certaines colonnes semblent avoir des valeurs manquantes. Comptez, pour chaque colonne le nombre de valeurs manquantes. Vous devriez obtenir les résultats suivants:</p></li>
+</ol>
+<ul>
+<li><code>Age</code>: 177 valeurs manquantes</li>
+<li><code>Cabin</code>: 687 valeurs manquantes</li>
+<li><code>Embarked</code>: 2 valeurs manquantes</li>
+</ul>
+<p>Proposez une manière de gérer les données manquantes pour les variables <code>Cabin</code> et <code>Embarked</code>.</p>
+<p>Pour la variable <code>Age</code>, nous allons imputer les valeurs manquantes en utilisant la moyenne de l’âge des passagers. Commencez par calculer la moyenne et la déviation stadard de l’âge des passagers. Nous allons ensuite remplacer les valeurs manquentes par des valeurs tirées d’une distribution normale avec la moyenne et la déviation standard calculées. Créez une nouvelle colonne <code>Age_calc</code> où la valeur de l’âge est égale à celle de <code>Age</code> si elle est disponible et à celle celle calculée si elle est manquante. Pour le calcul, vous pouvez utiliser la fonction <code>rnorm</code> pour générer des valeurs aléatoires à partir d’une distribution normale.</p>
+<p><em>Hint</em>: Si vous utilisez la fonction <code>rnorm</code> directement dans la fonction <code>mutate</code>, il n’y aura qu’un seul tirage de la distribution. Pour contourner ce problème, vous pouvez utiliser la fonction <code>map2</code> du package <code>purrr</code> pour appliquer la fonction <code>rnorm</code> à chaque ligne du jeu de données. La fonction <code>map2</code> prend une liste de valeurs et une fonction comme arguments. Il existe également d’autres approches, vous êtes libre d’utiliser celle que vous souhaitez.</p>
+<p><em>Hint</em>: En utilisant la fonction <code>rnorm</code>, vous pouvez obtenir des valeurs négatives pour l’âge. Remplacez ces valeurs par 0.</p>
+<ol start="11" type="1">
+<li><strong>Question 11 (10 points)</strong> - Combien de passagers ont survécu au naufrage du Titanic? Combien de passagers n’ont pas survécu? Créez une visualisation représentant la survie des passagers en fonction de la classe et du sexe des passagers.</li>
+</ol>
+<p>Que pouvez vous en déduire?</p>
+<p>12 <strong>Question 12 (5 points)</strong> - Nous allons essayer de prédire la survie des passagers en fonction des différentes variables. Pour cela, nous allons séparer les données en un ensemble d’entraînement et un ensemble de test. Utilisez 80% des données pour l’entraînement et 20% pour le test. Utilisez un réechantillonnage par Bootstraping sur les données d’entrainement.</p>
+<ol start="13" type="1">
+<li><strong>Question 13 (15 points)</strong> - Créez deux modèles de classification pour prédire la survie des passagers en fonction de la classe, du sexe, de l’âge, du nombre de frères et soeurs / époux à bord, du nombre de parents / enfants à bord, du port d’embarquement et du prix du ticket. Pour chacun des modèles, quelle performance est obtenue après entraînement. Quel est le meilleur des deux modèles choisis ? Représentez sur un même graphique les courbes ROC des deux modèles.</li>
+</ol>
+<p><em>Indice</em>: Pensez à créer une recette dans laquelle vous pourrez créer faire les prétraitement que vous jugez utiles.</p>
+<ol start="14" type="1">
+<li><strong>Question 14 (10 points)</strong> - Appliquez le meilleur des modèles sur les données de tests. À l’aide de la fonction <code>conf_mat</code>, qui prend comme premier argument la liste des vraies valeurs et en deuxième argument la liste des valeur prédites, affichez la matrice de confusion.</li>
+</ol>
+<p>Seriez-vous plus confiant dans la qualité de prédiction si le modèle prédit “Non” (pas de survie) ou s’il prédit “Oui” (survie).</p>
+</section>
+</section>
+<section id="exercice-3---exercice-exploratoire-40-points" class="level1">
+<h1>Exercice 3 - Exercice exploratoire (40 points)</h1>
+<section id="les-données-2" class="level2">
+<h2 class="anchored" data-anchor-id="les-données-2">Les données</h2>
+<p>Pour cet exercice, nous allons utiliser des données représentant la composition chimique de morceaux de verre provenant de différentes vitres, fabriquées par deux entreprises. Les données sont présentes dans le fichier <code>data/glass.csv</code>.</p>
+<p>Les colonnes du jeu de données sont les suivantes:</p>
+<ul>
+<li>company: Indique si le verre provient de l’entreprise A ou B,</li>
+<li>pane: Indique le numéro de la vitre,</li>
+<li>fragment: indique le numéro de fragment pour chaque vitre,</li>
+<li>rep: indique le numéro de réplicat pour chaque mesure de fragment,</li>
+</ul>
+<p>Les colonnes suivantes représentes les mesures par LA-ICP-MS des différents composants du verre. Toutes les unités sont en parties par millions (ppm).</p>
+<p>Les analyses de 3 fragments de verre inconnus sont également fournis dans le fichier <code>data/unknown-glass.csv</code>.</p>
+<p>L’objectif de cet exercice est de déterminer, si possible, pour chaque fragment:</p>
+<ul>
+<li>L’entreprise ayant frabriqué la vitre d’origine des fragments</li>
+<li>La vitre d’origine des fragments</li>
+</ul>
+<p>Cet exercice ce veut plus libre dans l’approche à suivre.</p>
+</section>
+<section id="analyse-exploratoire-20-points" class="level2">
+<h2 class="anchored" data-anchor-id="analyse-exploratoire-20-points">Analyse exploratoire (20 points)</h2>
+<p>Commencez par une analyse exploratoire (Visualisations, PCA, …).</p>
+<ol start="15" type="1">
+<li><strong>Question 15 (20 points)</strong> - Êtes-vous capable de répondre aux questions posées ?</li>
+</ol>
+<p>Si oui, quelle confiance avez vous dans vos conclusions ?</p>
+</section>
+<section id="classification-20-points" class="level2">
+<h2 class="anchored" data-anchor-id="classification-20-points">Classification (20 points)</h2>
+<p>Utilisez ensuite un modèle de classification.</p>
+<ol start="16" type="1">
+<li><strong>Question 16 (20 points)</strong>Êtes-vous capable de répondre aux questions posées ?</li>
+</ol>
+<p>Si oui, quelle confiance avez vous dans vos conclusions ?</p>
+<p><strong>Bonus (10 points)</strong>: Pour la question concernant l’entreprise d’origine, calculez le LR pour un des fragments inconnu.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
