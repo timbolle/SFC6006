@@ -74,7 +74,7 @@ Les colonnes du jeu de données sont les suivantes:
 
 ## Questions
 
-1.  **Question 1 (5 points)** - Recodez la variable `season` pour en faire un `factor` avec les niveaux suivants: "printemps", "été", "automne", "hiver". Assurez vous que le premire niveau soit "printemps". Recodez les variables `holiday` et `workingday` en `factor` également avec les niveaux "non" et "oui", avec "non" comme premier niveau. Recodez la variable `yr` en `factor` avec les niveaux "2011" et "2012". Recodez la variable `weathersit` en `factor` avec les niveaux suivants: 1 - "Temps clair", 2 - "Brouillard", 3 - "Légères précipitations", et 4 - "Fortes précipitations".
+1.  **Question 1 (5 points)** - Recodez la variable `season` pour en faire un `factor` avec les niveaux suivants: "printemps", "été", "automne", "hiver". Assurez vous que les saisons soient dans l'ordre. Recodez les variables `holiday` et `workingday` en `factor` également avec les niveaux "non" et "oui", avec "non" comme premier niveau. Recodez la variable `yr` en `factor` avec les niveaux "2011" et "2012". Recodez la variable `weathersit` en `factor` avec les niveaux suivants: 1 - "Temps clair", 2 - "Brouillard", 3 - "Légères précipitations", et 4 - "Fortes précipitations".
 
 Si ce n'est pas déjà le cas, utilisez le package `lubridate` pour transformer la variable `dteday` en une variable de type `date`.
 
