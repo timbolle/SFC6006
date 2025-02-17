@@ -52,7 +52,7 @@ Pour cet exercice, nous utiliserons les données d'utilisation des vélos en lib
 Les colonnes du jeu de données sont les suivantes:
 
   - dteday: Date
-  - season: Saison (1:printemps, 2:été, 3:automne, 4:hivers)
+  - season: Saison (1:hiver, 2:printemps, 3:été, 4:automne)
   - yr: Année (0: 2011, 1:2012)
   - mnth: Mois (1 to 12)
   - hr: Année (0 to 23)
