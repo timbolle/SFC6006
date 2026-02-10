@@ -1,5 +1,376 @@
 [
   {
+    "objectID": "slides/00 - Intro.html#objectifs",
+    "href": "slides/00 - Intro.html#objectifs",
+    "title": "01 - Introduction",
+    "section": "Objectifs",
+    "text": "Objectifs\nÊtre capable de manipuler des données et de les visualiser avec R (SFC1018)\nÈtre capable de mettre en oeuvre des méthodes de traitement statistique des données avec R (SFC6008)\nÊtre capable de réaliser un projet de traitement de données de A à Z en R."
+  },
+  {
+    "objectID": "slides/00 - Intro.html#méthode",
+    "href": "slides/00 - Intro.html#méthode",
+    "title": "01 - Introduction",
+    "section": "Méthode",
+    "text": "Méthode\n\n(Wickham et al., 2023)"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#ressources",
+    "href": "slides/00 - Intro.html#ressources",
+    "title": "01 - Introduction",
+    "section": "Ressources",
+    "text": "Ressources\n\n\n\n(Wickham et al., 2023)\n\n\n(Kuhn and Silge, 2022)"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#les-outils",
+    "href": "slides/00 - Intro.html#les-outils",
+    "title": "01 - Introduction",
+    "section": "Les outils",
+    "text": "Les outils\n\nDéveloppement:\n\nR\nRStudio\ntidyverse\ntidymodels\nR Markdown\n\n\n\nGestion et collaboration:\n\nGit\nGitHub"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#objectifs-1",
+    "href": "slides/00 - Intro.html#objectifs-1",
+    "title": "01 - Introduction",
+    "section": "Objectifs",
+    "text": "Objectifs\n\nAnalyser des données\nAnalyser des données de manière répétable\nAnalyser des données de manière répétable, avec des outils de programmation modernes\nAnalyser des données de manière répétable et collaborative, avec des outils de programmation modernes"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#répétabilité",
+    "href": "slides/00 - Intro.html#répétabilité",
+    "title": "01 - Introduction",
+    "section": "Répétabilité",
+    "text": "Répétabilité\n\nQue signifie conduire une analyse de donnée de manière répétable ?\n\nÀ court-terme:\n\nPouvons nous reproduire les tableaux et les figures à partir des données\nEst-ce que le code fait ce que nous voulons ?\nPouvons-nous reconstruire pourquoi et comment nous avons obtenus les résultats\n\nÀ long-terme:\n\nPeut-on réutiliser le code pour d’autres données ?\nPeut-on réutiliser le code pour faire autre chose ?"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#les-outils-de-la-répérabilité",
+    "href": "slides/00 - Intro.html#les-outils-de-la-répérabilité",
+    "title": "01 - Introduction",
+    "section": "Les outils de la répérabilité",
+    "text": "Les outils de la répérabilité\nScriptability \\(\\rightarrow\\) R\nDocumentation et communication \\(\\rightarrow\\) R Markdown\nGestion et collaboration \\(\\rightarrow\\) Git/GitHub"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#r-et-rstudio",
+    "href": "slides/00 - Intro.html#r-et-rstudio",
+    "title": "01 - Introduction",
+    "section": "R et RStudio",
+    "text": "R et RStudio\n\n\n\n\nR est un language de programmation open-source\nR est un environnement pour faire des calculs statistiques et de la visualisation\nDe nombreuses autres applications sont disponibles grâce à des packages\n\n\n\n\nRStudio est un IDE (Environnement de Développement Intégré)\nC’est une interface pour R\nPas nécessaire pour coder en R mais tellement pratique !"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#rstudio-tour",
+    "href": "slides/00 - Intro.html#rstudio-tour",
+    "title": "01 - Introduction",
+    "section": "RStudio tour",
+    "text": "RStudio tour"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#r-packages",
+    "href": "slides/00 - Intro.html#r-packages",
+    "title": "01 - Introduction",
+    "section": "R packages",
+    "text": "R packages\nLes packages sont les building blocks de la reproductibilité. Ils contiennent de nombreuses fonctions réutilisables, de la documentation et données de test (Wickham and Bryan, 2023)\nNous allons en utiliser quelques une mais vous verrez que c’est tout une philosophie !"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#tidyverse",
+    "href": "slides/00 - Intro.html#tidyverse",
+    "title": "01 - Introduction",
+    "section": "Tidyverse",
+    "text": "Tidyverse\n\n\n\n\ntidyverse.org\nLe Tidyverse est une collection de packages développés pour faire de la data science\nIl y a une philophie et une grammaire commune à tous ces packages, que nous allons apprendre."
+  },
+  {
+    "objectID": "slides/00 - Intro.html#tidymodels",
+    "href": "slides/00 - Intro.html#tidymodels",
+    "title": "01 - Introduction",
+    "section": "Tidymodels",
+    "text": "Tidymodels\n\n\n\n\ntidymodels.org\nTidymodels est une collection de packages pour créer de modèles de machine learning, en gardant la logique du Tidyverse."
+  },
+  {
+    "objectID": "slides/00 - Intro.html#r-markdown",
+    "href": "slides/00 - Intro.html#r-markdown",
+    "title": "01 - Introduction",
+    "section": "R Markdown",
+    "text": "R Markdown\n\n\nrmarkdown.rstudio.com\nR Markdown permet d’écrire des documents avec du code intégré (extension en .Rmd).\nVa permettre de documenter et de communiquer directement nos analyses de données !\n\nReproductible: À chaque fois qu’on génère le document, tout est exécuté depuis le début\nSyntaxe simple pour avoir des documents de qualité\nLe document se découpe en zones de texte et blocks de code"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#r-markdown-1",
+    "href": "slides/00 - Intro.html#r-markdown-1",
+    "title": "01 - Introduction",
+    "section": "R Markdown",
+    "text": "R Markdown"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#r-markdown---aide",
+    "href": "slides/00 - Intro.html#r-markdown---aide",
+    "title": "01 - Introduction",
+    "section": "R Markdown - Aide",
+    "text": "R Markdown - Aide\n\n\nCheatsheetHelp &gt; Cheatsheet\n\n\nMarkdown Quick ReferenceHelp &gt; Markdown Quick Reference"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#les-outils-1",
+    "href": "slides/00 - Intro.html#les-outils-1",
+    "title": "01 - Introduction",
+    "section": "Les outils",
+    "text": "Les outils\n\nDéveloppement:\n\nR\nRStudio\ntidyverse\nR Markdown\n\n\n\nGestion et collaboration:\n\nGit\nGitHub"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#git-et-github",
+    "href": "slides/00 - Intro.html#git-et-github",
+    "title": "01 - Introduction",
+    "section": "Git et GitHub",
+    "text": "Git et GitHub\n\n\n\n\n\n\n\n\nGit est un outil de gestion de version\n\nComme le track changes sur Word\n\nTrès populaire dans le monde de la programmation\n\n\n\n\n\n\n\n\nGitHub est un plateforme de stockage de repo Git\n\nComme un Onedrive/Dropbox pour Git\n\nNous allons essayer de l’utiliser pour… tout !"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#pourquoi-la-gestion-de-version",
+    "href": "slides/00 - Intro.html#pourquoi-la-gestion-de-version",
+    "title": "01 - Introduction",
+    "section": "Pourquoi la gestion de version ?",
+    "text": "Pourquoi la gestion de version ?\n\nPhD Comics"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#fonctionnement",
+    "href": "slides/00 - Intro.html#fonctionnement",
+    "title": "01 - Introduction",
+    "section": "Fonctionnement",
+    "text": "Fonctionnement"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#mise-en-place",
+    "href": "slides/00 - Intro.html#mise-en-place",
+    "title": "01 - Introduction",
+    "section": "Mise en place",
+    "text": "Mise en place\nGit peut être utilisé depuis le terminal de commande\n\nUtilisation plus avancée\nNous pouvons normalement tout faire depuis R Studio\n\nGithub:\n\nCréez un compte avec votre adresse UQTR\nVérifiez votre adresse courriel"
+  },
+  {
+    "objectID": "slides/00 - Intro.html#bibliographie",
+    "href": "slides/00 - Intro.html#bibliographie",
+    "title": "01 - Introduction",
+    "section": "Bibliographie",
+    "text": "Bibliographie\n\n\nKuhn, M. and Silge, J. (2022). Tidy modeling with R: A framework for modeling in the tidyverse. O’Reilly Media.\n\n\nWickham, H. and Bryan, J. (2023). R Packages: Organize, Test, Document, and Share Your Code (2nd edition). O’Reilly Media.\n\n\nWickham, H., Çetinkaya-Rundel, M. and Grolemund, G. (2023). R for Data Science (2nd ed.). O’Reilly Media, Inc."
+  },
+  {
+    "objectID": "labs/Semaine2.html",
+    "href": "labs/Semaine2.html",
+    "title": "Semaine 2 - Machine Learning",
+    "section": "",
+    "text": "L’objectif de ce lab est de nous familiariser avec la logique derrière le machine learning en utilisant la suite de package tidymodels.\nPour cela, nous allons travailler sur un jeu de données qui contient des informations sur des maisons à vendre dans la ville de Ames, Iowa, USA. Nous allons notament chercher à prédire le prix de vente des maisons en fonction des différentes caractéristiques."
+  },
+  {
+    "objectID": "labs/Semaine2.html#chargement-des-données",
+    "href": "labs/Semaine2.html#chargement-des-données",
+    "title": "Semaine 2 - Machine Learning",
+    "section": "Chargement des données",
+    "text": "Chargement des données\n\ndata(ames, package = \"modeldata\")\n\ndim(ames)\n\n[1] 2930   74\n\n\nNous pouvons jeter un coup d’oeil aux données:\n\nglimpse(ames)\n\nRows: 2,930\nColumns: 74\n$ MS_SubClass        &lt;fct&gt; One_Story_1946_and_Newer_All_Styles, One_Story_1946…\n$ MS_Zoning          &lt;fct&gt; Residential_Low_Density, Residential_High_Density, …\n$ Lot_Frontage       &lt;dbl&gt; 141, 80, 81, 93, 74, 78, 41, 43, 39, 60, 75, 0, 63,…\n$ Lot_Area           &lt;int&gt; 31770, 11622, 14267, 11160, 13830, 9978, 4920, 5005…\n$ Street             &lt;fct&gt; Pave, Pave, Pave, Pave, Pave, Pave, Pave, Pave, Pav…\n$ Alley              &lt;fct&gt; No_Alley_Access, No_Alley_Access, No_Alley_Access, …\n$ Lot_Shape          &lt;fct&gt; Slightly_Irregular, Regular, Slightly_Irregular, Re…\n$ Land_Contour       &lt;fct&gt; Lvl, Lvl, Lvl, Lvl, Lvl, Lvl, Lvl, HLS, Lvl, Lvl, L…\n$ Utilities          &lt;fct&gt; AllPub, AllPub, AllPub, AllPub, AllPub, AllPub, All…\n$ Lot_Config         &lt;fct&gt; Corner, Inside, Corner, Corner, Inside, Inside, Ins…\n$ Land_Slope         &lt;fct&gt; Gtl, Gtl, Gtl, Gtl, Gtl, Gtl, Gtl, Gtl, Gtl, Gtl, G…\n$ Neighborhood       &lt;fct&gt; North_Ames, North_Ames, North_Ames, North_Ames, Gil…\n$ Condition_1        &lt;fct&gt; Norm, Feedr, Norm, Norm, Norm, Norm, Norm, Norm, No…\n$ Condition_2        &lt;fct&gt; Norm, Norm, Norm, Norm, Norm, Norm, Norm, Norm, Nor…\n$ Bldg_Type          &lt;fct&gt; OneFam, OneFam, OneFam, OneFam, OneFam, OneFam, Twn…\n$ House_Style        &lt;fct&gt; One_Story, One_Story, One_Story, One_Story, Two_Sto…\n$ Overall_Cond       &lt;fct&gt; Average, Above_Average, Above_Average, Average, Ave…\n$ Year_Built         &lt;int&gt; 1960, 1961, 1958, 1968, 1997, 1998, 2001, 1992, 199…\n$ Year_Remod_Add     &lt;int&gt; 1960, 1961, 1958, 1968, 1998, 1998, 2001, 1992, 199…\n$ Roof_Style         &lt;fct&gt; Hip, Gable, Hip, Hip, Gable, Gable, Gable, Gable, G…\n$ Roof_Matl          &lt;fct&gt; CompShg, CompShg, CompShg, CompShg, CompShg, CompSh…\n$ Exterior_1st       &lt;fct&gt; BrkFace, VinylSd, Wd Sdng, BrkFace, VinylSd, VinylS…\n$ Exterior_2nd       &lt;fct&gt; Plywood, VinylSd, Wd Sdng, BrkFace, VinylSd, VinylS…\n$ Mas_Vnr_Type       &lt;fct&gt; Stone, None, BrkFace, None, None, BrkFace, None, No…\n$ Mas_Vnr_Area       &lt;dbl&gt; 112, 0, 108, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6…\n$ Exter_Cond         &lt;fct&gt; Typical, Typical, Typical, Typical, Typical, Typica…\n$ Foundation         &lt;fct&gt; CBlock, CBlock, CBlock, CBlock, PConc, PConc, PConc…\n$ Bsmt_Cond          &lt;fct&gt; Good, Typical, Typical, Typical, Typical, Typical, …\n$ Bsmt_Exposure      &lt;fct&gt; Gd, No, No, No, No, No, Mn, No, No, No, No, No, No,…\n$ BsmtFin_Type_1     &lt;fct&gt; BLQ, Rec, ALQ, ALQ, GLQ, GLQ, GLQ, ALQ, GLQ, Unf, U…\n$ BsmtFin_SF_1       &lt;dbl&gt; 2, 6, 1, 1, 3, 3, 3, 1, 3, 7, 7, 1, 7, 3, 3, 1, 3, …\n$ BsmtFin_Type_2     &lt;fct&gt; Unf, LwQ, Unf, Unf, Unf, Unf, Unf, Unf, Unf, Unf, U…\n$ BsmtFin_SF_2       &lt;dbl&gt; 0, 144, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1120, 0…\n$ Bsmt_Unf_SF        &lt;dbl&gt; 441, 270, 406, 1045, 137, 324, 722, 1017, 415, 994,…\n$ Total_Bsmt_SF      &lt;dbl&gt; 1080, 882, 1329, 2110, 928, 926, 1338, 1280, 1595, …\n$ Heating            &lt;fct&gt; GasA, GasA, GasA, GasA, GasA, GasA, GasA, GasA, Gas…\n$ Heating_QC         &lt;fct&gt; Fair, Typical, Typical, Excellent, Good, Excellent,…\n$ Central_Air        &lt;fct&gt; Y, Y, Y, Y, Y, Y, Y, Y, Y, Y, Y, Y, Y, Y, Y, Y, Y, …\n$ Electrical         &lt;fct&gt; SBrkr, SBrkr, SBrkr, SBrkr, SBrkr, SBrkr, SBrkr, SB…\n$ First_Flr_SF       &lt;int&gt; 1656, 896, 1329, 2110, 928, 926, 1338, 1280, 1616, …\n$ Second_Flr_SF      &lt;int&gt; 0, 0, 0, 0, 701, 678, 0, 0, 0, 776, 892, 0, 676, 0,…\n$ Gr_Liv_Area        &lt;int&gt; 1656, 896, 1329, 2110, 1629, 1604, 1338, 1280, 1616…\n$ Bsmt_Full_Bath     &lt;dbl&gt; 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, …\n$ Bsmt_Half_Bath     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ Full_Bath          &lt;int&gt; 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 3, 2, …\n$ Half_Bath          &lt;int&gt; 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, …\n$ Bedroom_AbvGr      &lt;int&gt; 3, 2, 3, 3, 3, 3, 2, 2, 2, 3, 3, 3, 3, 2, 1, 4, 4, …\n$ Kitchen_AbvGr      &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ TotRms_AbvGrd      &lt;int&gt; 7, 5, 6, 8, 6, 7, 6, 5, 5, 7, 7, 6, 7, 5, 4, 12, 8,…\n$ Functional         &lt;fct&gt; Typ, Typ, Typ, Typ, Typ, Typ, Typ, Typ, Typ, Typ, T…\n$ Fireplaces         &lt;int&gt; 2, 0, 0, 2, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, …\n$ Garage_Type        &lt;fct&gt; Attchd, Attchd, Attchd, Attchd, Attchd, Attchd, Att…\n$ Garage_Finish      &lt;fct&gt; Fin, Unf, Unf, Fin, Fin, Fin, Fin, RFn, RFn, Fin, F…\n$ Garage_Cars        &lt;dbl&gt; 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, …\n$ Garage_Area        &lt;dbl&gt; 528, 730, 312, 522, 482, 470, 582, 506, 608, 442, 4…\n$ Garage_Cond        &lt;fct&gt; Typical, Typical, Typical, Typical, Typical, Typica…\n$ Paved_Drive        &lt;fct&gt; Partial_Pavement, Paved, Paved, Paved, Paved, Paved…\n$ Wood_Deck_SF       &lt;int&gt; 210, 140, 393, 0, 212, 360, 0, 0, 237, 140, 157, 48…\n$ Open_Porch_SF      &lt;int&gt; 62, 0, 36, 0, 34, 36, 0, 82, 152, 60, 84, 21, 75, 0…\n$ Enclosed_Porch     &lt;int&gt; 0, 0, 0, 0, 0, 0, 170, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…\n$ Three_season_porch &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ Screen_Porch       &lt;int&gt; 0, 120, 0, 0, 0, 0, 0, 144, 0, 0, 0, 0, 0, 0, 140, …\n$ Pool_Area          &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ Pool_QC            &lt;fct&gt; No_Pool, No_Pool, No_Pool, No_Pool, No_Pool, No_Poo…\n$ Fence              &lt;fct&gt; No_Fence, Minimum_Privacy, No_Fence, No_Fence, Mini…\n$ Misc_Feature       &lt;fct&gt; None, None, Gar2, None, None, None, None, None, Non…\n$ Misc_Val           &lt;int&gt; 0, 0, 12500, 0, 0, 0, 0, 0, 0, 0, 0, 500, 0, 0, 0, …\n$ Mo_Sold            &lt;int&gt; 5, 6, 6, 4, 3, 6, 4, 1, 3, 6, 4, 3, 5, 2, 6, 6, 6, …\n$ Year_Sold          &lt;int&gt; 2010, 2010, 2010, 2010, 2010, 2010, 2010, 2010, 201…\n$ Sale_Type          &lt;fct&gt; WD , WD , WD , WD , WD , WD , WD , WD , WD , WD , W…\n$ Sale_Condition     &lt;fct&gt; Normal, Normal, Normal, Normal, Normal, Normal, Nor…\n$ Sale_Price         &lt;int&gt; 215000, 105000, 172000, 244000, 189900, 195500, 213…\n$ Longitude          &lt;dbl&gt; -93.61975, -93.61976, -93.61939, -93.61732, -93.638…\n$ Latitude           &lt;dbl&gt; 42.05403, 42.05301, 42.05266, 42.05125, 42.06090, 4…\n\n\nQuestion 1: Faites un historgramme pour représenter les prix de vente des maisons. Faites un deuxième histogramme en utilisant une échelle logarithmique sur le prix."
+  },
+  {
+    "objectID": "labs/Semaine2.html#construction-du-modèle",
+    "href": "labs/Semaine2.html#construction-du-modèle",
+    "title": "Semaine 2 - Machine Learning",
+    "section": "Construction du modèle",
+    "text": "Construction du modèle\nIl existe de nombreux packages et fonctions pour faire appel à toute une collection de modèles. Tidymodels propose une interface unique à de nombreux modèles. Cela permet d’interagir de manière “unique” avec les modèles et leurs résultats.\nL’approche de base pour un modèle consiste à:\n\nSpécifier le modèle mathématique souhaité.\nSpécifier le “moteur” ( engine ) à utiliser pour le modèle. Souvent, cela correspond au package dans lequel on retrouve la fonction.\nDans certains cas, préciser le mode dans lequel le modèle va être utilisé. De base, si l’on travaille des données numériques, le mode sera Regression et si les données sont catégoriques, il sera Classification. Il est possible de le préciser explicitement.\n\nPar exemple, pour une regression linéaire, nous pourrions avoir:\n\nlinear_reg() %&gt;%\n  set_engine(\"lm\")\n\nLinear Regression Model Specification (regression)\n\nComputational engine: lm \n\nlinear_reg() %&gt;%\n  set_engine(\"glmnet\")\n\nLinear Regression Model Specification (regression)\n\nComputational engine: glmnet \n\n\nNous allons commencer avec une simple regression linéaire (engine : \"lm\"). Nous pouvons définir le modèle:\n\nlm_model &lt;- linear_reg() %&gt;%\n  set_engine(\"lm\")\n\nNous pourrions également utiliser un Random Forest. Pour cela, nous allons utiliser celui du package \"ranger\" (que vous devrez probablement installer). Il est possible que le modèle que nous souhaitons utiliser ait besoin de paramètres à préciser. Nous pouvons le faire à la définition du modèle:\n\nrf_model &lt;- rand_forest(trees = 1000, min_n = 5) %&gt;%\n  set_engine(\"ranger\") %&gt;%\n  set_mode(\"regression\")\n\nIci, nous avons préciser directement les arguments trees et min_n. Nous verrons la semaine prochaine comment tester plusieurs valeurs pour ces hyperparamètres. Nous avons également précisé que nous souhaitons faire du Random Forest en mode régession.\nÀ tout moment, vous pouvez aller consulter la doc des fonctions sur le site de tidymodels ou avec la commande ?rand_forest ou ?linear_reg.\nLa liste des différents modèles disponibles peut être consultée dans la documentation du package parsnip (partie de tidymodels)"
+  },
+  {
+    "objectID": "labs/Semaine2.html#entraînement-du-modèle",
+    "href": "labs/Semaine2.html#entraînement-du-modèle",
+    "title": "Semaine 2 - Machine Learning",
+    "section": "Entraînement du modèle",
+    "text": "Entraînement du modèle\nPour entraîner le modèle, il suffit de le fit sur des données. Il faut en revanche indiquer via une formule ce que nous souhaitons modéliser.\nLa forme générale pour les formules permet d’indiquer la variable expliquée ( response ou outcome ) en fonction des variables explicatives ( predictor ). En R, les formules sont écrite de la manière var_expliquee ~ var_explicative. Pour utiliser toutes les variables comme explicatives, on peut simplement écrire var_expliquee ~ .. Pour en savoir plus sur les formules et les possibilités, vous pouvez lire ce chapitre (Kuhn and Silge, 2022).\nPar exemple, si nous voulons prédire le prix en fonction de la localisation de la maison, nous pouvons indiquer:\n\nlm_fit &lt;- lm_model %&gt;%\n  fit(Sale_Price ~ Longitude + Latitude, data= ames_train)\n\nL’argument data indique sur quelles données faire le fit.\nNous pouvons, également entrainer notre modèle de Random Forest:\n\nrf_fit &lt;- rf_model %&gt;%\n  fit(Sale_Price ~ Longitude + Latitude, data= ames_train)"
+  },
+  {
+    "objectID": "labs/Semaine2.html#résultats-de-lentrainement",
+    "href": "labs/Semaine2.html#résultats-de-lentrainement",
+    "title": "Semaine 2 - Machine Learning",
+    "section": "Résultats de l’entrainement",
+    "text": "Résultats de l’entrainement\nPour afficher les résultats de l’entraînement, il y a plusieurs manières de faire, selon que nous voulons les afficher ou les visualiser.\nUne première approche consiste à extraire les paramètres de fit:\n\nlm_fit %&gt;% extract_fit_engine()\n\n\nCall:\nstats::lm(formula = Sale_Price ~ Longitude + Latitude, data = data)\n\nCoefficients:\n(Intercept)    Longitude     Latitude  \n -133779792      -823798      1351690  \n\nrf_fit %&gt;% extract_fit_engine()\n\nRanger result\n\nCall:\n ranger::ranger(x = maybe_data_frame(x), y = y, num.trees = ~1000,      min.node.size = min_rows(~5, x), num.threads = 1, verbose = FALSE,      seed = sample.int(10^5, 1)) \n\nType:                             Regression \nNumber of trees:                  1000 \nSample size:                      2197 \nNumber of independent variables:  2 \nMtry:                             1 \nTarget node size:                 5 \nVariable importance mode:         none \nSplitrule:                        variance \nOOB prediction error (MSE):       1842151707 \nR squared (OOB):                  0.7129196 \n\n\nFaite attention que certaines méthodes ne fonctionnent que pour les résultats de certains modèles. Par exemple, la fonction tidy() du package broom (inclus dans tidymodels) permet d’afficher certains résultats pour le résultats de la régrssion linéaire mais pas ceux du Random Forest.\n\ntidy(lm_fit)\n\n# A tibble: 3 × 5\n  term           estimate std.error statistic  p.value\n  &lt;chr&gt;             &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept) -133779792.  6803737.     -19.7 2.08e-79\n2 Longitude      -823798.    60860.     -13.5 3.75e-40\n3 Latitude       1351690.    84586.      16.0 1.85e-54\n\n\nDans ces cas, il ne faut pas hésiter à rechercher un peu dans la doc la meilleure manière d’afficher les résultats.\nIl est déjà possible à cette étape d’avoir une idée de la performance du modèle, sur les données d’entrainement. Vous l’avez peut-être vu pour le Random Forest, quand nous affichons les détails du modèle, un \\(R^2\\) est indiqué. Pour les résultats de la régression linéaire, on peut utiliser glance()\n\nlm_fit %&gt;% glance()\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared  sigma statistic  p.value    df  logLik    AIC    BIC\n      &lt;dbl&gt;         &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1     0.163         0.162 73331.      213. 2.38e-85     2 -27728. 55465. 55487.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;"
+  },
+  {
+    "objectID": "labs/Semaine2.html#faire-des-prédictions",
+    "href": "labs/Semaine2.html#faire-des-prédictions",
+    "title": "Semaine 2 - Machine Learning",
+    "section": "Faire des prédictions",
+    "text": "Faire des prédictions\nL’idée de cette étape est d’appliquer le modèle entraîné sur des données, en générale celles de tests. De base, cela se fait via la fonction predict:\n\nlm_fit %&gt;% predict(new_data = ames_test)\n\n# A tibble: 733 × 1\n     .pred\n     &lt;dbl&gt;\n 1 213054.\n 2 202464.\n 3 196577.\n 4 227633.\n 5 225029.\n 6 224060.\n 7 221036.\n 8 217686.\n 9 218026.\n10 215263.\n# ℹ 723 more rows\n\n\nComme vous le voyez, nous obtenons une liste de valeur prédite. La colonne contenant celles-ci s’appelle .pred.\nIl est souvent utile coller les prédictions au tableau des données de test:\n\nlm_pred &lt;- lm_fit %&gt;%\n  predict(new_data = ames_test) %&gt;%\n  bind_cols(ames_test)\n\nCette fois, nous obtenons un tableau complet, avec les données réelles et les données prédites. Nous pouvons par exemple les visualiser:\n\nlm_pred %&gt;%\n  ggplot(aes(x=.pred, y=Sale_Price)) +\n  geom_point(alpha = .5)\n\n\n\n\n\n\n\n\nQuestion 2: Faites de même pour le modèle Random Forest ! Que constatez vous ?"
+  },
+  {
+    "objectID": "labs/Semaine2.html#les-données",
+    "href": "labs/Semaine2.html#les-données",
+    "title": "Semaine 2 - Machine Learning",
+    "section": "Les données",
+    "text": "Les données\nNous allons travailler sur un jeu de données qui contient des informations sur des réservations d’hôtels. Nous allons essayer de prédire si une réservation avait des enfants. Pour cela, nous allons utiliser des méthodes de classification.\n\nlibrary(tidymodels)\nlibrary(readr)\n\nhotels &lt;- \n  read_csv(\"https://tidymodels.org/start/case-study/hotels.csv\") %&gt;%\n  mutate(across(where(is.character), as.factor))\n\ndim(hotels)\n\n[1] 50000    23\n\n\nQuestion 4: Déterminez la proportion de réservations qui ont des enfants."
+  },
+  {
+    "objectID": "labs/Semaine2.html#séparation-des-données-1",
+    "href": "labs/Semaine2.html#séparation-des-données-1",
+    "title": "Semaine 2 - Machine Learning",
+    "section": "Séparation des données",
+    "text": "Séparation des données\nQuestion 5: Commencez par fixer un seed et puis divisez les données en un ensemble d’entraînement et un ensemble de test. Utilisez 75% des données pour l’entraînement. Assurez-vous que les proportions de réservations avec enfants sont les mêmes dans les deux ensembles."
+  },
+  {
+    "objectID": "labs/Semaine2.html#premier-modèle-régression-logistique",
+    "href": "labs/Semaine2.html#premier-modèle-régression-logistique",
+    "title": "Semaine 2 - Machine Learning",
+    "section": "Premier modèle: Régression logistique",
+    "text": "Premier modèle: Régression logistique\n\nChoix du modèle\nQuestion 6: Configurez un modèle de regression logistique en utilisant la fonction logistic_reg(). Utilisez la fonction set_engine() pour spécifier que vous voulez utiliser la fonction glm(). Nous travaillons en mode Classification.\n\n\nRecette\nQuestion 7: Créez une recette pour le modèle en utilisant la fonction recipe().\nNous allons utiliser les recettes suivantes:\n\nstep_date(): pour créer les variable de l’année, du mois et du jour de la semaine\nstep_holiday(): pour créer une variable qui indique si la réservation a été faite pendant une période de vacances. Nous vous avons fourni une liste de vacances dans le fichier de réponse (voir ci-dessous). Vous pouvez indiquer d’utiliser cette liste avec step_holiday(arrival_date, holidays = holidays)\nstep_rm(): pour supprimer les variables arrival_date\n\nNous allons également transformer les variables catégorielles en dummy variables et les variables numériques en variables centrées et réduites.\n\nstep_dummy() pour convertir les variables catégorielles (all_nominal_predictors()) en variables binaires\nstep_zv() permet d’enlever les variables qui ne contiennent qu’une unique valeur (all_predictors())\nstep_normalize() pour centrer et réduire les variables numériques (all_numeric_predictors())\n\nPour step_holiday, vous pouvez utiliser la liste suivante:\n\nholidays &lt;- c(\"AllSouls\", \"AshWednesday\", \"ChristmasEve\", \"Easter\", \n              \"ChristmasDay\", \"GoodFriday\", \"NewYearsDay\", \"PalmSunday\")\n\n\n\nCréation du workflow\nQuestion 8: Créez un workflow en utilisant la fonction workflow(). Ajoutez-y la recette et le modèle.\n\n\nEntraînement et Prédiction\nQuestion 9: Fittez votre modèle\nQuestion 10: Prédisez le modèle en utilisant le bloc de code ci-dessous. Expliquez ce qu’il fait !\n\nlr_pred &lt;- predict(lr_fit, hotel_test) %&gt;%\n  bind_cols(predict(lr_fit, hotel_test, type = \"prob\")) %&gt;%\n  bind_cols(hotel_test %&gt;% select(children))\n\n\n\nÉvaluation du modèle\nNous allons générer une courbe ROC pour évaluer le modèle\n\nlr_auc &lt;- lr_pred %&gt;%\n  roc_curve(children, .pred_children) %&gt;%\n  mutate(model = \"Logistic Regression\")\n\nlr_auc %&gt;% autoplot()\n\nNous pouvons également calculer directement l’aire sous la courve en faisant appelle à yardstick et à la fonction roc_auc\n\nlr_pred %&gt;%\n  roc_auc(children, .pred_children)"
+  },
+  {
+    "objectID": "labs/Semaine2.html#deuxième-modèle-random-forest",
+    "href": "labs/Semaine2.html#deuxième-modèle-random-forest",
+    "title": "Semaine 2 - Machine Learning",
+    "section": "Deuxième modèle: Random Forest",
+    "text": "Deuxième modèle: Random Forest\nCette fois, nous allons faire de la classification avec Random Forest. Vous pouvez utiliser le modèle suivant:\n\ncores &lt;- parallel::detectCores() # Nombre de coeur à disposition pour le calcul\n\nrf_mod &lt;- \n  rand_forest(trees = 1000) %&gt;% \n  set_engine(\"ranger\", num.threads = cores) %&gt;% \n  set_mode(\"classification\")\n\nQuestion 11: Reproduisez les étapes de préprocessing, d’entrainement et de prédiction avec ce nouveau model. Pour le preprocessing, utilisez simplement les étapes:\n\nstep_date() avec la date d’arrivée\nstep_holiday() pour déterminer si la date d’arrivée correspond à une période de vacance\nstep_rm() pour retirer la date d’arrivée (nous voulons simplement garder l’indication de si cela correspond à une période de vacances)\n\nQuestion 12: Calculez l’aire sous la courbe ROC. Comparez par rapport à celle obtenu pour le premier modèle.\nQuestion 13: Faite un graphique contenant les courbes ROC pour les deux modèles. Pour cela, inspirez du code fourni pour la regression logistique pour obtenir un tableau similaire à lr_auc, mais contenant les valeurs obtenues avec Random Forest, en indiquant “Random Forest” dans la colonne model. Combinez, à l’aide de bind_rows() les deux tableaux et utilisez ggplot pour afficher les deux courbes sur un même grahique en changeant la couleur selon le modèle."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "SFC6006",
+    "section": "",
+    "text": "Bienvenue au module d’analyse de données en R du cours SFC6006 !\nL’ensemble des ressources pour les cours se trouvent sur ce site web.\nLa présentation d’introduction au module se trouve ici.\n\n\nL’ensemble de ce site est sous license a Creative Commons Attribution-ShareAlike 4.0 International.\n\n\n\nUne partie du cours proposé ici est adapté du matériel proposé par Data Science in a Box.\nThis website is built with Quarto."
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "SFC6006",
+    "section": "",
+    "text": "L’ensemble de ce site est sous license a Creative Commons Attribution-ShareAlike 4.0 International."
+  },
+  {
+    "objectID": "index.html#acknowledements",
+    "href": "index.html#acknowledements",
+    "title": "SFC6006",
+    "section": "",
+    "text": "Une partie du cours proposé ici est adapté du matériel proposé par Data Science in a Box.\nThis website is built with Quarto."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "examen/examen.html",
+    "href": "examen/examen.html",
+    "title": "Examen",
+    "section": "",
+    "text": "L’examen se compose de 3 exercices. Pour avoir accès aux données et à la feuille de réponse, vous devrez utiliser GitHub et GitHub classroom.\nSur le portail de cours, acceptez l’invitation à rejoindre le projet GitHub Classroom pour l’examen.\nCopiez le lien de repo personnel. Cela devrait ressember à Examen-&lt;votre nom d'utilisateur GitHub&gt;.\nDans RStudio:\n\nFichier &gt; Nouveau Projet\nVersion Control &gt; Git\nDans Repository URL : indiquez l’adresse de repo copiée précédemment\nChoisissez un nom pour le dossier qui sera créé\nChoisissez le dossier où créer le projet\n\nCela va copier les fichiers présents sur GitHub, et les copier dans le dossier spécifié.\nDans RStudio, vous devriez voir le fichier .Rmd listé en bas à droite dans la liste de fichier.\nSi vous cliquez maintenant sur le fichier .Rmd, il va apparaitre dans la zone en haut à gauche. Vous pourrez l’éditer et le “Render/Knit” pour voir le résultat final.\nVeuillez noter que ce que vous écrivez dans le fichier Rmd et ce que vous écrivez dans la console ne communiquent pas (il s’agit de deux environnements différents). Si vous voulez utiliser la console (zone en bas à gauche), il faut retaper les commandes du fichier.\nLe type d’output dans le fichier .Rmd est réglé sur github_document. Cela veut dire que lorsque vous allez knit le document, un fichier .md sera généré avec votre rapport.\nC’est ce fichier .md qui sera évalué. Assurez que vous le pushez bien sur Github (il faudra l’inclure dans vos commit) et que son contenu est “propre”. Enlevez les messages indésirables ou non-utiles et assurez-vous que les graphes et images soient correctement rendue depuis GitHub."
+  },
+  {
+    "objectID": "examen/examen.html#les-données",
+    "href": "examen/examen.html#les-données",
+    "title": "Examen",
+    "section": "Les données",
+    "text": "Les données\nPour cet exercice, nous utiliserons les données d’utilisation des vélos en libre circulation à Washington, D.C. pour 2011 et 2012, avec les données de météo correspondantes. Les données sont disponibles dans le fichier data/bikeshare.csv.\nLes colonnes du jeu de données sont les suivantes:\n\ndteday: Date\nseason: Saison (1:hiver, 2:printemps, 3:été, 4:automne)\nyr: Année (0: 2011, 1:2012)\nmnth: Mois (1 to 12)\nhr: Année (0 to 23)\nholiday: Jour férié ou non\nweekday: Jour de la semaine (0:dimanche, …, 6:samedi)\nworkingday: 1 si c’est un jour ouvrable (lundi à vendredi, hors vacances), 0 sinon\nweathersit: Météo\n\n1: Temps clair, peu de nuages, partiellement couvert\n2: Brouillard et nuageux, brouillard et partiellement nuageux, brouillard\n3: Faible neige, faible pluie et orage, faible pluie et nuageux\n4: Grosse pluie, grèle, tempête, neige et brouillard\n\ntemp: Température normalisée en degrés Celsius (\\(t_min = -8\\) et \\(t_max = +39\\))\natemp: Température ressentie normalisée en degrés Celsius (\\(t_min = -16\\) et \\(t_max = +50\\))\nhum: Humidité normalisée (avec comme valeur maximale 100)\nwindspeed: Vitesse du vent normalisée en km/h (avec comme valeur maximale 67)\ncasual: Nombre d’utilisateurs casuels\nregistered: Nombre d’utilisateurs enregistrés (abonnement annuel)\ncnt: Nombre total d’utilisateurs (casual + registered)"
+  },
+  {
+    "objectID": "examen/examen.html#questions",
+    "href": "examen/examen.html#questions",
+    "title": "Examen",
+    "section": "Questions",
+    "text": "Questions\n\nQuestion 1 (5 points) - Recodez la variable season pour en faire un factor avec les niveaux suivants: “printemps”, “été”, “automne”, “hiver”. Assurez vous que les saisons soient dans l’ordre. Recodez les variables holiday et workingday en factor également avec les niveaux “non” et “oui”, avec “non” comme premier niveau. Recodez la variable yr en factor avec les niveaux “2011” et “2012”. Recodez la variable weathersit en factor avec les niveaux suivants: 1 - “Temps clair”, 2 - “Brouillard”, 3 - “Légères précipitations”, et 4 - “Fortes précipitations”.\n\nSi ce n’est pas déjà le cas, utilisez le package lubridate pour transformer la variable dteday en une variable de type date.\n\nQuestion 2 (5 points) - Calculez les valeurs absolues pour les variables temp, atemp, hum et windspeed, en multipliant les valeurs normalisées par leurs valeurs minimales et maximales.\nQuestion 3 (5 points) - Assurez vous que les variables casual et registered s’additionnent bien pour donner la variable cnt.\n\nIndice: Une possibilité est de créer une nouvelle colonne qui contient la valeur TRUE si la somme est égale à cnt et FALSE sinon. Vous pouvez ensuite utiliser cette colonne pour vérifier si la somme est correcte.\n\nQuestion 4 (10 points) - Recréez le graphique ci-dessous. Une fois que vous avez créé la visualisation, décrivez en un paragraphe ce que vous pensez être le point de cette visualisation.\n\n\nAnalysez le graphique et indiquez ce que vous en comprenez.\n\nQuestion 5 (10 points) - Créez un graphique montrant la relation entre le nombre de location de vélos, le faite qu’il s’agisse d’un jour de travail ou non et la saison. Interprétez votre graphique\nQuestion 6 (5 points) - Séparez les données en un ensemble d’entraînement et un ensemble de test. Utilisez 80% des données pour l’entraînement et 20% pour le test. Utilisez un réechantillonnage par Cross-Validation sur les données d’entrainement.\nQuestion 7 (10 points) - Créez deux modèles de régression prédisant le nombre total de locations de vélos à partir de la saison, de l’année, du fait qu’il s’agisse d’un jour de travail ou non, de la météo, de la température, de la température ressentie, de l’humidité et de la vitesse du vent. Pour chacun des modèles, quelle performance est obtenue après entraînement. Quel est le meilleur des deux modèles choisis ?\n\nIndice: Pensez à créer une recette dans laquelle vous pourrez créer faire les prétraitement que vous jugez utiles.\n\nQuestion 8 (10 points) - Appliquez vos deux modèles sur les données de tests. Représentez sur un même graphique les valeurs prédites par chaque modèle en fonction des vraies valeurs."
+  },
+  {
+    "objectID": "examen/examen.html#les-données-1",
+    "href": "examen/examen.html#les-données-1",
+    "title": "Examen",
+    "section": "Les données",
+    "text": "Les données\nPour cet exercice, nous allons utiliser les données sur les passagers du Titanic. Les données sont présentes dans le fichier data/Titanic.csv. L’objectif est de prédire si un passager a survécu ou non au naufrage du Titanic.\nLes colonnes du jeu de données sont les suivantes:\n\nPassengerId: Identifiant du passager\nSurvived: Survie (0 = Non, 1 = Oui)\nPclass: Classe du passager (1 = 1ère, 2 = 2ème, 3 = 3ème)\nName: Nom du passager\nSex: Sexe du passager\nAge: Âge du passager\nSibSp: Nombre de frères et soeurs / époux à bord\nParch: Nombre de parents / enfants à bord\nTicket: Numéro du ticket\nFare: Prix du ticket\nCabin: Numéro de cabine\nEmbarked: Port d’embarquement (C = Cherbourg, Q = Queenstown, S = Southampton)"
+  },
+  {
+    "objectID": "examen/examen.html#questions-1",
+    "href": "examen/examen.html#questions-1",
+    "title": "Examen",
+    "section": "Questions",
+    "text": "Questions\n\nQuestion 9 (5 points) - Recodez la variable Pclass en factor avec les niveaux “1ère”, “2ème” et “3ème”. Recodez la variable Survived en factor avec les niveaux “Non” et “Oui”. Recodez la variable Embarked en factor avec les niveaux “Cherbourg”, “Queenstown” et “Southampton”. Recodez la variable Sex en factor avec les niveaux “Femme” et “Homme”.\nQuestion 10 (10 points) - Certaines colonnes semblent avoir des valeurs manquantes. Comptez, pour chaque colonne le nombre de valeurs manquantes. Vous devriez obtenir les résultats suivants:\n\n\nAge: 177 valeurs manquantes\nCabin: 687 valeurs manquantes\nEmbarked: 2 valeurs manquantes\n\nProposez une manière de gérer les données manquantes pour les variables Cabin et Embarked.\nPour la variable Age, nous allons imputer les valeurs manquantes en utilisant la moyenne de l’âge des passagers. Commencez par calculer la moyenne et la déviation stadard de l’âge des passagers. Nous allons ensuite remplacer les valeurs manquentes par des valeurs tirées d’une distribution normale avec la moyenne et la déviation standard calculées. Créez une nouvelle colonne Age_calc où la valeur de l’âge est égale à celle de Age si elle est disponible et à celle celle calculée si elle est manquante. Pour le calcul, vous pouvez utiliser la fonction rnorm pour générer des valeurs aléatoires à partir d’une distribution normale.\nHint: Si vous utilisez la fonction rnorm directement dans la fonction mutate, il n’y aura qu’un seul tirage de la distribution. Pour contourner ce problème, vous pouvez utiliser la fonction map2 du package purrr pour appliquer la fonction rnorm à chaque ligne du jeu de données. La fonction map2 prend une liste de valeurs et une fonction comme arguments. Il existe également d’autres approches, vous êtes libre d’utiliser celle que vous souhaitez.\nHint: En utilisant la fonction rnorm, vous pouvez obtenir des valeurs négatives pour l’âge. Remplacez ces valeurs par 0.\n\nQuestion 11 (10 points) - Combien de passagers ont survécu au naufrage du Titanic? Combien de passagers n’ont pas survécu? Créez une visualisation représentant la survie des passagers en fonction de la classe et du sexe des passagers.\n\nQue pouvez vous en déduire?\n12 Question 12 (5 points) - Nous allons essayer de prédire la survie des passagers en fonction des différentes variables. Pour cela, nous allons séparer les données en un ensemble d’entraînement et un ensemble de test. Utilisez 80% des données pour l’entraînement et 20% pour le test. Utilisez un réechantillonnage par Bootstraping sur les données d’entrainement.\n\nQuestion 13 (15 points) - Créez deux modèles de classification pour prédire la survie des passagers en fonction de la classe, du sexe, de l’âge, du nombre de frères et soeurs / époux à bord, du nombre de parents / enfants à bord, du port d’embarquement et du prix du ticket. Pour chacun des modèles, quelle performance est obtenue après entraînement. Quel est le meilleur des deux modèles choisis ? Représentez sur un même graphique les courbes ROC des deux modèles.\n\nIndice: Pensez à créer une recette dans laquelle vous pourrez créer faire les prétraitement que vous jugez utiles.\n\nQuestion 14 (10 points) - Appliquez le meilleur des modèles sur les données de tests. À l’aide de la fonction conf_mat, qui prend comme premier argument la liste des vraies valeurs et en deuxième argument la liste des valeur prédites, affichez la matrice de confusion.\n\nSeriez-vous plus confiant dans la qualité de prédiction si le modèle prédit “Non” (pas de survie) ou s’il prédit “Oui” (survie)."
+  },
+  {
+    "objectID": "examen/examen.html#les-données-2",
+    "href": "examen/examen.html#les-données-2",
+    "title": "Examen",
+    "section": "Les données",
+    "text": "Les données\nPour cet exercice, nous allons utiliser des données représentant la composition chimique de morceaux de verre provenant de différentes vitres, fabriquées par deux entreprises. Les données sont présentes dans le fichier data/glass.csv.\nLes colonnes du jeu de données sont les suivantes:\n\ncompany: Indique si le verre provient de l’entreprise A ou B,\npane: Indique le numéro de la vitre,\nfragment: indique le numéro de fragment pour chaque vitre,\nrep: indique le numéro de réplicat pour chaque mesure de fragment,\n\nLes colonnes suivantes représentes les mesures par LA-ICP-MS des différents composants du verre. Toutes les unités sont en parties par millions (ppm).\nLes analyses de 3 fragments de verre inconnus sont également fournis dans le fichier data/unknown-glass.csv.\nL’objectif de cet exercice est de déterminer, si possible, pour chaque fragment:\n\nL’entreprise ayant frabriqué la vitre d’origine des fragments\nLa vitre d’origine des fragments\n\nCet exercice ce veut plus libre dans l’approche à suivre."
+  },
+  {
+    "objectID": "examen/examen.html#analyse-exploratoire-20-points",
+    "href": "examen/examen.html#analyse-exploratoire-20-points",
+    "title": "Examen",
+    "section": "Analyse exploratoire (20 points)",
+    "text": "Analyse exploratoire (20 points)\nCommencez par une analyse exploratoire (Visualisations, PCA, …).\n\nQuestion 15 (20 points) - Êtes-vous capable de répondre aux questions posées ?\n\nSi oui, quelle confiance avez vous dans vos conclusions ?"
+  },
+  {
+    "objectID": "examen/examen.html#classification-20-points",
+    "href": "examen/examen.html#classification-20-points",
+    "title": "Examen",
+    "section": "Classification (20 points)",
+    "text": "Classification (20 points)\nUtilisez ensuite un modèle de classification.\n\nQuestion 16 (20 points)Êtes-vous capable de répondre aux questions posées ?\n\nSi oui, quelle confiance avez vous dans vos conclusions ?\nBonus (10 points): Pour la question concernant l’entreprise d’origine, calculez le LR pour un des fragments inconnu."
+  },
+  {
+    "objectID": "labs/Semaine1.html",
+    "href": "labs/Semaine1.html",
+    "title": "Semaine 1 - Data wrangling",
+    "section": "",
+    "text": "En janvier 2017, Buzzfeed a publié un article sur pourquoi les lauréats du prix Nobel montrent que l’immigration est si importante pour la science américaine.\nVous pouvez lire l’article ici. Dans l’article, ils montrent que bien que la plupart des lauréats vivants du prix Nobel en sciences soient basés aux États-Unis, beaucoup d’entre eux sont nés dans d’autres pays. C’est une des raisons pour lesquelles le monde scientifique dit que l’immigration est vitale pour le progrès. Dans ce lab, nous travaillerons avec les données de cet article pour recréer certaines de leurs visualisations ainsi qu’explorer de nouvelles questions."
+  },
+  {
+    "objectID": "labs/Semaine1.html#échauffement",
+    "href": "labs/Semaine1.html#échauffement",
+    "title": "Semaine 1 - Data wrangling",
+    "section": "Échauffement",
+    "text": "Échauffement\nAvant d’introduire les données, commençons par quelques exercices simples.\n\nMettez à jour le YAML, en changeant le nom de l’auteur par le vôtre, et knit le document.\nCommittez vos modifications avec un message de commit. Assurez vous que les fichiers .Rmd et .md sont bien ajoutés au commit.\nPushez vos modifications sur GitHub.\nAllez dans votre dépôt sur GitHub et confirmez que vos modifications sont visibles dans vos fichiers Rmd et md."
+  },
+  {
+    "objectID": "labs/Semaine1.html#packages",
+    "href": "labs/Semaine1.html#packages",
+    "title": "Semaine 1 - Data wrangling",
+    "section": "Packages",
+    "text": "Packages\nNous utiliserons le package tidyverse pour une grande partie de la manipulation des données.\n\nlibrary(tidyverse)\n\nS’il n’est pas déjà installé, vous pouvez le faire avec la commande install.packages(\"tidyverse\"). Cette commande n’est nécaisse qu’une seule fois."
+  },
+  {
+    "objectID": "labs/Semaine1.html#données",
+    "href": "labs/Semaine1.html#données",
+    "title": "Semaine 1 - Data wrangling",
+    "section": "Données",
+    "text": "Données\nLe jeu de données pour cet exercice se trouve sous forme de fichier CSV (valeurs séparées par des virgules) dans le dossier data de votre dépôt. Vous pouvez les charger avec la fonction read_csv:\nLes descriptions des variables sont les suivantes :\n\nid: Numéro d’identification\nfirstname: Prénom du lauréat\nsurname: Nom de famille\nyear: Année de remise du prix\ncategory: Catégorie du prix\naffiliation: Affiliation du lauréat\ncity: Ville du lauréat l’année du prix\ncountry: Pays du lauréat l’année du prix\nborn_date: Date de naissance du lauréat\ndied_date: Date de décès du lauréat\ngender: Sexe du lauréat\nborn_city: Ville de naissance du lauréat\nborn_country: Pays de naissance du lauréat\nborn_country_code: Code du pays de naissance du lauréat\ndied_city: Ville de décès du lauréat\ndied_country: Pays de décès du lauréat\ndied_country_code: Code du pays de décès du lauréat\noverall_motivation: Motivation générale pour la reconnaissance\nshare: Nombre d’autres lauréats avec lesquels le prix est partagé\nmotivation: Motivation pour la reconnaissance\n\nDans quelques cas, le nom de la ville/pays a changé après la réception du prix par le lauréat (par exemple, en 1975, la Bosnie-Herzégovine s’appelait la République fédérative socialiste de Yougoslavie). Dans ces cas, les variables ci-dessous reflètent un nom différent de leurs homologues sans le suffixe `_original`.\n\nborn_country_original\nborn_city_original\ndied_country_original\ndied_city_original\ncity_original\ncountry_original"
+  },
+  {
+    "objectID": "labs/Semaine1.html#manipulation-de-données",
+    "href": "labs/Semaine1.html#manipulation-de-données",
+    "title": "Semaine 1 - Data wrangling",
+    "section": "Manipulation de données",
+    "text": "Manipulation de données\nNous allons commencer par jeter un coup d’oeil au tableau que nous avons chargé. Pour cela, nous pouvons utiliser la fonction glimpse()\n\n\nRows: 935\nColumns: 26\n$ id                    &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 6, 8, 9, 10, 11, 12, 13, 14, 1…\n$ firstname             &lt;chr&gt; \"Wilhelm Conrad\", \"Hendrik A.\", \"Pieter\", \"Henri…\n$ surname               &lt;chr&gt; \"Röntgen\", \"Lorentz\", \"Zeeman\", \"Becquerel\", \"Cu…\n$ year                  &lt;dbl&gt; 1901, 1902, 1902, 1903, 1903, 1903, 1911, 1904, …\n$ category              &lt;chr&gt; \"Physics\", \"Physics\", \"Physics\", \"Physics\", \"Phy…\n$ affiliation           &lt;chr&gt; \"Munich University\", \"Leiden University\", \"Amste…\n$ city                  &lt;chr&gt; \"Munich\", \"Leiden\", \"Amsterdam\", \"Paris\", \"Paris…\n$ country               &lt;chr&gt; \"Germany\", \"Netherlands\", \"Netherlands\", \"France…\n$ born_date             &lt;date&gt; 1845-03-27, 1853-07-18, 1865-05-25, 1852-12-15,…\n$ died_date             &lt;date&gt; 1923-02-10, 1928-02-04, 1943-10-09, 1908-08-25,…\n$ gender                &lt;chr&gt; \"male\", \"male\", \"male\", \"male\", \"male\", \"female\"…\n$ born_city             &lt;chr&gt; \"Remscheid\", \"Arnhem\", \"Zonnemaire\", \"Paris\", \"P…\n$ born_country          &lt;chr&gt; \"Germany\", \"Netherlands\", \"Netherlands\", \"France…\n$ born_country_code     &lt;chr&gt; \"DE\", \"NL\", \"NL\", \"FR\", \"FR\", \"PL\", \"PL\", \"GB\", …\n$ died_city             &lt;chr&gt; \"Munich\", NA, \"Amsterdam\", NA, \"Paris\", \"Sallanc…\n$ died_country          &lt;chr&gt; \"Germany\", \"Netherlands\", \"Netherlands\", \"France…\n$ died_country_code     &lt;chr&gt; \"DE\", \"NL\", \"NL\", \"FR\", \"FR\", \"FR\", \"FR\", \"GB\", …\n$ overall_motivation    &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ share                 &lt;dbl&gt; 1, 2, 2, 2, 4, 4, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, …\n$ motivation            &lt;chr&gt; \"\\\"in recognition of the extraordinary services …\n$ born_country_original &lt;chr&gt; \"Prussia (now Germany)\", \"the Netherlands\", \"the…\n$ born_city_original    &lt;chr&gt; \"Lennep (now Remscheid)\", \"Arnhem\", \"Zonnemaire\"…\n$ died_country_original &lt;chr&gt; \"Germany\", \"the Netherlands\", \"the Netherlands\",…\n$ died_city_original    &lt;chr&gt; \"Munich\", NA, \"Amsterdam\", NA, \"Paris\", \"Sallanc…\n$ city_original         &lt;chr&gt; \"Munich\", \"Leiden\", \"Amsterdam\", \"Paris\", \"Paris…\n$ country_original      &lt;chr&gt; \"Germany\", \"the Netherlands\", \"the Netherlands\",…\n\n\nIl est ainsi possible de voir pour chaque colonne, le type de données qui a été détecté lors de l’importation, et un coup d’oeils aux premières valeurs. C’est le moment de repérer si un type ne convient pas.\n\nExploration de données\nCombien d’observations et combien de variables y a-t-il dans le jeu de données ? Que représente chaque ligne ?\n\n\nSélection de données\nIl y a quelques observations dans ce jeu de données que nous exclurons de notre analyse pour correspondre aux résultats de Buzzfeed.\nPour rappel, les différents verbes du tidyverse permettent de manipuler les données:\n\nselect: Sélectionner une colonne\narrange: Ordonner les lignes\nslice: Sélectionner des lignes (par les index)\nfilter: Sélectionner des lignes selon des critères\ndistinct: Filtrer les lignes uniques\nmutate: Ajout de nouvelles variables\nsummarise: Réduire variables en valeurs\ngroup_by: Regrouper des observations selon une variable\n\nCountez le nombre de valeur NA pour la colonne country. Pour cela, vous pouvez utiliser les fonctions filter, is.na et count.\nQuelles sont les valeurs possibles pour la variable gender ? La valeur org signifie qu’une organisation a gagné le prix Nobel.\nNous allons maintenant vouloir sélectionner seulement les entrées qui ont toutes les valeur nécessaire, c’est-à-dire des personnes vivantes dont on connait le pays d’origine.\nCréez un nouveau data frame appelé nobel_living qui filtre pour\n\nles lauréats pour lesquels country est disponible\nles lauréats qui sont des personnes par opposition aux organisations (les organisations sont désignées par org dans la variable gender)\nles lauréats vivant, c’est-à-dire les entrées dont la died_date est NA\n\nVérifiez que vous obtenez bien un data frame avec 228 observations après avoir filtré les données.\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\nAnalyse et visualisation de données\n\n“La plupart des lauréats vivants du prix Nobel étaient basés aux États-Unis lorsqu’ils ont remporté leurs prix”\n… dit l’article de Buzzfeed. Voyons si c’est vrai.\nTout d’abord, nous allons créer une nouvelle variable pour identifier si le lauréat vivait aux États-Unis lorsqu’il a remporté son prix. Pour cela, nous utiliserons la fonction mutate(). Créez une nouvelle colonne country_us qui sera égale à \"USA\" si le country est égal à “USA” et à \"Other\" sinon. Pour cela, pensez à utiliser la fonction if_else dans votre mutate.\nNous voudrons ensuite transformer cette colonne en facteur, ce qui est toujours utile lorsqu’on travaille avec des données catégoriques. Pour cela, vous pouvez utiliser la fonction fct_relvel() en précisant la colonne à mettre en facteur et le nom des niveaux (ici “USA” en premier et “Other” en deuxième).\nPour la suite de l’exercice, nous limiterons notre analyse aux catégories suivantes : Physique, Médecine, Chimie et Économie.\nCréez un nouveau data frame appelé nobel_living_science qui filtre pour les catégories suivantes : Physique, Médecine, Chimie et Économie.\nPour cela, vous pouvez tester si category est dans le vecteur c(\"Physics\", \"Medicine\", \"Chemistry\", \"Economics\"). Profitez-en également pour transformer cette colonne en facteurs également, en les ordonant par ordre alphabétique.\nPour le prochain exercice, travaillez avec le data frame nobel_living_science que nous avons créé ci-dessus.\nCréez un graphique à barres avec des facets visualisant la relation entre la catégorie du prix Nobel et si le lauréat était aux États-Unis lorsqu’il l’a remporté.\nPour rappel, les graphiques peuvent être créés de la forme:\n\nnobel_living_science %&gt;%\n  ggplot(aes(...)) +\n    geom_XXX(...)\n\nPar exemple,\n\nnobel_living_science %&gt;%\n  ggplot(aes(x=country_us, fill = country_us)) +\n  geom_bar() +\n   labs(x = \"Pays de résidence\",                 # On met à jour les labels\n       y = \"Nombre de lauréats\",\n       title = \"Pays de résidence des lauréats vivants du prix Nobel\",\n       subtitle = \"Selon si le pays de résidence correspond aux USA ou non\",\n       fill = \"Pays du lauréat\")\n\n\n\n\n\n\n\n\nPour créer des facettes selon les catégories, vous pouvez ajouter la fonction facet_wrap. Votre visualisation doit avoir:\n\nVotre visualisation doit être facettée par catégorie.\nPour chaque facette, vous devez avoir deux barres, une pour les gagnants aux États-Unis et une pour les autres.\nInversez les coordonnées pour que les barres soient horizontales, pas verticales.\n\n\n\n\n\n\n\n\n\n\nInterprétez votre visualisation et commentez le titre de Buzzfeed en regardant s’il est soutenu par les données.\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\n“Mais parmi ces lauréats du prix Nobel basés aux États-Unis, beaucoup sont nés dans d’autres pays”\nCréez une nouvelle variable appelée born_country_us qui a la valeur \"USA\" si le lauréat est né aux États-Unis, et \"Other\" sinon. Combien de gagnants sont nés aux États-Unis ?\nAjoutez une deuxième variable à votre visualisation de l’exercice 4 basée sur si le lauréat est né aux États-Unis ou non. D’après votre visualisation, les données semblent-elles soutenir l’affirmation de Buzzfeed ? Expliquez votre raisonnement en 1-2 phrases.\n\nVotre visualisation finale doit contenir une facette pour chaque catégorie.\nDans chaque facette, il doit y avoir une barre pour savoir si le lauréat a remporté le prix aux États-Unis ou non.\nChaque barre doit avoir des segments pour savoir si le lauréat est né aux États-Unis ou non.\n\n\n\n\n\n\n\n\n\n\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\nD’où viennent les lauréats nés à l’étranger qui ont remporté leur prix aux États-Unis ?\nDans un seul pipeline, filtrez pour les lauréats qui ont remporté leur prix aux États-Unis, mais qui sont nés en dehors des États-Unis, puis créez un tableau de fréquence (avec la fonction count()) pour leur pays de naissance (born_country) et arrangez le data frame résultant par ordre décroissant du nombre d’observations pour chaque pays. Quel pays est le plus commun ?\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\nMaintenant, relisez votre rapport pour vous assurer que vous avez répondu à toutes les questions et que tous vos blocs de code R sont correctement étiquetés."
+  },
+  {
+    "objectID": "labs/Semaine1.html#intéressé-par-la-façon-dont-buzzfeed-a-réalisé-leurs-visualisations",
+    "href": "labs/Semaine1.html#intéressé-par-la-façon-dont-buzzfeed-a-réalisé-leurs-visualisations",
+    "title": "Semaine 1 - Data wrangling",
+    "section": "Intéressé par la façon dont Buzzfeed a réalisé leurs visualisations ?",
+    "text": "Intéressé par la façon dont Buzzfeed a réalisé leurs visualisations ?\nLes graphiques dans l’article de Buzzfeed sont appelés des graphiques en gaufre (waffle plots). Vous pouvez trouver le code utilisé pour réaliser ces graphiques dans le dépôt GitHub de Buzzfeed (oui, ils en ont un !) ici. Vous pouvez essayer de recréer ces graphiques pour le plaisir, mais ce n’est pas une exigence pour ce lab."
+  },
+  {
+    "objectID": "labs/Semaine1.html#données-1",
+    "href": "labs/Semaine1.html#données-1",
+    "title": "Semaine 1 - Data wrangling",
+    "section": "Données",
+    "text": "Données\nLes données utilisées dans ce laboratoire proviennent de l’étude Religious Landscape Study\n\n\n\n\n\nSource : Religious Landscape Study\n\n\n\n\nLes données sont disponibles dans le dossier data/"
+  },
+  {
+    "objectID": "labs/Semaine1.html#packages-1",
+    "href": "labs/Semaine1.html#packages-1",
+    "title": "Semaine 1 - Data wrangling",
+    "section": "Packages",
+    "text": "Packages\nPour pouvoir importer plus de formats de fichiers que le CSV, nous allons utiliser le package readxl. Installez-le si ce n’est pas déjà fait, et chargez-le. Le package janitor est un utilitaire qui peut être utile pour nettoyer les noms de colonnes, mais il n’est pas nécessaire pour ce lab.\n\nlibrary(readxl)      # lecture de fichiers Excel\nlibrary(janitor)     # utilitaire (facultatif), p. ex. clean_names()"
+  },
+  {
+    "objectID": "labs/Semaine1.html#exercices",
+    "href": "labs/Semaine1.html#exercices",
+    "title": "Semaine 1 - Data wrangling",
+    "section": "Exercices",
+    "text": "Exercices\n\nExercice 1 - Importation des données\nQuel est le type de fichier des données ? (CSV, Excel, autre ?)\nImportez les données dans R en utilisant la fonction appropriée.\n\n\nExercice 2 - Qualité de l’importation\nObservez les données importées. Combien y a-t-il de lignes et de colonnes ? Quels sont les types des différentes colonnes ? Si vous pensez q’une colonne n’a pas le bon type, modifiez-le.\nObservez le nom des colonnes importées. Renommez Religion tradition en religion et Sample Size en n.\nVous devriez avoir un tableau 12x6 à cette étape.\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\nExercice 3 - Forme Tidy\nLes données importées sont-elles Tidy ?\nSont-elles en format cours ou en format long ?\nPivotez les données de telle sorte à avoir un colonne income, indiquant la tranche de revenue, et une colonne proportion, indiquant la proportion de personne dans cette tranche de revenue. Les autres colonnes (religion et n) ne doivent pas être pivotées.\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\nExercice 4 - Calcul des fréquences\nEn combinant les colonnes proportion et n, créez une nouvelle colonne frequency indiquant le nombre de personnes dans chaque tranche de revenu pour chaque religion.\nAsssurez-vous “d’engristrer” votre nouveau tableau dans une variable.\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\nExercice 5 - Visualisation - 1ère étape\nFaite un diagrame en barres horizotales (geom_col), représentant pour chaque religion la fréquence de personnes.\nModifiez votre graphe de telle sorte à nettoyer les titres des différentes religion, et à les trier par ordre alphabétique.\nVous devriez obtenir cela :\n\n\n\n\n\n\n\n\n\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\nExercice 6 - Visualisation - 2ème étape\nNous allons maintenant vouloir colorer les barres en fonction des tranches de revenu. Pour cela vous pouvez utiliser l’argument position = \"fill\" de geom_col() pour avoir que les barres représentent la proportion.\nVous devriez obtenir quelque chose de similaire (les couleurs et la disposition peuvent différer) :\n\n\n\n\n\n\n\n\n\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\nExercice 7 - Visualisation finale\nIl reste un dernier problème à notre figure !! Vous le voyez ?\nCorrigez-le de telle sorte à obtenir une figure propre et lisible.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit."
+  },
+  {
+    "objectID": "labs/Semaine1.html#conclusion",
+    "href": "labs/Semaine1.html#conclusion",
+    "title": "Semaine 1 - Data wrangling",
+    "section": "Conclusion",
+    "text": "Conclusion\nVérifiez que tout est correcte !\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit."
+  },
+  {
     "objectID": "labs/Semaine3.html",
     "href": "labs/Semaine3.html",
     "title": "Semaine3 - Machine leanring - Suite",
@@ -75,383 +446,5 @@
     "title": "Semaine3 - Machine leanring - Suite",
     "section": "Modèle final",
     "text": "Modèle final\nLa meilleure combinaison peut être extraite automatiquement selon certains critères avec l’ensemble de fonction select_*. Ici, nous prenons la meilleure combinaison de paramptres selon la métrique \\(R^2\\). La fonction finalize_workflow() permet ensuite de créer le workflow final avec les paramètres sélectionnés.\n\nrf_best &lt;- rf_tune %&gt;% select_best(metric = \"rsq\")\n\nrf_final &lt;- rf_wf %&gt;% finalize_workflow(rf_best)\n\nrf_final\n\n══ Workflow ════════════════════════════════════════════════════════════════════\nPreprocessor: Recipe\nModel: rand_forest()\n\n── Preprocessor ────────────────────────────────────────────────────────────────\n4 Recipe Steps\n\n• step_log()\n• step_normalize()\n• step_dummy()\n• step_poly()\n\n── Model ───────────────────────────────────────────────────────────────────────\nRandom Forest Model Specification (regression)\n\nMain Arguments:\n  mtry = 12\n  trees = 1000\n  min_n = 2\n\nComputational engine: ranger \n\n\nLa fonction last_fit() permet d’entrainer une dernière fois le modèle sur les données d’entrainement et de tester les perfomances sur les données de test.\n\nfinal_pred &lt;- rf_final %&gt;% last_fit(diamond_split)\n\nNous pouvons finalement voir nos performances finales !\n\nfinal_pred %&gt;% collect_metrics()\n\n# A tibble: 2 × 4\n  .metric .estimator .estimate .config        \n  &lt;chr&gt;   &lt;chr&gt;          &lt;dbl&gt; &lt;chr&gt;          \n1 rmse    standard       0.114 pre0_mod0_post0\n2 rsq     standard       0.987 pre0_mod0_post0\n\n\n\nfinal_pred %&gt;% \n  collect_predictions() %&gt;%\n  ggplot(aes(x=price, y=.pred)) + \n  geom_point()\n\n\n\n\n\n\n\n\nPour plus d’informations sur le tuning d’hyperparamètres, vous pouvez lire les chapitre 12 et 13 (Kuhn and Silge, 2022)."
-  },
-  {
-    "objectID": "labs/Semaine1.html",
-    "href": "labs/Semaine1.html",
-    "title": "Semaine 1 - Data wrangling",
-    "section": "",
-    "text": "En janvier 2017, Buzzfeed a publié un article sur pourquoi les lauréats du prix Nobel montrent que l’immigration est si importante pour la science américaine.\nVous pouvez lire l’article ici. Dans l’article, ils montrent que bien que la plupart des lauréats vivants du prix Nobel en sciences soient basés aux États-Unis, beaucoup d’entre eux sont nés dans d’autres pays. C’est une des raisons pour lesquelles le monde scientifique dit que l’immigration est vitale pour le progrès. Dans ce lab, nous travaillerons avec les données de cet article pour recréer certaines de leurs visualisations ainsi qu’explorer de nouvelles questions."
-  },
-  {
-    "objectID": "labs/Semaine1.html#échauffement",
-    "href": "labs/Semaine1.html#échauffement",
-    "title": "Semaine 1 - Data wrangling",
-    "section": "Échauffement",
-    "text": "Échauffement\nAvant d’introduire les données, commençons par quelques exercices simples.\n\nMettez à jour le YAML, en changeant le nom de l’auteur par le vôtre, et knit le document.\nCommittez vos modifications avec un message de commit. Assurez vous que les fichiers .Rmd et .md sont bien ajoutés au commit.\nPushez vos modifications sur GitHub.\nAllez dans votre dépôt sur GitHub et confirmez que vos modifications sont visibles dans vos fichiers Rmd et md."
-  },
-  {
-    "objectID": "labs/Semaine1.html#packages",
-    "href": "labs/Semaine1.html#packages",
-    "title": "Semaine 1 - Data wrangling",
-    "section": "Packages",
-    "text": "Packages\nNous utiliserons le package tidyverse pour une grande partie de la manipulation des données.\n\nlibrary(tidyverse)\n\nS’il n’est pas déjà installé, vous pouvez le faire avec la commande install.packages(\"tidyverse\"). Cette commande n’est nécaisse qu’une seule fois."
-  },
-  {
-    "objectID": "labs/Semaine1.html#données",
-    "href": "labs/Semaine1.html#données",
-    "title": "Semaine 1 - Data wrangling",
-    "section": "Données",
-    "text": "Données\nLe jeu de données pour cet exercice se trouve sous forme de fichier CSV (valeurs séparées par des virgules) dans le dossier data de votre dépôt. Vous pouvez les charger avec la fonction read_csv:\nLes descriptions des variables sont les suivantes :\n\nid: Numéro d’identification\nfirstname: Prénom du lauréat\nsurname: Nom de famille\nyear: Année de remise du prix\ncategory: Catégorie du prix\naffiliation: Affiliation du lauréat\ncity: Ville du lauréat l’année du prix\ncountry: Pays du lauréat l’année du prix\nborn_date: Date de naissance du lauréat\ndied_date: Date de décès du lauréat\ngender: Sexe du lauréat\nborn_city: Ville de naissance du lauréat\nborn_country: Pays de naissance du lauréat\nborn_country_code: Code du pays de naissance du lauréat\ndied_city: Ville de décès du lauréat\ndied_country: Pays de décès du lauréat\ndied_country_code: Code du pays de décès du lauréat\noverall_motivation: Motivation générale pour la reconnaissance\nshare: Nombre d’autres lauréats avec lesquels le prix est partagé\nmotivation: Motivation pour la reconnaissance\n\nDans quelques cas, le nom de la ville/pays a changé après la réception du prix par le lauréat (par exemple, en 1975, la Bosnie-Herzégovine s’appelait la République fédérative socialiste de Yougoslavie). Dans ces cas, les variables ci-dessous reflètent un nom différent de leurs homologues sans le suffixe `_original`.\n\nborn_country_original\nborn_city_original\ndied_country_original\ndied_city_original\ncity_original\ncountry_original"
-  },
-  {
-    "objectID": "labs/Semaine1.html#manipulation-de-données",
-    "href": "labs/Semaine1.html#manipulation-de-données",
-    "title": "Semaine 1 - Data wrangling",
-    "section": "Manipulation de données",
-    "text": "Manipulation de données\nNous allons commencer par jeter un coup d’oeil au tableau que nous avons chargé. Pour cela, nous pouvons utiliser la fonction glimpse()\n\n\nRows: 935\nColumns: 26\n$ id                    &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 6, 8, 9, 10, 11, 12, 13, 14, 1…\n$ firstname             &lt;chr&gt; \"Wilhelm Conrad\", \"Hendrik A.\", \"Pieter\", \"Henri…\n$ surname               &lt;chr&gt; \"Röntgen\", \"Lorentz\", \"Zeeman\", \"Becquerel\", \"Cu…\n$ year                  &lt;dbl&gt; 1901, 1902, 1902, 1903, 1903, 1903, 1911, 1904, …\n$ category              &lt;chr&gt; \"Physics\", \"Physics\", \"Physics\", \"Physics\", \"Phy…\n$ affiliation           &lt;chr&gt; \"Munich University\", \"Leiden University\", \"Amste…\n$ city                  &lt;chr&gt; \"Munich\", \"Leiden\", \"Amsterdam\", \"Paris\", \"Paris…\n$ country               &lt;chr&gt; \"Germany\", \"Netherlands\", \"Netherlands\", \"France…\n$ born_date             &lt;date&gt; 1845-03-27, 1853-07-18, 1865-05-25, 1852-12-15,…\n$ died_date             &lt;date&gt; 1923-02-10, 1928-02-04, 1943-10-09, 1908-08-25,…\n$ gender                &lt;chr&gt; \"male\", \"male\", \"male\", \"male\", \"male\", \"female\"…\n$ born_city             &lt;chr&gt; \"Remscheid\", \"Arnhem\", \"Zonnemaire\", \"Paris\", \"P…\n$ born_country          &lt;chr&gt; \"Germany\", \"Netherlands\", \"Netherlands\", \"France…\n$ born_country_code     &lt;chr&gt; \"DE\", \"NL\", \"NL\", \"FR\", \"FR\", \"PL\", \"PL\", \"GB\", …\n$ died_city             &lt;chr&gt; \"Munich\", NA, \"Amsterdam\", NA, \"Paris\", \"Sallanc…\n$ died_country          &lt;chr&gt; \"Germany\", \"Netherlands\", \"Netherlands\", \"France…\n$ died_country_code     &lt;chr&gt; \"DE\", \"NL\", \"NL\", \"FR\", \"FR\", \"FR\", \"FR\", \"GB\", …\n$ overall_motivation    &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …\n$ share                 &lt;dbl&gt; 1, 2, 2, 2, 4, 4, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, …\n$ motivation            &lt;chr&gt; \"\\\"in recognition of the extraordinary services …\n$ born_country_original &lt;chr&gt; \"Prussia (now Germany)\", \"the Netherlands\", \"the…\n$ born_city_original    &lt;chr&gt; \"Lennep (now Remscheid)\", \"Arnhem\", \"Zonnemaire\"…\n$ died_country_original &lt;chr&gt; \"Germany\", \"the Netherlands\", \"the Netherlands\",…\n$ died_city_original    &lt;chr&gt; \"Munich\", NA, \"Amsterdam\", NA, \"Paris\", \"Sallanc…\n$ city_original         &lt;chr&gt; \"Munich\", \"Leiden\", \"Amsterdam\", \"Paris\", \"Paris…\n$ country_original      &lt;chr&gt; \"Germany\", \"the Netherlands\", \"the Netherlands\",…\n\n\nIl est ainsi possible de voir pour chaque colonne, le type de données qui a été détecté lors de l’importation, et un coup d’oeils aux premières valeurs. C’est le moment de repérer si un type ne convient pas.\n\nExploration de données\nCombien d’observations et combien de variables y a-t-il dans le jeu de données ? Que représente chaque ligne ?\n\n\nSélection de données\nIl y a quelques observations dans ce jeu de données que nous exclurons de notre analyse pour correspondre aux résultats de Buzzfeed.\nPour rappel, les différents verbes du tidyverse permettent de manipuler les données:\n\nselect: Sélectionner une colonne\narrange: Ordonner les lignes\nslice: Sélectionner des lignes (par les index)\nfilter: Sélectionner des lignes selon des critères\ndistinct: Filtrer les lignes uniques\nmutate: Ajout de nouvelles variables\nsummarise: Réduire variables en valeurs\ngroup_by: Regrouper des observations selon une variable\n\nCountez le nombre de valeur NA pour la colonne country. Pour cela, vous pouvez utiliser les fonctions filter, is.na et count.\nQuelles sont les valeurs possibles pour la variable gender ? La valeur org signifie qu’une organisation a gagné le prix Nobel.\nNous allons maintenant vouloir sélectionner seulement les entrées qui ont toutes les valeur nécessaire, c’est-à-dire des personnes vivantes dont on connait le pays d’origine.\nCréez un nouveau data frame appelé nobel_living qui filtre pour\n\nles lauréats pour lesquels country est disponible\nles lauréats qui sont des personnes par opposition aux organisations (les organisations sont désignées par org dans la variable gender)\nles lauréats vivant, c’est-à-dire les entrées dont la died_date est NA\n\nVérifiez que vous obtenez bien un data frame avec 228 observations après avoir filtré les données.\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\nAnalyse et visualisation de données\n\n“La plupart des lauréats vivants du prix Nobel étaient basés aux États-Unis lorsqu’ils ont remporté leurs prix”\n… dit l’article de Buzzfeed. Voyons si c’est vrai.\nTout d’abord, nous allons créer une nouvelle variable pour identifier si le lauréat vivait aux États-Unis lorsqu’il a remporté son prix. Pour cela, nous utiliserons la fonction mutate(). Créez une nouvelle colonne country_us qui sera égale à \"USA\" si le country est égal à “USA” et à \"Other\" sinon. Pour cela, pensez à utiliser la fonction if_else dans votre mutate.\nNous voudrons ensuite transformer cette colonne en facteur, ce qui est toujours utile lorsqu’on travaille avec des données catégoriques. Pour cela, vous pouvez utiliser la fonction fct_relvel() en précisant la colonne à mettre en facteur et le nom des niveaux (ici “USA” en premier et “Other” en deuxième).\nPour la suite de l’exercice, nous limiterons notre analyse aux catégories suivantes : Physique, Médecine, Chimie et Économie.\nCréez un nouveau data frame appelé nobel_living_science qui filtre pour les catégories suivantes : Physique, Médecine, Chimie et Économie.\nPour cela, vous pouvez tester si category est dans le vecteur c(\"Physics\", \"Medicine\", \"Chemistry\", \"Economics\"). Profitez-en également pour transformer cette colonne en facteurs également, en les ordonant par ordre alphabétique.\nPour le prochain exercice, travaillez avec le data frame nobel_living_science que nous avons créé ci-dessus.\nCréez un graphique à barres avec des facets visualisant la relation entre la catégorie du prix Nobel et si le lauréat était aux États-Unis lorsqu’il l’a remporté.\nPour rappel, les graphiques peuvent être créés de la forme:\n\nnobel_living_science %&gt;%\n  ggplot(aes(...)) +\n    geom_XXX(...)\n\nPar exemple,\n\nnobel_living_science %&gt;%\n  ggplot(aes(x=country_us, fill = country_us)) +\n  geom_bar() +\n   labs(x = \"Pays de résidence\",                 # On met à jour les labels\n       y = \"Nombre de lauréats\",\n       title = \"Pays de résidence des lauréats vivants du prix Nobel\",\n       subtitle = \"Selon si le pays de résidence correspond aux USA ou non\",\n       fill = \"Pays du lauréat\")\n\n\n\n\n\n\n\n\nPour créer des facettes selon les catégories, vous pouvez ajouter la fonction facet_wrap. Votre visualisation doit avoir:\n\nVotre visualisation doit être facettée par catégorie.\nPour chaque facette, vous devez avoir deux barres, une pour les gagnants aux États-Unis et une pour les autres.\nInversez les coordonnées pour que les barres soient horizontales, pas verticales.\n\n\n\n\n\n\n\n\n\n\nInterprétez votre visualisation et commentez le titre de Buzzfeed en regardant s’il est soutenu par les données.\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\n“Mais parmi ces lauréats du prix Nobel basés aux États-Unis, beaucoup sont nés dans d’autres pays”\nCréez une nouvelle variable appelée born_country_us qui a la valeur \"USA\" si le lauréat est né aux États-Unis, et \"Other\" sinon. Combien de gagnants sont nés aux États-Unis ?\nAjoutez une deuxième variable à votre visualisation de l’exercice 4 basée sur si le lauréat est né aux États-Unis ou non. D’après votre visualisation, les données semblent-elles soutenir l’affirmation de Buzzfeed ? Expliquez votre raisonnement en 1-2 phrases.\n\nVotre visualisation finale doit contenir une facette pour chaque catégorie.\nDans chaque facette, il doit y avoir une barre pour savoir si le lauréat a remporté le prix aux États-Unis ou non.\nChaque barre doit avoir des segments pour savoir si le lauréat est né aux États-Unis ou non.\n\n\n\n\n\n\n\n\n\n\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\nD’où viennent les lauréats nés à l’étranger qui ont remporté leur prix aux États-Unis ?\nDans un seul pipeline, filtrez pour les lauréats qui ont remporté leur prix aux États-Unis, mais qui sont nés en dehors des États-Unis, puis créez un tableau de fréquence (avec la fonction count()) pour leur pays de naissance (born_country) et arrangez le data frame résultant par ordre décroissant du nombre d’observations pour chaque pays. Quel pays est le plus commun ?\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\nMaintenant, relisez votre rapport pour vous assurer que vous avez répondu à toutes les questions et que tous vos blocs de code R sont correctement étiquetés."
-  },
-  {
-    "objectID": "labs/Semaine1.html#intéressé-par-la-façon-dont-buzzfeed-a-réalisé-leurs-visualisations",
-    "href": "labs/Semaine1.html#intéressé-par-la-façon-dont-buzzfeed-a-réalisé-leurs-visualisations",
-    "title": "Semaine 1 - Data wrangling",
-    "section": "Intéressé par la façon dont Buzzfeed a réalisé leurs visualisations ?",
-    "text": "Intéressé par la façon dont Buzzfeed a réalisé leurs visualisations ?\nLes graphiques dans l’article de Buzzfeed sont appelés des graphiques en gaufre (waffle plots). Vous pouvez trouver le code utilisé pour réaliser ces graphiques dans le dépôt GitHub de Buzzfeed (oui, ils en ont un !) ici. Vous pouvez essayer de recréer ces graphiques pour le plaisir, mais ce n’est pas une exigence pour ce lab."
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "SFC6006",
-    "section": "",
-    "text": "Bienvenue au module d’analyse de données en R du cours SFC6006 !\nL’ensemble des ressources pour les cours se trouvent sur ce site web.\n\n\nL’ensemble de ce site est sous license a Creative Commons Attribution-ShareAlike 4.0 International.\n\n\n\nUne partie du cours proposé ici est adapté du matériel proposé par Data Science in a Box.\nThis website is built with Quarto."
-  },
-  {
-    "objectID": "index.html#license",
-    "href": "index.html#license",
-    "title": "SFC6006",
-    "section": "",
-    "text": "L’ensemble de ce site est sous license a Creative Commons Attribution-ShareAlike 4.0 International."
-  },
-  {
-    "objectID": "index.html#acknowledements",
-    "href": "index.html#acknowledements",
-    "title": "SFC6006",
-    "section": "",
-    "text": "Une partie du cours proposé ici est adapté du matériel proposé par Data Science in a Box.\nThis website is built with Quarto."
-  },
-  {
-    "objectID": "slides/00 - Intro.html#objectifs",
-    "href": "slides/00 - Intro.html#objectifs",
-    "title": "01 - Introduction",
-    "section": "",
-    "text": "Être capable de manipuler des données et de les visualiser avec R (SFC1018)\nÈtre capable de mettre en oeuvre des méthodes de traitement statistique des données avec R (SFC6008)\nÊtre capable de réaliser un projet de traitement de données de A à Z en R."
-  },
-  {
-    "objectID": "slides/00 - Intro.html#méthode",
-    "href": "slides/00 - Intro.html#méthode",
-    "title": "01 - Introduction",
-    "section": "",
-    "text": "(Wickham et al., 2023)"
-  },
-  {
-    "objectID": "slides/00 - Intro.html#ressources",
-    "href": "slides/00 - Intro.html#ressources",
-    "title": "01 - Introduction",
-    "section": "",
-    "text": "(Wickham et al., 2023)\n\n\n(Kuhn and Silge, 2022)"
-  },
-  {
-    "objectID": "slides/00 - Intro.html#les-outils",
-    "href": "slides/00 - Intro.html#les-outils",
-    "title": "01 - Introduction",
-    "section": "Les outils",
-    "text": "Les outils\n\nDéveloppement:\n\nR\nRStudio\ntidyverse\ntidymodels\nR Markdown\n\n\n\nGestion et collaboration:\n\nGit\nGitHub"
-  },
-  {
-    "objectID": "slides/00 - Intro.html#objectifs-1",
-    "href": "slides/00 - Intro.html#objectifs-1",
-    "title": "01 - Introduction",
-    "section": "Objectifs",
-    "text": "Objectifs\n\n\nAnalyser des données\nAnalyser des données de manière répétable\nAnalyser des données de manière répétable, avec des outils de programmation modernes\nAnalyser des données de manière répétable et collaborative, avec des outils de programmation modernes"
-  },
-  {
-    "objectID": "slides/00 - Intro.html#répétabilité",
-    "href": "slides/00 - Intro.html#répétabilité",
-    "title": "01 - Introduction",
-    "section": "Répétabilité",
-    "text": "Répétabilité\n\nQue signifie conduire une analyse de donnée de manière répétable ?\n\nÀ court-terme:\n\nPouvons nous reproduire les tableaux et les figures à partir des données\nEst-ce que le code fait ce que nous voulons ?\nPouvons-nous reconstruire pourquoi et comment nous avons obtenus les résultats\n\nÀ long-terme:\n\nPeut-on réutiliser le code pour d’autres données ?\nPeut-on réutiliser le code pour faire autre chose ?"
-  },
-  {
-    "objectID": "slides/00 - Intro.html#les-outils-de-la-répérabilité",
-    "href": "slides/00 - Intro.html#les-outils-de-la-répérabilité",
-    "title": "01 - Introduction",
-    "section": "Les outils de la répérabilité",
-    "text": "Les outils de la répérabilité\nScriptability \\(\\rightarrow\\) R\nDocumentation et communication \\(\\rightarrow\\) R Markdown\nGestion et collaboration \\(\\rightarrow\\) Git/GitHub"
-  },
-  {
-    "objectID": "slides/00 - Intro.html#r-et-rstudio",
-    "href": "slides/00 - Intro.html#r-et-rstudio",
-    "title": "01 - Introduction",
-    "section": "R et RStudio",
-    "text": "R et RStudio\n\n\n\n\nR est un language de programmation open-source\nR est un environnement pour faire des calculs statistiques et de la visualisation\nDe nombreuses autres applications sont disponibles grâce à des packages\n\n\n\n\nRStudio est un IDE (Environnement de Développement Intégré)\nC’est une interface pour R\nPas nécessaire pour coder en R mais tellement pratique !"
-  },
-  {
-    "objectID": "slides/00 - Intro.html#rstudio-tour",
-    "href": "slides/00 - Intro.html#rstudio-tour",
-    "title": "01 - Introduction",
-    "section": "RStudio tour",
-    "text": "RStudio tour"
-  },
-  {
-    "objectID": "slides/00 - Intro.html#r-packages",
-    "href": "slides/00 - Intro.html#r-packages",
-    "title": "01 - Introduction",
-    "section": "R packages",
-    "text": "R packages\nLes packages sont les building blocks de la reproductibilité. Ils contiennent de nombreuses fonctions réutilisables, de la documentation et données de test (Wickham and Bryan, 2023)\nNous allons en utiliser quelques une mais vous verrez que c’est tout une philosophie !"
-  },
-  {
-    "objectID": "slides/00 - Intro.html#tidyverse",
-    "href": "slides/00 - Intro.html#tidyverse",
-    "title": "01 - Introduction",
-    "section": "Tidyverse",
-    "text": "Tidyverse\n\n\n\n\ntidyverse.org\nLe Tidyverse est une collection de packages développés pour faire de la data science\nIl y a une philophie et une grammaire commune à tous ces packages, que nous allons apprendre."
-  },
-  {
-    "objectID": "slides/00 - Intro.html#tidymodels",
-    "href": "slides/00 - Intro.html#tidymodels",
-    "title": "01 - Introduction",
-    "section": "Tidymodels",
-    "text": "Tidymodels\n\n\n\n\ntidymodels.org\nTidymodels est une collection de packages pour créer de modèles de machine learning, en gardant la logique du Tidyverse."
-  },
-  {
-    "objectID": "slides/00 - Intro.html#r-markdown",
-    "href": "slides/00 - Intro.html#r-markdown",
-    "title": "01 - Introduction",
-    "section": "R Markdown",
-    "text": "R Markdown\n\n\nrmarkdown.rstudio.com\nR Markdown permet d’écrire des documents avec du code intégré (extension en .Rmd).\nVa permettre de documenter et de communiquer directement nos analyses de données !\n\n\nReproductible: À chaque fois qu’on génère le document, tout est exécuté depuis le début\nSyntaxe simple pour avoir des documents de qualité\nLe document se découpe en zones de texte et blocks de code"
-  },
-  {
-    "objectID": "slides/00 - Intro.html#r-markdown-1",
-    "href": "slides/00 - Intro.html#r-markdown-1",
-    "title": "01 - Introduction",
-    "section": "R Markdown",
-    "text": "R Markdown"
-  },
-  {
-    "objectID": "slides/00 - Intro.html#r-markdown---aide",
-    "href": "slides/00 - Intro.html#r-markdown---aide",
-    "title": "01 - Introduction",
-    "section": "R Markdown - Aide",
-    "text": "R Markdown - Aide\n\n\nCheatsheetHelp &gt; Cheatsheet\n\n\nMarkdown Quick ReferenceHelp &gt; Markdown Quick Reference"
-  },
-  {
-    "objectID": "slides/00 - Intro.html#les-outils-1",
-    "href": "slides/00 - Intro.html#les-outils-1",
-    "title": "01 - Introduction",
-    "section": "Les outils",
-    "text": "Les outils\n\nDéveloppement:\n\nR\nRStudio\ntidyverse\nR Markdown\n\n\n\nGestion et collaboration:\n\nGit\nGitHub"
-  },
-  {
-    "objectID": "slides/00 - Intro.html#git-et-github",
-    "href": "slides/00 - Intro.html#git-et-github",
-    "title": "01 - Introduction",
-    "section": "Git et GitHub",
-    "text": "Git et GitHub\n\n\n\n\n\n\n\n\nGit est un outil de gestion de version\n\nComme le track changes sur Word\n\nTrès populaire dans le monde de la programmation\n\n\n\n\n\n\n\n\nGitHub est un plateforme de stockage de repo Git\n\nComme un Onedrive/Dropbox pour Git\n\nNous allons essayer de l’utiliser pour… tout !"
-  },
-  {
-    "objectID": "slides/00 - Intro.html#pourquoi-la-gestion-de-version",
-    "href": "slides/00 - Intro.html#pourquoi-la-gestion-de-version",
-    "title": "01 - Introduction",
-    "section": "Pourquoi la gestion de version ?",
-    "text": "Pourquoi la gestion de version ?\n\n\n\nPhD Comics"
-  },
-  {
-    "objectID": "slides/00 - Intro.html#fonctionnement",
-    "href": "slides/00 - Intro.html#fonctionnement",
-    "title": "01 - Introduction",
-    "section": "Fonctionnement",
-    "text": "Fonctionnement"
-  },
-  {
-    "objectID": "slides/00 - Intro.html#mise-en-place",
-    "href": "slides/00 - Intro.html#mise-en-place",
-    "title": "01 - Introduction",
-    "section": "Mise en place",
-    "text": "Mise en place\nGit peut être utilisé depuis le terminal de commande\n\nUtilisation plus avancée\nNous pouvons normalement tout faire depuis R Studio\n\nGithub:\n\nCréez un compte avec votre adresse UQTR\nVérifiez votre adresse courriel"
-  },
-  {
-    "objectID": "slides/00 - Intro.html#bibliographie",
-    "href": "slides/00 - Intro.html#bibliographie",
-    "title": "01 - Introduction",
-    "section": "Bibliographie",
-    "text": "Bibliographie\n\n\nKuhn, M. and Silge, J. (2022). Tidy modeling with R: A framework for modeling in the tidyverse. O’Reilly Media.\n\n\nWickham, H. and Bryan, J. (2023). R Packages: Organize, Test, Document, and Share Your Code (2nd edition). O’Reilly Media.\n\n\nWickham, H., Çetinkaya-Rundel, M. and Grolemund, G. (2023). R for Data Science (2nd ed.). O’Reilly Media, Inc."
-  },
-  {
-    "objectID": "examen/examen.html",
-    "href": "examen/examen.html",
-    "title": "Examen",
-    "section": "",
-    "text": "L’examen se compose de 3 exercices. Pour avoir accès aux données et à la feuille de réponse, vous devrez utiliser GitHub et GitHub classroom.\nSur le portail de cours, acceptez l’invitation à rejoindre le projet GitHub Classroom pour l’examen.\nCopiez le lien de repo personnel. Cela devrait ressember à Examen-&lt;votre nom d'utilisateur GitHub&gt;.\nDans RStudio:\n\nFichier &gt; Nouveau Projet\nVersion Control &gt; Git\nDans Repository URL : indiquez l’adresse de repo copiée précédemment\nChoisissez un nom pour le dossier qui sera créé\nChoisissez le dossier où créer le projet\n\nCela va copier les fichiers présents sur GitHub, et les copier dans le dossier spécifié.\nDans RStudio, vous devriez voir le fichier .Rmd listé en bas à droite dans la liste de fichier.\nSi vous cliquez maintenant sur le fichier .Rmd, il va apparaitre dans la zone en haut à gauche. Vous pourrez l’éditer et le “Render/Knit” pour voir le résultat final.\nVeuillez noter que ce que vous écrivez dans le fichier Rmd et ce que vous écrivez dans la console ne communiquent pas (il s’agit de deux environnements différents). Si vous voulez utiliser la console (zone en bas à gauche), il faut retaper les commandes du fichier.\nLe type d’output dans le fichier .Rmd est réglé sur github_document. Cela veut dire que lorsque vous allez knit le document, un fichier .md sera généré avec votre rapport.\nC’est ce fichier .md qui sera évalué. Assurez que vous le pushez bien sur Github (il faudra l’inclure dans vos commit) et que son contenu est “propre”. Enlevez les messages indésirables ou non-utiles et assurez-vous que les graphes et images soient correctement rendue depuis GitHub."
-  },
-  {
-    "objectID": "examen/examen.html#les-données",
-    "href": "examen/examen.html#les-données",
-    "title": "Examen",
-    "section": "Les données",
-    "text": "Les données\nPour cet exercice, nous utiliserons les données d’utilisation des vélos en libre circulation à Washington, D.C. pour 2011 et 2012, avec les données de météo correspondantes. Les données sont disponibles dans le fichier data/bikeshare.csv.\nLes colonnes du jeu de données sont les suivantes:\n\ndteday: Date\nseason: Saison (1:hiver, 2:printemps, 3:été, 4:automne)\nyr: Année (0: 2011, 1:2012)\nmnth: Mois (1 to 12)\nhr: Année (0 to 23)\nholiday: Jour férié ou non\nweekday: Jour de la semaine (0:dimanche, …, 6:samedi)\nworkingday: 1 si c’est un jour ouvrable (lundi à vendredi, hors vacances), 0 sinon\nweathersit: Météo\n\n1: Temps clair, peu de nuages, partiellement couvert\n2: Brouillard et nuageux, brouillard et partiellement nuageux, brouillard\n3: Faible neige, faible pluie et orage, faible pluie et nuageux\n4: Grosse pluie, grèle, tempête, neige et brouillard\n\ntemp: Température normalisée en degrés Celsius (\\(t_min = -8\\) et \\(t_max = +39\\))\natemp: Température ressentie normalisée en degrés Celsius (\\(t_min = -16\\) et \\(t_max = +50\\))\nhum: Humidité normalisée (avec comme valeur maximale 100)\nwindspeed: Vitesse du vent normalisée en km/h (avec comme valeur maximale 67)\ncasual: Nombre d’utilisateurs casuels\nregistered: Nombre d’utilisateurs enregistrés (abonnement annuel)\ncnt: Nombre total d’utilisateurs (casual + registered)"
-  },
-  {
-    "objectID": "examen/examen.html#questions",
-    "href": "examen/examen.html#questions",
-    "title": "Examen",
-    "section": "Questions",
-    "text": "Questions\n\nQuestion 1 (5 points) - Recodez la variable season pour en faire un factor avec les niveaux suivants: “printemps”, “été”, “automne”, “hiver”. Assurez vous que les saisons soient dans l’ordre. Recodez les variables holiday et workingday en factor également avec les niveaux “non” et “oui”, avec “non” comme premier niveau. Recodez la variable yr en factor avec les niveaux “2011” et “2012”. Recodez la variable weathersit en factor avec les niveaux suivants: 1 - “Temps clair”, 2 - “Brouillard”, 3 - “Légères précipitations”, et 4 - “Fortes précipitations”.\n\nSi ce n’est pas déjà le cas, utilisez le package lubridate pour transformer la variable dteday en une variable de type date.\n\nQuestion 2 (5 points) - Calculez les valeurs absolues pour les variables temp, atemp, hum et windspeed, en multipliant les valeurs normalisées par leurs valeurs minimales et maximales.\nQuestion 3 (5 points) - Assurez vous que les variables casual et registered s’additionnent bien pour donner la variable cnt.\n\nIndice: Une possibilité est de créer une nouvelle colonne qui contient la valeur TRUE si la somme est égale à cnt et FALSE sinon. Vous pouvez ensuite utiliser cette colonne pour vérifier si la somme est correcte.\n\nQuestion 4 (10 points) - Recréez le graphique ci-dessous. Une fois que vous avez créé la visualisation, décrivez en un paragraphe ce que vous pensez être le point de cette visualisation.\n\n\nAnalysez le graphique et indiquez ce que vous en comprenez.\n\nQuestion 5 (10 points) - Créez un graphique montrant la relation entre le nombre de location de vélos, le faite qu’il s’agisse d’un jour de travail ou non et la saison. Interprétez votre graphique\nQuestion 6 (5 points) - Séparez les données en un ensemble d’entraînement et un ensemble de test. Utilisez 80% des données pour l’entraînement et 20% pour le test. Utilisez un réechantillonnage par Cross-Validation sur les données d’entrainement.\nQuestion 7 (10 points) - Créez deux modèles de régression prédisant le nombre total de locations de vélos à partir de la saison, de l’année, du fait qu’il s’agisse d’un jour de travail ou non, de la météo, de la température, de la température ressentie, de l’humidité et de la vitesse du vent. Pour chacun des modèles, quelle performance est obtenue après entraînement. Quel est le meilleur des deux modèles choisis ?\n\nIndice: Pensez à créer une recette dans laquelle vous pourrez créer faire les prétraitement que vous jugez utiles.\n\nQuestion 8 (10 points) - Appliquez vos deux modèles sur les données de tests. Représentez sur un même graphique les valeurs prédites par chaque modèle en fonction des vraies valeurs."
-  },
-  {
-    "objectID": "examen/examen.html#les-données-1",
-    "href": "examen/examen.html#les-données-1",
-    "title": "Examen",
-    "section": "Les données",
-    "text": "Les données\nPour cet exercice, nous allons utiliser les données sur les passagers du Titanic. Les données sont présentes dans le fichier data/Titanic.csv. L’objectif est de prédire si un passager a survécu ou non au naufrage du Titanic.\nLes colonnes du jeu de données sont les suivantes:\n\nPassengerId: Identifiant du passager\nSurvived: Survie (0 = Non, 1 = Oui)\nPclass: Classe du passager (1 = 1ère, 2 = 2ème, 3 = 3ème)\nName: Nom du passager\nSex: Sexe du passager\nAge: Âge du passager\nSibSp: Nombre de frères et soeurs / époux à bord\nParch: Nombre de parents / enfants à bord\nTicket: Numéro du ticket\nFare: Prix du ticket\nCabin: Numéro de cabine\nEmbarked: Port d’embarquement (C = Cherbourg, Q = Queenstown, S = Southampton)"
-  },
-  {
-    "objectID": "examen/examen.html#questions-1",
-    "href": "examen/examen.html#questions-1",
-    "title": "Examen",
-    "section": "Questions",
-    "text": "Questions\n\nQuestion 9 (5 points) - Recodez la variable Pclass en factor avec les niveaux “1ère”, “2ème” et “3ème”. Recodez la variable Survived en factor avec les niveaux “Non” et “Oui”. Recodez la variable Embarked en factor avec les niveaux “Cherbourg”, “Queenstown” et “Southampton”. Recodez la variable Sex en factor avec les niveaux “Femme” et “Homme”.\nQuestion 10 (10 points) - Certaines colonnes semblent avoir des valeurs manquantes. Comptez, pour chaque colonne le nombre de valeurs manquantes. Vous devriez obtenir les résultats suivants:\n\n\nAge: 177 valeurs manquantes\nCabin: 687 valeurs manquantes\nEmbarked: 2 valeurs manquantes\n\nProposez une manière de gérer les données manquantes pour les variables Cabin et Embarked.\nPour la variable Age, nous allons imputer les valeurs manquantes en utilisant la moyenne de l’âge des passagers. Commencez par calculer la moyenne et la déviation stadard de l’âge des passagers. Nous allons ensuite remplacer les valeurs manquentes par des valeurs tirées d’une distribution normale avec la moyenne et la déviation standard calculées. Créez une nouvelle colonne Age_calc où la valeur de l’âge est égale à celle de Age si elle est disponible et à celle celle calculée si elle est manquante. Pour le calcul, vous pouvez utiliser la fonction rnorm pour générer des valeurs aléatoires à partir d’une distribution normale.\nHint: Si vous utilisez la fonction rnorm directement dans la fonction mutate, il n’y aura qu’un seul tirage de la distribution. Pour contourner ce problème, vous pouvez utiliser la fonction map2 du package purrr pour appliquer la fonction rnorm à chaque ligne du jeu de données. La fonction map2 prend une liste de valeurs et une fonction comme arguments. Il existe également d’autres approches, vous êtes libre d’utiliser celle que vous souhaitez.\nHint: En utilisant la fonction rnorm, vous pouvez obtenir des valeurs négatives pour l’âge. Remplacez ces valeurs par 0.\n\nQuestion 11 (10 points) - Combien de passagers ont survécu au naufrage du Titanic? Combien de passagers n’ont pas survécu? Créez une visualisation représentant la survie des passagers en fonction de la classe et du sexe des passagers.\n\nQue pouvez vous en déduire?\n12 Question 12 (5 points) - Nous allons essayer de prédire la survie des passagers en fonction des différentes variables. Pour cela, nous allons séparer les données en un ensemble d’entraînement et un ensemble de test. Utilisez 80% des données pour l’entraînement et 20% pour le test. Utilisez un réechantillonnage par Bootstraping sur les données d’entrainement.\n\nQuestion 13 (15 points) - Créez deux modèles de classification pour prédire la survie des passagers en fonction de la classe, du sexe, de l’âge, du nombre de frères et soeurs / époux à bord, du nombre de parents / enfants à bord, du port d’embarquement et du prix du ticket. Pour chacun des modèles, quelle performance est obtenue après entraînement. Quel est le meilleur des deux modèles choisis ? Représentez sur un même graphique les courbes ROC des deux modèles.\n\nIndice: Pensez à créer une recette dans laquelle vous pourrez créer faire les prétraitement que vous jugez utiles.\n\nQuestion 14 (10 points) - Appliquez le meilleur des modèles sur les données de tests. À l’aide de la fonction conf_mat, qui prend comme premier argument la liste des vraies valeurs et en deuxième argument la liste des valeur prédites, affichez la matrice de confusion.\n\nSeriez-vous plus confiant dans la qualité de prédiction si le modèle prédit “Non” (pas de survie) ou s’il prédit “Oui” (survie)."
-  },
-  {
-    "objectID": "examen/examen.html#les-données-2",
-    "href": "examen/examen.html#les-données-2",
-    "title": "Examen",
-    "section": "Les données",
-    "text": "Les données\nPour cet exercice, nous allons utiliser des données représentant la composition chimique de morceaux de verre provenant de différentes vitres, fabriquées par deux entreprises. Les données sont présentes dans le fichier data/glass.csv.\nLes colonnes du jeu de données sont les suivantes:\n\ncompany: Indique si le verre provient de l’entreprise A ou B,\npane: Indique le numéro de la vitre,\nfragment: indique le numéro de fragment pour chaque vitre,\nrep: indique le numéro de réplicat pour chaque mesure de fragment,\n\nLes colonnes suivantes représentes les mesures par LA-ICP-MS des différents composants du verre. Toutes les unités sont en parties par millions (ppm).\nLes analyses de 3 fragments de verre inconnus sont également fournis dans le fichier data/unknown-glass.csv.\nL’objectif de cet exercice est de déterminer, si possible, pour chaque fragment:\n\nL’entreprise ayant frabriqué la vitre d’origine des fragments\nLa vitre d’origine des fragments\n\nCet exercice ce veut plus libre dans l’approche à suivre."
-  },
-  {
-    "objectID": "examen/examen.html#analyse-exploratoire-20-points",
-    "href": "examen/examen.html#analyse-exploratoire-20-points",
-    "title": "Examen",
-    "section": "Analyse exploratoire (20 points)",
-    "text": "Analyse exploratoire (20 points)\nCommencez par une analyse exploratoire (Visualisations, PCA, …).\n\nQuestion 15 (20 points) - Êtes-vous capable de répondre aux questions posées ?\n\nSi oui, quelle confiance avez vous dans vos conclusions ?"
-  },
-  {
-    "objectID": "examen/examen.html#classification-20-points",
-    "href": "examen/examen.html#classification-20-points",
-    "title": "Examen",
-    "section": "Classification (20 points)",
-    "text": "Classification (20 points)\nUtilisez ensuite un modèle de classification.\n\nQuestion 16 (20 points)Êtes-vous capable de répondre aux questions posées ?\n\nSi oui, quelle confiance avez vous dans vos conclusions ?\nBonus (10 points): Pour la question concernant l’entreprise d’origine, calculez le LR pour un des fragments inconnu."
-  },
-  {
-    "objectID": "labs/Semaine2.html",
-    "href": "labs/Semaine2.html",
-    "title": "Semaine 2 - Machine Learning",
-    "section": "",
-    "text": "L’objectif de ce lab est de nous familiariser avec la logique derrière le machine learning en utilisant la suite de package tidymodels.\nPour cela, nous allons travailler sur un jeu de données qui contient des informations sur des maisons à vendre dans la ville de Ames, Iowa, USA. Nous allons notament chercher à prédire le prix de vente des maisons en fonction des différentes caractéristiques."
-  },
-  {
-    "objectID": "labs/Semaine2.html#chargement-des-données",
-    "href": "labs/Semaine2.html#chargement-des-données",
-    "title": "Semaine 2 - Machine Learning",
-    "section": "Chargement des données",
-    "text": "Chargement des données\n\ndata(ames, package = \"modeldata\")\n\ndim(ames)\n\n[1] 2930   74\n\n\nNous pouvons jeter un coup d’oeil aux données:\n\nglimpse(ames)\n\nRows: 2,930\nColumns: 74\n$ MS_SubClass        &lt;fct&gt; One_Story_1946_and_Newer_All_Styles, One_Story_1946…\n$ MS_Zoning          &lt;fct&gt; Residential_Low_Density, Residential_High_Density, …\n$ Lot_Frontage       &lt;dbl&gt; 141, 80, 81, 93, 74, 78, 41, 43, 39, 60, 75, 0, 63,…\n$ Lot_Area           &lt;int&gt; 31770, 11622, 14267, 11160, 13830, 9978, 4920, 5005…\n$ Street             &lt;fct&gt; Pave, Pave, Pave, Pave, Pave, Pave, Pave, Pave, Pav…\n$ Alley              &lt;fct&gt; No_Alley_Access, No_Alley_Access, No_Alley_Access, …\n$ Lot_Shape          &lt;fct&gt; Slightly_Irregular, Regular, Slightly_Irregular, Re…\n$ Land_Contour       &lt;fct&gt; Lvl, Lvl, Lvl, Lvl, Lvl, Lvl, Lvl, HLS, Lvl, Lvl, L…\n$ Utilities          &lt;fct&gt; AllPub, AllPub, AllPub, AllPub, AllPub, AllPub, All…\n$ Lot_Config         &lt;fct&gt; Corner, Inside, Corner, Corner, Inside, Inside, Ins…\n$ Land_Slope         &lt;fct&gt; Gtl, Gtl, Gtl, Gtl, Gtl, Gtl, Gtl, Gtl, Gtl, Gtl, G…\n$ Neighborhood       &lt;fct&gt; North_Ames, North_Ames, North_Ames, North_Ames, Gil…\n$ Condition_1        &lt;fct&gt; Norm, Feedr, Norm, Norm, Norm, Norm, Norm, Norm, No…\n$ Condition_2        &lt;fct&gt; Norm, Norm, Norm, Norm, Norm, Norm, Norm, Norm, Nor…\n$ Bldg_Type          &lt;fct&gt; OneFam, OneFam, OneFam, OneFam, OneFam, OneFam, Twn…\n$ House_Style        &lt;fct&gt; One_Story, One_Story, One_Story, One_Story, Two_Sto…\n$ Overall_Cond       &lt;fct&gt; Average, Above_Average, Above_Average, Average, Ave…\n$ Year_Built         &lt;int&gt; 1960, 1961, 1958, 1968, 1997, 1998, 2001, 1992, 199…\n$ Year_Remod_Add     &lt;int&gt; 1960, 1961, 1958, 1968, 1998, 1998, 2001, 1992, 199…\n$ Roof_Style         &lt;fct&gt; Hip, Gable, Hip, Hip, Gable, Gable, Gable, Gable, G…\n$ Roof_Matl          &lt;fct&gt; CompShg, CompShg, CompShg, CompShg, CompShg, CompSh…\n$ Exterior_1st       &lt;fct&gt; BrkFace, VinylSd, Wd Sdng, BrkFace, VinylSd, VinylS…\n$ Exterior_2nd       &lt;fct&gt; Plywood, VinylSd, Wd Sdng, BrkFace, VinylSd, VinylS…\n$ Mas_Vnr_Type       &lt;fct&gt; Stone, None, BrkFace, None, None, BrkFace, None, No…\n$ Mas_Vnr_Area       &lt;dbl&gt; 112, 0, 108, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6…\n$ Exter_Cond         &lt;fct&gt; Typical, Typical, Typical, Typical, Typical, Typica…\n$ Foundation         &lt;fct&gt; CBlock, CBlock, CBlock, CBlock, PConc, PConc, PConc…\n$ Bsmt_Cond          &lt;fct&gt; Good, Typical, Typical, Typical, Typical, Typical, …\n$ Bsmt_Exposure      &lt;fct&gt; Gd, No, No, No, No, No, Mn, No, No, No, No, No, No,…\n$ BsmtFin_Type_1     &lt;fct&gt; BLQ, Rec, ALQ, ALQ, GLQ, GLQ, GLQ, ALQ, GLQ, Unf, U…\n$ BsmtFin_SF_1       &lt;dbl&gt; 2, 6, 1, 1, 3, 3, 3, 1, 3, 7, 7, 1, 7, 3, 3, 1, 3, …\n$ BsmtFin_Type_2     &lt;fct&gt; Unf, LwQ, Unf, Unf, Unf, Unf, Unf, Unf, Unf, Unf, U…\n$ BsmtFin_SF_2       &lt;dbl&gt; 0, 144, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1120, 0…\n$ Bsmt_Unf_SF        &lt;dbl&gt; 441, 270, 406, 1045, 137, 324, 722, 1017, 415, 994,…\n$ Total_Bsmt_SF      &lt;dbl&gt; 1080, 882, 1329, 2110, 928, 926, 1338, 1280, 1595, …\n$ Heating            &lt;fct&gt; GasA, GasA, GasA, GasA, GasA, GasA, GasA, GasA, Gas…\n$ Heating_QC         &lt;fct&gt; Fair, Typical, Typical, Excellent, Good, Excellent,…\n$ Central_Air        &lt;fct&gt; Y, Y, Y, Y, Y, Y, Y, Y, Y, Y, Y, Y, Y, Y, Y, Y, Y, …\n$ Electrical         &lt;fct&gt; SBrkr, SBrkr, SBrkr, SBrkr, SBrkr, SBrkr, SBrkr, SB…\n$ First_Flr_SF       &lt;int&gt; 1656, 896, 1329, 2110, 928, 926, 1338, 1280, 1616, …\n$ Second_Flr_SF      &lt;int&gt; 0, 0, 0, 0, 701, 678, 0, 0, 0, 776, 892, 0, 676, 0,…\n$ Gr_Liv_Area        &lt;int&gt; 1656, 896, 1329, 2110, 1629, 1604, 1338, 1280, 1616…\n$ Bsmt_Full_Bath     &lt;dbl&gt; 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, …\n$ Bsmt_Half_Bath     &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ Full_Bath          &lt;int&gt; 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 3, 2, …\n$ Half_Bath          &lt;int&gt; 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, …\n$ Bedroom_AbvGr      &lt;int&gt; 3, 2, 3, 3, 3, 3, 2, 2, 2, 3, 3, 3, 3, 2, 1, 4, 4, …\n$ Kitchen_AbvGr      &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …\n$ TotRms_AbvGrd      &lt;int&gt; 7, 5, 6, 8, 6, 7, 6, 5, 5, 7, 7, 6, 7, 5, 4, 12, 8,…\n$ Functional         &lt;fct&gt; Typ, Typ, Typ, Typ, Typ, Typ, Typ, Typ, Typ, Typ, T…\n$ Fireplaces         &lt;int&gt; 2, 0, 0, 2, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, …\n$ Garage_Type        &lt;fct&gt; Attchd, Attchd, Attchd, Attchd, Attchd, Attchd, Att…\n$ Garage_Finish      &lt;fct&gt; Fin, Unf, Unf, Fin, Fin, Fin, Fin, RFn, RFn, Fin, F…\n$ Garage_Cars        &lt;dbl&gt; 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, …\n$ Garage_Area        &lt;dbl&gt; 528, 730, 312, 522, 482, 470, 582, 506, 608, 442, 4…\n$ Garage_Cond        &lt;fct&gt; Typical, Typical, Typical, Typical, Typical, Typica…\n$ Paved_Drive        &lt;fct&gt; Partial_Pavement, Paved, Paved, Paved, Paved, Paved…\n$ Wood_Deck_SF       &lt;int&gt; 210, 140, 393, 0, 212, 360, 0, 0, 237, 140, 157, 48…\n$ Open_Porch_SF      &lt;int&gt; 62, 0, 36, 0, 34, 36, 0, 82, 152, 60, 84, 21, 75, 0…\n$ Enclosed_Porch     &lt;int&gt; 0, 0, 0, 0, 0, 0, 170, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…\n$ Three_season_porch &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ Screen_Porch       &lt;int&gt; 0, 120, 0, 0, 0, 0, 0, 144, 0, 0, 0, 0, 0, 0, 140, …\n$ Pool_Area          &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …\n$ Pool_QC            &lt;fct&gt; No_Pool, No_Pool, No_Pool, No_Pool, No_Pool, No_Poo…\n$ Fence              &lt;fct&gt; No_Fence, Minimum_Privacy, No_Fence, No_Fence, Mini…\n$ Misc_Feature       &lt;fct&gt; None, None, Gar2, None, None, None, None, None, Non…\n$ Misc_Val           &lt;int&gt; 0, 0, 12500, 0, 0, 0, 0, 0, 0, 0, 0, 500, 0, 0, 0, …\n$ Mo_Sold            &lt;int&gt; 5, 6, 6, 4, 3, 6, 4, 1, 3, 6, 4, 3, 5, 2, 6, 6, 6, …\n$ Year_Sold          &lt;int&gt; 2010, 2010, 2010, 2010, 2010, 2010, 2010, 2010, 201…\n$ Sale_Type          &lt;fct&gt; WD , WD , WD , WD , WD , WD , WD , WD , WD , WD , W…\n$ Sale_Condition     &lt;fct&gt; Normal, Normal, Normal, Normal, Normal, Normal, Nor…\n$ Sale_Price         &lt;int&gt; 215000, 105000, 172000, 244000, 189900, 195500, 213…\n$ Longitude          &lt;dbl&gt; -93.61975, -93.61976, -93.61939, -93.61732, -93.638…\n$ Latitude           &lt;dbl&gt; 42.05403, 42.05301, 42.05266, 42.05125, 42.06090, 4…\n\n\nQuestion 1: Faites un historgramme pour représenter les prix de vente des maisons. Faites un deuxième histogramme en utilisant une échelle logarithmique sur le prix."
-  },
-  {
-    "objectID": "labs/Semaine2.html#construction-du-modèle",
-    "href": "labs/Semaine2.html#construction-du-modèle",
-    "title": "Semaine 2 - Machine Learning",
-    "section": "Construction du modèle",
-    "text": "Construction du modèle\nIl existe de nombreux packages et fonctions pour faire appel à toute une collection de modèles. Tidymodels propose une interface unique à de nombreux modèles. Cela permet d’interagir de manière “unique” avec les modèles et leurs résultats.\nL’approche de base pour un modèle consiste à:\n\nSpécifier le modèle mathématique souhaité.\nSpécifier le “moteur” ( engine ) à utiliser pour le modèle. Souvent, cela correspond au package dans lequel on retrouve la fonction.\nDans certains cas, préciser le mode dans lequel le modèle va être utilisé. De base, si l’on travaille des données numériques, le mode sera Regression et si les données sont catégoriques, il sera Classification. Il est possible de le préciser explicitement.\n\nPar exemple, pour une regression linéaire, nous pourrions avoir:\n\nlinear_reg() %&gt;%\n  set_engine(\"lm\")\n\nLinear Regression Model Specification (regression)\n\nComputational engine: lm \n\nlinear_reg() %&gt;%\n  set_engine(\"glmnet\")\n\nLinear Regression Model Specification (regression)\n\nComputational engine: glmnet \n\n\nNous allons commencer avec une simple regression linéaire (engine : \"lm\"). Nous pouvons définir le modèle:\n\nlm_model &lt;- linear_reg() %&gt;%\n  set_engine(\"lm\")\n\nNous pourrions également utiliser un Random Forest. Pour cela, nous allons utiliser celui du package \"ranger\" (que vous devrez probablement installer). Il est possible que le modèle que nous souhaitons utiliser ait besoin de paramètres à préciser. Nous pouvons le faire à la définition du modèle:\n\nrf_model &lt;- rand_forest(trees = 1000, min_n = 5) %&gt;%\n  set_engine(\"ranger\") %&gt;%\n  set_mode(\"regression\")\n\nIci, nous avons préciser directement les arguments trees et min_n. Nous verrons la semaine prochaine comment tester plusieurs valeurs pour ces hyperparamètres. Nous avons également précisé que nous souhaitons faire du Random Forest en mode régession.\nÀ tout moment, vous pouvez aller consulter la doc des fonctions sur le site de tidymodels ou avec la commande ?rand_forest ou ?linear_reg.\nLa liste des différents modèles disponibles peut être consultée dans la documentation du package parsnip (partie de tidymodels)"
-  },
-  {
-    "objectID": "labs/Semaine2.html#entraînement-du-modèle",
-    "href": "labs/Semaine2.html#entraînement-du-modèle",
-    "title": "Semaine 2 - Machine Learning",
-    "section": "Entraînement du modèle",
-    "text": "Entraînement du modèle\nPour entraîner le modèle, il suffit de le fit sur des données. Il faut en revanche indiquer via une formule ce que nous souhaitons modéliser.\nLa forme générale pour les formules permet d’indiquer la variable expliquée ( response ou outcome ) en fonction des variables explicatives ( predictor ). En R, les formules sont écrite de la manière var_expliquee ~ var_explicative. Pour utiliser toutes les variables comme explicatives, on peut simplement écrire var_expliquee ~ .. Pour en savoir plus sur les formules et les possibilités, vous pouvez lire ce chapitre (Kuhn and Silge, 2022).\nPar exemple, si nous voulons prédire le prix en fonction de la localisation de la maison, nous pouvons indiquer:\n\nlm_fit &lt;- lm_model %&gt;%\n  fit(Sale_Price ~ Longitude + Latitude, data= ames_train)\n\nL’argument data indique sur quelles données faire le fit.\nNous pouvons, également entrainer notre modèle de Random Forest:\n\nrf_fit &lt;- rf_model %&gt;%\n  fit(Sale_Price ~ Longitude + Latitude, data= ames_train)"
-  },
-  {
-    "objectID": "labs/Semaine2.html#résultats-de-lentrainement",
-    "href": "labs/Semaine2.html#résultats-de-lentrainement",
-    "title": "Semaine 2 - Machine Learning",
-    "section": "Résultats de l’entrainement",
-    "text": "Résultats de l’entrainement\nPour afficher les résultats de l’entraînement, il y a plusieurs manières de faire, selon que nous voulons les afficher ou les visualiser.\nUne première approche consiste à extraire les paramètres de fit:\n\nlm_fit %&gt;% extract_fit_engine()\n\n\nCall:\nstats::lm(formula = Sale_Price ~ Longitude + Latitude, data = data)\n\nCoefficients:\n(Intercept)    Longitude     Latitude  \n -133779792      -823798      1351690  \n\nrf_fit %&gt;% extract_fit_engine()\n\nRanger result\n\nCall:\n ranger::ranger(x = maybe_data_frame(x), y = y, num.trees = ~1000,      min.node.size = min_rows(~5, x), num.threads = 1, verbose = FALSE,      seed = sample.int(10^5, 1)) \n\nType:                             Regression \nNumber of trees:                  1000 \nSample size:                      2197 \nNumber of independent variables:  2 \nMtry:                             1 \nTarget node size:                 5 \nVariable importance mode:         none \nSplitrule:                        variance \nOOB prediction error (MSE):       1842151707 \nR squared (OOB):                  0.7129196 \n\n\nFaite attention que certaines méthodes ne fonctionnent que pour les résultats de certains modèles. Par exemple, la fonction tidy() du package broom (inclus dans tidymodels) permet d’afficher certains résultats pour le résultats de la régrssion linéaire mais pas ceux du Random Forest.\n\ntidy(lm_fit)\n\n# A tibble: 3 × 5\n  term           estimate std.error statistic  p.value\n  &lt;chr&gt;             &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept) -133779792.  6803737.     -19.7 2.08e-79\n2 Longitude      -823798.    60860.     -13.5 3.75e-40\n3 Latitude       1351690.    84586.      16.0 1.85e-54\n\n\nDans ces cas, il ne faut pas hésiter à rechercher un peu dans la doc la meilleure manière d’afficher les résultats.\nIl est déjà possible à cette étape d’avoir une idée de la performance du modèle, sur les données d’entrainement. Vous l’avez peut-être vu pour le Random Forest, quand nous affichons les détails du modèle, un \\(R^2\\) est indiqué. Pour les résultats de la régression linéaire, on peut utiliser glance()\n\nlm_fit %&gt;% glance()\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared  sigma statistic  p.value    df  logLik    AIC    BIC\n      &lt;dbl&gt;         &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1     0.163         0.162 73331.      213. 2.38e-85     2 -27728. 55465. 55487.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;"
-  },
-  {
-    "objectID": "labs/Semaine2.html#faire-des-prédictions",
-    "href": "labs/Semaine2.html#faire-des-prédictions",
-    "title": "Semaine 2 - Machine Learning",
-    "section": "Faire des prédictions",
-    "text": "Faire des prédictions\nL’idée de cette étape est d’appliquer le modèle entraîné sur des données, en générale celles de tests. De base, cela se fait via la fonction predict:\n\nlm_fit %&gt;% predict(new_data = ames_test)\n\n# A tibble: 733 × 1\n     .pred\n     &lt;dbl&gt;\n 1 213054.\n 2 202464.\n 3 196577.\n 4 227633.\n 5 225029.\n 6 224060.\n 7 221036.\n 8 217686.\n 9 218026.\n10 215263.\n# ℹ 723 more rows\n\n\nComme vous le voyez, nous obtenons une liste de valeur prédite. La colonne contenant celles-ci s’appelle .pred.\nIl est souvent utile coller les prédictions au tableau des données de test:\n\nlm_pred &lt;- lm_fit %&gt;%\n  predict(new_data = ames_test) %&gt;%\n  bind_cols(ames_test)\n\nCette fois, nous obtenons un tableau complet, avec les données réelles et les données prédites. Nous pouvons par exemple les visualiser:\n\nlm_pred %&gt;%\n  ggplot(aes(x=.pred, y=Sale_Price)) +\n  geom_point(alpha = .5)\n\n\n\n\n\n\n\n\nQuestion 2: Faites de même pour le modèle Random Forest ! Que constatez vous ?"
-  },
-  {
-    "objectID": "labs/Semaine2.html#les-données",
-    "href": "labs/Semaine2.html#les-données",
-    "title": "Semaine 2 - Machine Learning",
-    "section": "Les données",
-    "text": "Les données\nNous allons travailler sur un jeu de données qui contient des informations sur des réservations d’hôtels. Nous allons essayer de prédire si une réservation avait des enfants. Pour cela, nous allons utiliser des méthodes de classification.\n\nlibrary(tidymodels)\nlibrary(readr)\n\nhotels &lt;- \n  read_csv(\"https://tidymodels.org/start/case-study/hotels.csv\") %&gt;%\n  mutate(across(where(is.character), as.factor))\n\ndim(hotels)\n\n[1] 50000    23\n\n\nQuestion 4: Déterminez la proportion de réservations qui ont des enfants."
-  },
-  {
-    "objectID": "labs/Semaine2.html#séparation-des-données-1",
-    "href": "labs/Semaine2.html#séparation-des-données-1",
-    "title": "Semaine 2 - Machine Learning",
-    "section": "Séparation des données",
-    "text": "Séparation des données\nQuestion 5: Commencez par fixer un seed et puis divisez les données en un ensemble d’entraînement et un ensemble de test. Utilisez 75% des données pour l’entraînement. Assurez-vous que les proportions de réservations avec enfants sont les mêmes dans les deux ensembles."
-  },
-  {
-    "objectID": "labs/Semaine2.html#premier-modèle-régression-logistique",
-    "href": "labs/Semaine2.html#premier-modèle-régression-logistique",
-    "title": "Semaine 2 - Machine Learning",
-    "section": "Premier modèle: Régression logistique",
-    "text": "Premier modèle: Régression logistique\n\nChoix du modèle\nQuestion 6: Configurez un modèle de regression logistique en utilisant la fonction logistic_reg(). Utilisez la fonction set_engine() pour spécifier que vous voulez utiliser la fonction glm(). Nous travaillons en mode Classification.\n\n\nRecette\nQuestion 7: Créez une recette pour le modèle en utilisant la fonction recipe().\nNous allons utiliser les recettes suivantes:\n\nstep_date(): pour créer les variable de l’année, du mois et du jour de la semaine\nstep_holiday(): pour créer une variable qui indique si la réservation a été faite pendant une période de vacances. Nous vous avons fourni une liste de vacances dans le fichier de réponse (voir ci-dessous). Vous pouvez indiquer d’utiliser cette liste avec step_holiday(arrival_date, holidays = holidays)\nstep_rm(): pour supprimer les variables arrival_date\n\nNous allons également transformer les variables catégorielles en dummy variables et les variables numériques en variables centrées et réduites.\n\nstep_dummy() pour convertir les variables catégorielles (all_nominal_predictors()) en variables binaires\nstep_zv() permet d’enlever les variables qui ne contiennent qu’une unique valeur (all_predictors())\nstep_normalize() pour centrer et réduire les variables numériques (all_numeric_predictors())\n\nPour step_holiday, vous pouvez utiliser la liste suivante:\n\nholidays &lt;- c(\"AllSouls\", \"AshWednesday\", \"ChristmasEve\", \"Easter\", \n              \"ChristmasDay\", \"GoodFriday\", \"NewYearsDay\", \"PalmSunday\")\n\n\n\nCréation du workflow\nQuestion 8: Créez un workflow en utilisant la fonction workflow(). Ajoutez-y la recette et le modèle.\n\n\nEntraînement et Prédiction\nQuestion 9: Fittez votre modèle\nQuestion 10: Prédisez le modèle en utilisant le bloc de code ci-dessous. Expliquez ce qu’il fait !\n\nlr_pred &lt;- predict(lr_fit, hotel_test) %&gt;%\n  bind_cols(predict(lr_fit, hotel_test, type = \"prob\")) %&gt;%\n  bind_cols(hotel_test %&gt;% select(children))\n\n\n\nÉvaluation du modèle\nNous allons générer une courbe ROC pour évaluer le modèle\n\nlr_auc &lt;- lr_pred %&gt;%\n  roc_curve(children, .pred_children) %&gt;%\n  mutate(model = \"Logistic Regression\")\n\nlr_auc %&gt;% autoplot()\n\nNous pouvons également calculer directement l’aire sous la courve en faisant appelle à yardstick et à la fonction roc_auc\n\nlr_pred %&gt;%\n  roc_auc(children, .pred_children)"
-  },
-  {
-    "objectID": "labs/Semaine2.html#deuxième-modèle-random-forest",
-    "href": "labs/Semaine2.html#deuxième-modèle-random-forest",
-    "title": "Semaine 2 - Machine Learning",
-    "section": "Deuxième modèle: Random Forest",
-    "text": "Deuxième modèle: Random Forest\nCette fois, nous allons faire de la classification avec Random Forest. Vous pouvez utiliser le modèle suivant:\n\ncores &lt;- parallel::detectCores() # Nombre de coeur à disposition pour le calcul\n\nrf_mod &lt;- \n  rand_forest(trees = 1000) %&gt;% \n  set_engine(\"ranger\", num.threads = cores) %&gt;% \n  set_mode(\"classification\")\n\nQuestion 11: Reproduisez les étapes de préprocessing, d’entrainement et de prédiction avec ce nouveau model. Pour le preprocessing, utilisez simplement les étapes:\n\nstep_date() avec la date d’arrivée\nstep_holiday() pour déterminer si la date d’arrivée correspond à une période de vacance\nstep_rm() pour retirer la date d’arrivée (nous voulons simplement garder l’indication de si cela correspond à une période de vacances)\n\nQuestion 12: Calculez l’aire sous la courbe ROC. Comparez par rapport à celle obtenu pour le premier modèle.\nQuestion 13: Faite un graphique contenant les courbes ROC pour les deux modèles. Pour cela, inspirez du code fourni pour la regression logistique pour obtenir un tableau similaire à lr_auc, mais contenant les valeurs obtenues avec Random Forest, en indiquant “Random Forest” dans la colonne model. Combinez, à l’aide de bind_rows() les deux tableaux et utilisez ggplot pour afficher les deux courbes sur un même grahique en changeant la couleur selon le modèle."
-  },
-  {
-    "objectID": "labs/Semaine1.html#données-1",
-    "href": "labs/Semaine1.html#données-1",
-    "title": "Semaine 1 - Data wrangling",
-    "section": "Données",
-    "text": "Données\nLes données utilisées dans ce laboratoire proviennent de l’étude Religious Landscape Study\n\n\n\n\n\nSource : Religious Landscape Study\n\n\n\n\nLes données sont disponibles dans le dossier data/"
-  },
-  {
-    "objectID": "labs/Semaine1.html#packages-1",
-    "href": "labs/Semaine1.html#packages-1",
-    "title": "Semaine 1 - Data wrangling",
-    "section": "Packages",
-    "text": "Packages\nPour pouvoir importer plus de formats de fichiers que le CSV, nous allons utiliser le package readxl. Installez-le si ce n’est pas déjà fait, et chargez-le. Le package janitor est un utilitaire qui peut être utile pour nettoyer les noms de colonnes, mais il n’est pas nécessaire pour ce lab.\n\nlibrary(readxl)      # lecture de fichiers Excel\nlibrary(janitor)     # utilitaire (facultatif), p. ex. clean_names()"
-  },
-  {
-    "objectID": "labs/Semaine1.html#exercices",
-    "href": "labs/Semaine1.html#exercices",
-    "title": "Semaine 1 - Data wrangling",
-    "section": "Exercices",
-    "text": "Exercices\n\nExercice 1 - Importation des données\nQuel est le type de fichier des données ? (CSV, Excel, autre ?)\nImportez les données dans R en utilisant la fonction appropriée.\n\n\nExercice 2 - Qualité de l’importation\nObservez les données importées. Combien y a-t-il de lignes et de colonnes ? Quels sont les types des différentes colonnes ? Si vous pensez q’une colonne n’a pas le bon type, modifiez-le.\nObservez le nom des colonnes importées. Renommez Religion tradition en religion et Sample Size en n.\nVous devriez avoir un tableau 12x6 à cette étape.\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\nExercice 3 - Forme Tidy\nLes données importées sont-elles Tidy ?\nSont-elles en format cours ou en format long ?\nPivotez les données de telle sorte à avoir un colonne income, indiquant la tranche de revenue, et une colonne proportion, indiquant la proportion de personne dans cette tranche de revenue. Les autres colonnes (religion et n) ne doivent pas être pivotées.\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\nExercice 4 - Calcul des fréquences\nEn combinant les colonnes proportion et n, créez une nouvelle colonne frequency indiquant le nombre de personnes dans chaque tranche de revenu pour chaque religion.\nAsssurez-vous “d’engristrer” votre nouveau tableau dans une variable.\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\nExercice 5 - Visualisation - 1ère étape\nFaite un diagrame en barres horizotales (geom_col), représentant pour chaque religion la fréquence de personnes.\nModifiez votre graphe de telle sorte à nettoyer les titres des différentes religion, et à les trier par ordre alphabétique.\nVous devriez obtenir cela :\n\n\n\n\n\n\n\n\n\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\nExercice 6 - Visualisation - 2ème étape\nNous allons maintenant vouloir colorer les barres en fonction des tranches de revenu. Pour cela vous pouvez utiliser l’argument position = \"fill\" de geom_col() pour avoir que les barres représentent la proportion.\nVous devriez obtenir quelque chose de similaire (les couleurs et la disposition peuvent différer) :\n\n\n\n\n\n\n\n\n\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit.\n\n\nExercice 7 - Visualisation finale\nIl reste un dernier problème à notre figure !! Vous le voyez ?\nCorrigez-le de telle sorte à obtenir une figure propre et lisible.\n\n\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit."
-  },
-  {
-    "objectID": "labs/Semaine1.html#conclusion",
-    "href": "labs/Semaine1.html#conclusion",
-    "title": "Semaine 1 - Data wrangling",
-    "section": "Conclusion",
-    "text": "Conclusion\nVérifiez que tout est correcte !\n🧶 ✅ ⬆️ Knit, commit, and push ! N’oubliez pas le message de commit."
-  },
-  {
-    "objectID": "slides/00 - Intro.html",
-    "href": "slides/00 - Intro.html",
-    "title": "01 - Introduction",
-    "section": "",
-    "text": "Être capable de manipuler des données et de les visualiser avec R (SFC1018)\nÈtre capable de mettre en oeuvre des méthodes de traitement statistique des données avec R (SFC6008)\nÊtre capable de réaliser un projet de traitement de données de A à Z en R.\n\n\n\n\n\n\n(Wickham et al., 2023)\n\n\n\n\n\n\n\n\n(Wickham et al., 2023)\n\n\n(Kuhn and Silge, 2022)"
   }
 ]

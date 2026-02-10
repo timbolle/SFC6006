@@ -2,7 +2,7 @@
 title: "01 - Introduction"
 subtitle: "SFC6006 - Sujets de pointe"
 author: "Tim Bollé"
-date: "2025-01-21"
+date: "2025-02-10"
 date-format: long
 footer: "SFC6006 | Tim Bollé"
 license: "CC BY-SA"
