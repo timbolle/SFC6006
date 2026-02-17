@@ -433,14 +433,14 @@ Computational engine: glmnet </code></pre>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"ranger"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_mode</span>(<span class="st">"regression"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Ici, nous avons préciser directement les arguments <code>trees</code> et <code>min_n</code>. Nous verrons la semaine prochaine comment tester plusieurs valeurs pour ces hyperparamètres. Nous avons également précisé que nous souhaitons faire du Random Forest en mode régession.</p>
-<p>À tout moment, vous pouvez aller consulter la doc des fonctions sur le site de <code>tidymodels</code> ou avec la commande <code>?rand_forest</code> ou <code>?linear_reg</code>.</p>
+<p>Ici, nous avons précisé directement les arguments <code>trees</code> et <code>min_n</code>. Nous verrons la semaine prochaine comment tester plusieurs valeurs pour ces hyperparamètres. Nous avons également précisé que nous souhaitons faire du Random Forest en mode régression.</p>
+<p>À tout moment, vous pouvez consulter la doc des fonctions sur le site de <code>tidymodels</code> ou avec la commande <code>?rand_forest</code> ou <code>?linear_reg</code>.</p>
 <p>La liste des différents modèles disponibles peut être consultée dans la <a href="https://parsnip.tidymodels.org/reference/index.html#models">documentation</a> du package <code>parsnip</code> (partie de <code>tidymodels</code>)</p>
 </section>
 <section id="entraînement-du-modèle" class="level2">
 <h2 class="anchored" data-anchor-id="entraînement-du-modèle">Entraînement du modèle</h2>
 <p>Pour entraîner le modèle, il suffit de le <code>fit</code> sur des données. Il faut en revanche indiquer via une <em>formule</em> ce que nous souhaitons modéliser.</p>
-<p>La forme générale pour les formules permet d’indiquer la variable expliquée ( <em>response</em> ou <em>outcome</em> ) en fonction des variables explicatives ( <em>predictor</em> ). En R, les formules sont écrite de la manière <code>var_expliquee ~ var_explicative</code>. Pour utiliser toutes les variables comme explicatives, on peut simplement écrire <code>var_expliquee ~ .</code>. Pour en savoir plus sur les formules et les possibilités, vous pouvez lire <a href="https://www.tmwr.org/base-r">ce chapitre</a> <span class="citation" data-cites="kuhnTidyModelingFramework2022">(<a href="#ref-kuhnTidyModelingFramework2022" role="doc-biblioref">Kuhn and Silge, 2022</a>)</span>.</p>
+<p>La forme générale pour les formules permet d’indiquer la variable expliquée ( <em>response</em> ou <em>outcome</em> ) en fonction des variables explicatives ( <em>predictor</em> ). En R, les formules sont écrites de la manière <code>var_expliquee ~ var_explicative</code>. Pour utiliser toutes les variables comme explicatives, on peut simplement écrire <code>var_expliquee ~ .</code>. Pour en savoir plus sur les formules et les possibilités, vous pouvez lire <a href="https://www.tmwr.org/base-r">ce chapitre</a> <span class="citation" data-cites="kuhnTidyModelingFramework2022">(<a href="#ref-kuhnTidyModelingFramework2022" role="doc-biblioref">Kuhn and Silge, 2022</a>)</span>.</p>
 <p>Par exemple, si nous voulons prédire le prix en fonction de la localisation de la maison, nous pouvons indiquer:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>lm_fit <span class="ot">&lt;-</span> lm_model <span class="sc">%&gt;%</span></span>
@@ -487,7 +487,7 @@ OOB prediction error (MSE):       1842151707
 R squared (OOB):                  0.7129196 </code></pre>
 </div>
 </div>
-<p>Faite attention que certaines méthodes ne fonctionnent que pour les résultats de certains modèles. Par exemple, la fonction <code>tidy()</code> du package <code>broom</code> (inclus dans <code>tidymodels</code>) permet d’afficher certains résultats pour le résultats de la régrssion linéaire mais pas ceux du Random Forest.</p>
+<p>Faites attention que certaines méthodes ne fonctionnent que pour les résultats de certains modèles. Par exemple, la fonction <code>tidy()</code> du package <code>broom</code> (inclus dans <code>tidymodels</code>) permet d’afficher certains résultats pour le résultats de la régrssion linéaire mais pas ceux du Random Forest.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(lm_fit)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -653,7 +653,7 @@ Coefficients:
 <section id="preprocessing-et-feature-engineering" class="level1">
 <h1>Preprocessing et feature engineering</h1>
 <p>Dans <code>Tidymodels</code>, les opérations de preprocessing et de feature engineering sont faites via des <code>recipes</code>.</p>
-<p>Dans une recette de base, nous allons définir une formule, élément de base pour définir les variables expliquées et explicatives, ainsi qu’une série de <code>step_*</code> qui correspondront à la suite d’opération que nous souhaitons faire sur nos données.</p>
+<p>Dans une recette de base, nous allons définir une formule, élément de base pour définir les variables expliquées et explicatives, ainsi qu’une série de <code>step_*</code> qui correspondront à la suite d’opérations que nous souhaitons faire sur nos données.</p>
 <p>Par exemple, nous pourrions vouloir faire quelque chose comme cela:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>rcp_ames <span class="ot">&lt;-</span> <span class="fu">recipe</span>(Sale_Price <span class="sc">~</span> Neighborhood <span class="sc">+</span> Gr_Liv_Area <span class="sc">+</span> Year_Built <span class="sc">+</span> Bldg_Type,</span>
@@ -700,7 +700,7 @@ predictor: 4</code></pre>
 </div>
 <p>Dans cette recette, nous avons:</p>
 <ul>
-<li>Donner la base de la recette avec <code>recipe()</code>, dans laquelle nous spécifions la formule à utiliser. Ici nous précisons <code>data = ames_train</code>. Il faut noter qu’à cette étape, les données ne sont pas transformées. L’argument <code>data</code> permet juste d’indiquer les types des colonnes. Nous aurions pu mettre <code>data = ames</code>, les résultats auraient été les mêmes. Ici, nous allons prédire le prix de vente à partir du quartier (<code>Neighborhood</code>), de la surface habitable (<code>Gr_Liv_Area</code>), de l’année de construction (<code>Year_Built</code>) et du type de bâtiment (<code>Bldg_Type</code>).</li>
+<li>Donné la base de la recette avec <code>recipe()</code>, dans laquelle nous spécifions la formule à utiliser. Ici nous précisons <code>data = ames_train</code>. Il faut noter qu’à cette étape, les données ne sont pas transformées. L’argument <code>data</code> permet juste d’indiquer les types des colonnes. Nous aurions pu mettre <code>data = ames</code>, les résultats auraient été les mêmes. Ici, nous allons prédire le prix de vente à partir du quartier (<code>Neighborhood</code>), de la surface habitable (<code>Gr_Liv_Area</code>), de l’année de construction (<code>Year_Built</code>) et du type de bâtiment (<code>Bldg_Type</code>).</li>
 <li><code>step_log()</code> permet d’appliquer un log base 10 sur le predictor <code>Gr_Liv_Area</code>.</li>
 <li><code>step_other()</code> permet de regrouper les catégories les moins fréquentes dans une catégorie <em>“other”</em>.</li>
 <li><code>step_dummy()</code> permet de transformer des colonnes en variable <em>dummy</em>. Il est possible de lui dire de le faire directement sur toutes les variables qualitatives avec la fonction <code>all_nominal_predictors()</code>.</li>

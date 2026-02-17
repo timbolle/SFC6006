@@ -109,9 +109,9 @@ rf_model <- rand_forest(trees = 1000, min_n = 5) %>%
   set_mode("regression")
 ```
 
-Ici, nous avons préciser directement les arguments `trees` et `min_n`. Nous verrons la semaine prochaine comment tester plusieurs valeurs pour ces hyperparamètres. Nous avons également précisé que nous souhaitons faire du Random Forest en mode régession.
+Ici, nous avons précisé directement les arguments `trees` et `min_n`. Nous verrons la semaine prochaine comment tester plusieurs valeurs pour ces hyperparamètres. Nous avons également précisé que nous souhaitons faire du Random Forest en mode régression.
 
-À tout moment, vous pouvez aller consulter la doc des fonctions sur le site de `tidymodels` ou avec la commande `?rand_forest` ou `?linear_reg`.
+À tout moment, vous pouvez consulter la doc des fonctions sur le site de `tidymodels` ou avec la commande `?rand_forest` ou `?linear_reg`.
 
 La liste des différents modèles disponibles peut être consultée dans la [documentation](https://parsnip.tidymodels.org/reference/index.html#models) du package `parsnip` (partie de `tidymodels`)
 
@@ -120,7 +120,7 @@ La liste des différents modèles disponibles peut être consultée dans la [doc
 
 Pour entraîner le modèle, il suffit de le `fit` sur des données. Il faut en revanche indiquer via une *formule* ce que nous souhaitons modéliser.
 
-La forme générale pour les formules permet d'indiquer la variable expliquée ( _response_ ou _outcome_ ) en fonction des variables explicatives ( _predictor_ ). En R, les formules sont écrite de la manière `var_expliquee ~ var_explicative`. Pour utiliser toutes les variables comme explicatives, on peut simplement écrire `var_expliquee ~ .`. Pour en savoir plus sur les formules et les possibilités, vous pouvez lire [ce chapitre](https://www.tmwr.org/base-r) [@kuhnTidyModelingFramework2022].
+La forme générale pour les formules permet d'indiquer la variable expliquée ( _response_ ou _outcome_ ) en fonction des variables explicatives ( _predictor_ ). En R, les formules sont écrites de la manière `var_expliquee ~ var_explicative`. Pour utiliser toutes les variables comme explicatives, on peut simplement écrire `var_expliquee ~ .`. Pour en savoir plus sur les formules et les possibilités, vous pouvez lire [ce chapitre](https://www.tmwr.org/base-r) [@kuhnTidyModelingFramework2022].
 
 Par exemple, si nous voulons prédire le prix en fonction de la localisation de la maison, nous pouvons indiquer:
 
@@ -151,7 +151,7 @@ lm_fit %>% extract_fit_engine()
 rf_fit %>% extract_fit_engine()
 ```
 
-Faite attention que certaines méthodes ne fonctionnent que pour les résultats de certains modèles. Par exemple, la fonction `tidy()` du package `broom` (inclus dans `tidymodels`) permet d'afficher certains résultats pour le résultats de la régrssion linéaire mais pas ceux du Random Forest.
+Faites attention que certaines méthodes ne fonctionnent que pour les résultats de certains modèles. Par exemple, la fonction `tidy()` du package `broom` (inclus dans `tidymodels`) permet d'afficher certains résultats pour le résultats de la régrssion linéaire mais pas ceux du Random Forest.
 
 ```{r}
 tidy(lm_fit)
@@ -253,7 +253,7 @@ Nous verrons plus en détails l'intérêt de ces workflow la semaine prochaine.
 
 Dans `Tidymodels`, les opérations de preprocessing et de feature engineering sont faites via des `recipes`.
 
-Dans une recette de base, nous allons définir une formule, élément de base pour définir les variables expliquées et explicatives, ainsi qu'une série de `step_*` qui correspondront à la suite d'opération que nous souhaitons faire sur nos données.
+Dans une recette de base, nous allons définir une formule, élément de base pour définir les variables expliquées et explicatives, ainsi qu'une série de `step_*` qui correspondront à la suite d'opérations que nous souhaitons faire sur nos données.
 
 Par exemple, nous pourrions vouloir faire quelque chose comme cela:
 
@@ -269,7 +269,7 @@ rcp_ames
 
 Dans cette recette, nous avons:
 
-- Donner la base de la recette avec `recipe()`, dans laquelle nous spécifions la formule à utiliser. Ici nous précisons `data = ames_train`. Il faut noter qu'à cette étape, les données ne sont pas transformées. L'argument `data` permet juste d'indiquer les types des colonnes. Nous aurions pu mettre `data = ames`, les résultats auraient été les mêmes. Ici, nous allons prédire le prix de vente à partir du quartier (`Neighborhood`), de la surface habitable (`Gr_Liv_Area`), de l'année de construction (`Year_Built`) et du type de bâtiment (`Bldg_Type`).
+- Donné la base de la recette avec `recipe()`, dans laquelle nous spécifions la formule à utiliser. Ici nous précisons `data = ames_train`. Il faut noter qu'à cette étape, les données ne sont pas transformées. L'argument `data` permet juste d'indiquer les types des colonnes. Nous aurions pu mettre `data = ames`, les résultats auraient été les mêmes. Ici, nous allons prédire le prix de vente à partir du quartier (`Neighborhood`), de la surface habitable (`Gr_Liv_Area`), de l'année de construction (`Year_Built`) et du type de bâtiment (`Bldg_Type`).
 - `step_log()` permet d'appliquer un log base 10 sur le predictor `Gr_Liv_Area`.
 - `step_other()` permet de regrouper les catégories les moins fréquentes dans une catégorie _"other"_.
 - `step_dummy()` permet de transformer des colonnes en variable _dummy_. Il est possible de lui dire de le faire directement sur toutes les variables qualitatives avec la fonction `all_nominal_predictors()`.
@@ -307,13 +307,6 @@ lm_wf_fit %>% extract_fit_engine() %>% tidy()
 # Pour les recettes, la fonction tidy() est toujours disponible
 lm_wf_fit %>% extract_recipe() %>% tidy()
 ```
-
-
-
-
-
-
-
 
 
 
