@@ -164,101 +164,45 @@ pip install -r requirements.txt
 Vous verrez que si vous reprenez des projets faits par d'autres personnes, il y a souvent un fichier `requirements.txt` qui liste les dépendances du projet.
 
 
-# 5) Mini-exercice: adapter un script
+# 5) Analyse de `Data_Cannabis.csv`
+
+Vous trouverez sur Github classroom un repo dans lequel se trouve un notebook Jupyter (`analyse_cannabis.ipynb`) qui couvre une analyse de données complète sur un dataset de cannabis.
+
+Ce notebook, qui est similaire à un Rmarkdown, couvre:
+
+1. importation des données;
+2. exploration des données;
+3. ACP (PCA) et visualisation;
+4. classification supervisée.
+
+## Exécution
+
+Ouvrez le fichier `analyse_cannabis.ipynb` dans VS Code. Assurez-vous que le kernel Python est bien celui de votre environnement virtuel (`.venv`).
+
+Vous devriez ensuite pouvoir exécuter les cellules du notebook une par une (avec le bouton "Run Cell" ou `Shift+Enter`) et voir les résultats directement dans le notebook.
+
+Essayez de comprendre chaque étape du code et les résultats affichés. N'hésitez pas à modifier le code pour voir comment cela affecte les résultats (ex: changer les variables utilisées, les paramètres du modèle, etc.).
+
+Pour aller plus loin, vous pouvez aussi essayer d'ajouter des visualisations supplémentaires ou d'ajouter un étape de prétraitement des données, par exemple en appliquant une étape de normalisation des variables avant l'ACP.
+
+
+# 6) À vous de jouer: mini-exercice
 
 ## Contexte
 
-Vous recevez un script Python incomplet. Le but est de:
+Vous avez à disposition des analyses issues de différentes saisies faites dans différentes provinces et villes de Suisse. Le but de cet exercice est de voir s'il est possible de séparer chimiquement les échantillons saisies dans les différentes régions, indiquant possiblement des réseaux de distribution différents. 
+
+Deux inconnus sont également à disposition, qui correspondent à des échantillons saisis à la frontière. L'objectif est de voir s'il est possible de déterminer vers quelle région ces échantillons étaient destinés.
+
+Créez un notebook Jupyter et essayez de faire une analyse similaire à celle du notebook `analyse_cannabis.ipynb` en suivant les étapes:
 
 1. charger un fichier CSV,
-2. nettoyer des valeurs manquantes,
-3. entrainer un modele simple,
-4. afficher une metrique.
+2. Explorez vos données (dimensions, types de variables, valeurs manquantes, etc.),
+3. Essayez de visualiser les données (ex: PCA, pairplot, etc.),
+4. Essayez si besoin de faire une classification supervisée (ex: Random Forest).
+5. Déterminez à quelle région les échantillons inconnus sont les plus similaires.
 
-## Donnees
+## Données à disposition
 
-Utiliser le fichier `labs/data/nobel.csv`.
-
-## Script de depart
-
-Creer un fichier `mini_exercice.py` avec le code suivant:
-
-```python
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score
-
-# 1) Charger les donnees
-df = pd.read_csv("labs/data/nobel.csv")
-
-# 2) Garder seulement des colonnes utiles
-# TODO: adapter si necessaire selon les colonnes presentes
-cols = ["category", "sex", "birth_country", "year"]
-df = df[cols].copy()
-
-# 3) Nettoyage simple
-df = df.dropna()
-
-# 4) Variable cible et variables explicatives
-# Exemple: predire la categorie du prix Nobel
-y = df["category"]
-X = df[["sex", "birth_country", "year"]]
-
-# 5) Encodage des variables categorielles
-X = pd.get_dummies(X, drop_first=True)
-
-# 6) Separation train/test
-X_train, X_test, y_train, y_test = train_test_split(
-	X, y, test_size=0.2, random_state=42, stratify=y
-)
-
-# 7) Modele
-model = RandomForestClassifier(n_estimators=200, random_state=42)
-model.fit(X_train, y_train)
-
-# 8) Evaluation
-pred = model.predict(X_test)
-acc = accuracy_score(y_test, pred)
-print(f"Accuracy: {acc:.3f}")
-```
-
-## Votre travail
-
-- Verifier les noms de colonnes avec `print(df.columns)`.
-- Adapter `cols` si une colonne n'existe pas.
-- Remplacer la cible `y` par une autre variable (ex: `sex`) et observer l'impact.
-- Changer le modele (ex: `LogisticRegression`) et comparer l'accuracy.
-
-## Questions de reflection
-
-1. Pourquoi doit-on encoder les variables categorielles?
-2. Pourquoi separer train/test?
-3. Pourquoi fixer `random_state`?
-4. Que se passe-t-il si on ne retire pas les valeurs manquantes?
-
-# Bonus: equivalent d'un notebook
-
-Vous pouvez aussi travailler en notebook (`.ipynb`) dans VS Code.
-
-Workflow minimal:
-
-1. creer un notebook;
-2. choisir le kernel Python `.venv`;
-3. executer les cellules une par une;
-4. exporter si necessaire.
-
-# Recap
-
-Si vous retenez 4 choses de ce lab:
-
-1. un projet Python = un dossier + un `.venv`;
-2. toujours selectionner l'interpreteur du projet dans VS Code;
-3. installer les dependances dans l'environnement actif;
-4. figer les dependances (`requirements.txt`) pour la reproductibilite.
-
-# Pour aller plus loin
-
-- Ajouter un fichier `README.md` avec les commandes d'installation.
-- Apprendre `pytest` pour les tests unitaires.
-- Tester `ruff` et `black` pour la qualite de code.
+- `data/saissies.csv`: données de saisies avec des variables chimiques et la région de saisie.
+- `data/inconnu.csv`: données des échantillons inconnus.

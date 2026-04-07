@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.552">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>SFC6006 - Semaine 4 - Demarrer en Python pour la science des donnees</title>
+<title>Semaine 4 - Démarrer en Python – SFC6006</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -21,8 +24,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -64,15 +68,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-0f80a58165a724fccfd76cdd5d61267f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -116,7 +121,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -126,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-labs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-labs" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Labs</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-labs">    
@@ -158,7 +163,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -174,37 +179,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#rstudio-vs-vs-code-correspondances-rapides" id="toc-rstudio-vs-vs-code-correspondances-rapides" class="nav-link" data-scroll-target="#rstudio-vs-vs-code-correspondances-rapides">RStudio vs VS Code: correspondances rapides</a></li>
-  <li><a href="#installation-de-vs-code-et-des-extensions" id="toc-installation-de-vs-code-et-des-extensions" class="nav-link" data-scroll-target="#installation-de-vs-code-et-des-extensions">1) Installation de VS Code et des extensions</a>
-  <ul class="collapse">
-  <li><a href="#installer-vs-code" id="toc-installer-vs-code" class="nav-link" data-scroll-target="#installer-vs-code">Installer VS Code</a></li>
-  <li><a href="#extensions-a-installer" id="toc-extensions-a-installer" class="nav-link" data-scroll-target="#extensions-a-installer">Extensions a installer</a></li>
-  </ul></li>
-  <li><a href="#installation-de-python" id="toc-installation-de-python" class="nav-link" data-scroll-target="#installation-de-python">2) Installation de Python</a>
+  <li><a href="#installation-de-python" id="toc-installation-de-python" class="nav-link" data-scroll-target="#installation-de-python">1) Installation de Python</a>
   <ul class="collapse">
   <li><a href="#windows" id="toc-windows" class="nav-link" data-scroll-target="#windows">Windows</a></li>
   <li><a href="#verification" id="toc-verification" class="nav-link" data-scroll-target="#verification">Verification</a></li>
   </ul></li>
-  <li><a href="#creer-un-environnement-virtuel" id="toc-creer-un-environnement-virtuel" class="nav-link" data-scroll-target="#creer-un-environnement-virtuel">3) Creer un environnement virtuel</a>
+  <li><a href="#installation-de-vs-code-et-des-extensions" id="toc-installation-de-vs-code-et-des-extensions" class="nav-link" data-scroll-target="#installation-de-vs-code-et-des-extensions">2) Installation de VS Code et des extensions</a>
+  <ul class="collapse">
+  <li><a href="#installer-vs-code" id="toc-installer-vs-code" class="nav-link" data-scroll-target="#installer-vs-code">Installer VS Code</a></li>
+  <li><a href="#extensions-a-installer" id="toc-extensions-a-installer" class="nav-link" data-scroll-target="#extensions-a-installer">Extensions a installer</a></li>
+  <li><a href="#vérification" id="toc-vérification" class="nav-link" data-scroll-target="#vérification">Vérification</a></li>
+  </ul></li>
+  <li><a href="#créer-un-environnement-virtuel" id="toc-créer-un-environnement-virtuel" class="nav-link" data-scroll-target="#créer-un-environnement-virtuel">3) Créer un environnement virtuel</a>
   <ul class="collapse">
   <li><a href="#pourquoi" id="toc-pourquoi" class="nav-link" data-scroll-target="#pourquoi">Pourquoi?</a></li>
-  <li><a href="#etapes-dans-le-dossier-du-projet" id="toc-etapes-dans-le-dossier-du-projet" class="nav-link" data-scroll-target="#etapes-dans-le-dossier-du-projet">Etapes (dans le dossier du projet)</a></li>
-  <li><a href="#selectionner-linterpreteur-dans-vs-code" id="toc-selectionner-linterpreteur-dans-vs-code" class="nav-link" data-scroll-target="#selectionner-linterpreteur-dans-vs-code">Selectionner l’interpreteur dans VS Code</a></li>
+  <li><a href="#depuis-le-terminal" id="toc-depuis-le-terminal" class="nav-link" data-scroll-target="#depuis-le-terminal">Depuis le terminal</a></li>
+  <li><a href="#depuis-vs-code" id="toc-depuis-vs-code" class="nav-link" data-scroll-target="#depuis-vs-code">Depuis VS Code</a></li>
+  <li><a href="#verification-1" id="toc-verification-1" class="nav-link" data-scroll-target="#verification-1">Verification</a></li>
   </ul></li>
-  <li><a href="#installer-les-packages-data-science" id="toc-installer-les-packages-data-science" class="nav-link" data-scroll-target="#installer-les-packages-data-science">4) Installer les packages data science</a>
+  <li><a href="#installer-des-packages" id="toc-installer-des-packages" class="nav-link" data-scroll-target="#installer-des-packages">4) Installer des packages</a></li>
+  <li><a href="#analyse-de-data_cannabis.csv" id="toc-analyse-de-data_cannabis.csv" class="nav-link" data-scroll-target="#analyse-de-data_cannabis.csv">5) Analyse de <code>Data_Cannabis.csv</code></a>
   <ul class="collapse">
-  <li><a href="#test-rapide" id="toc-test-rapide" class="nav-link" data-scroll-target="#test-rapide">Test rapide</a></li>
+  <li><a href="#exécution" id="toc-exécution" class="nav-link" data-scroll-target="#exécution">Exécution</a></li>
   </ul></li>
-  <li><a href="#mini-exercice-adapter-un-script" id="toc-mini-exercice-adapter-un-script" class="nav-link" data-scroll-target="#mini-exercice-adapter-un-script">5) Mini-exercice: adapter un script</a>
+  <li><a href="#à-vous-de-jouer-mini-exercice" id="toc-à-vous-de-jouer-mini-exercice" class="nav-link" data-scroll-target="#à-vous-de-jouer-mini-exercice">6) À vous de jouer: mini-exercice</a>
   <ul class="collapse">
   <li><a href="#contexte" id="toc-contexte" class="nav-link" data-scroll-target="#contexte">Contexte</a></li>
-  <li><a href="#donnees" id="toc-donnees" class="nav-link" data-scroll-target="#donnees">Donnees</a></li>
-  <li><a href="#script-de-depart" id="toc-script-de-depart" class="nav-link" data-scroll-target="#script-de-depart">Script de depart</a></li>
-  <li><a href="#votre-travail" id="toc-votre-travail" class="nav-link" data-scroll-target="#votre-travail">Votre travail</a></li>
-  <li><a href="#questions-de-reflection" id="toc-questions-de-reflection" class="nav-link" data-scroll-target="#questions-de-reflection">Questions de reflection</a></li>
+  <li><a href="#données-à-disposition" id="toc-données-à-disposition" class="nav-link" data-scroll-target="#données-à-disposition">Données à disposition</a></li>
   </ul></li>
-  <li><a href="#bonus-equivalent-dun-notebook" id="toc-bonus-equivalent-dun-notebook" class="nav-link" data-scroll-target="#bonus-equivalent-dun-notebook">Bonus: equivalent d’un notebook</a></li>
-  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
-  <li><a href="#pour-aller-plus-loin" id="toc-pour-aller-plus-loin" class="nav-link" data-scroll-target="#pour-aller-plus-loin">Pour aller plus loin</a></li>
   </ul>
 </nav>
     </div>
@@ -213,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Semaine 4 - Demarrer en Python pour la science des donnees</h1>
+<h1 class="title">Semaine 4 - Démarrer en Python</h1>
 </div>
 
 
@@ -232,29 +234,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="introduction" class="level1">
 <h1>Introduction</h1>
-<p>Cette semaine, l’objectif n’est pas de devenir expert Python, mais de savoir demarrer proprement un projet Python en autonomie.</p>
-<p>Vous connaissez deja bien R et RStudio. L’idee est de traduire vos reflexes:</p>
+<p>Cette semaine, l’objectif n’est pas de devenir expert Python, mais d’être capable de démarrer proprement un projet Python.</p>
+<p>Vous connaissez déjà bien R et RStudio. L’idee est de traduire ces éléments dans l’écosystème Python et VS Code:</p>
 <ul>
-<li>creer un projet,</li>
+<li>créer un projet,</li>
 <li>installer des packages,</li>
-<li>executer du code,</li>
+<li>exécuter du code,</li>
 <li>et garder un environnement reproductible.</li>
 </ul>
 <p>En fin de lab, vous aurez:</p>
 <ol type="1">
-<li>installe VS Code et les extensions utiles;</li>
-<li>installe Python;</li>
-<li>cree un environnement virtuel;</li>
-<li>installe les packages de base pour data science;</li>
-<li>adapte un petit script de base.</li>
+<li>installer VS Code et les extensions utiles;</li>
+<li>installer Python;</li>
+<li>créer un environnement virtuel;</li>
+<li>installer les packages de base pour la science des données;</li>
+<li>adapter un petit script de base.</li>
 </ol>
 </section>
 <section id="rstudio-vs-vs-code-correspondances-rapides" class="level1">
 <h1>RStudio vs VS Code: correspondances rapides</h1>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
-<th>Reflexe R/RStudio</th>
+<th>R/RStudio</th>
 <th>Equivalent Python/VS Code</th>
 </tr>
 </thead>
@@ -276,264 +278,205 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>Script <code>.py</code></td>
 </tr>
 <tr class="odd">
-<td>Knit Rmd</td>
-<td>Quarto peut executer Python aussi</td>
+<td>Knit <code>.Rmd</code></td>
+<td>Jupyter Notebook <code>.ipynb</code></td>
 </tr>
 </tbody>
 </table>
-<p>Important: en Python, on isole generalement les dependances dans un environnement virtuel par projet.</p>
-</section>
-<section id="installation-de-vs-code-et-des-extensions" class="level1">
-<h1>1) Installation de VS Code et des extensions</h1>
-<section id="installer-vs-code" class="level2">
-<h2 class="anchored" data-anchor-id="installer-vs-code">Installer VS Code</h2>
-<p>Si ce n’est pas deja fait, telechargez et installez VS Code depuis le site officiel.</p>
-</section>
-<section id="extensions-a-installer" class="level2">
-<h2 class="anchored" data-anchor-id="extensions-a-installer">Extensions a installer</h2>
-<p>Dans VS Code, ouvrir l’onglet Extensions et installer:</p>
-<ul>
-<li>Python (Microsoft)</li>
-<li>Pylance (Microsoft)</li>
-<li>Jupyter (Microsoft)</li>
-<li>Quarto (Quarto)</li>
-</ul>
-<p>Optionnel mais utile:</p>
-<ul>
-<li>Error Lens</li>
-<li>GitLens</li>
-</ul>
-<p>Verification rapide:</p>
-<ul>
-<li>vous ouvrez un fichier <code>.py</code>;</li>
-<li>VS Code affiche la version Python en bas a droite;</li>
-<li>l’autocompletion fonctionne.</li>
-</ul>
-</section>
+<p>Important: en Python, on isole generalement les dépendances dans un environnement virtuel par projet.</p>
 </section>
 <section id="installation-de-python" class="level1">
-<h1>2) Installation de Python</h1>
+<h1>1) Installation de Python</h1>
 <section id="windows" class="level2">
 <h2 class="anchored" data-anchor-id="windows">Windows</h2>
-<p>Option simple: installer Python depuis python.org (cocher “Add Python to PATH”).</p>
-<p>Option recommandee en contexte plus avance: Miniconda.</p>
+<p>Installez Python depuis <a href="https://www.python.org/downloads/">python.org</a>.</p>
+<p>De base, le site officiel propose d’installer le <em>Python install manager</em>. Il s’agit d’un outil en ligne de commande pour gérer les versions de Python. C’est une bonne option si vous voulez gérer plusieurs versions de Python sur votre machine. Une fois installé, la dernière version de python peut être installée avec (dans un terminal):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pymanager</span> install default</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="verification" class="level2">
 <h2 class="anchored" data-anchor-id="verification">Verification</h2>
-<p>Dans un terminal VS Code:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>ou selon votre machine:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">py</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Vous devez voir une version de Python (ex: 3.12.x).</p>
+<p>Dans un terminal:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Vous devez voir une version de Python (ex: Python 3.14.3).</p>
 </section>
 </section>
-<section id="creer-un-environnement-virtuel" class="level1">
-<h1>3) Creer un environnement virtuel</h1>
+<section id="installation-de-vs-code-et-des-extensions" class="level1">
+<h1>2) Installation de VS Code et des extensions</h1>
+<section id="installer-vs-code" class="level2">
+<h2 class="anchored" data-anchor-id="installer-vs-code">Installer VS Code</h2>
+<p>Si ce n’est pas déjà fait, téléchargez et installez VS Code depuis le <a href="https://code.visualstudio.com/">site officiel</a>.</p>
+</section>
+<section id="extensions-a-installer" class="level2">
+<h2 class="anchored" data-anchor-id="extensions-a-installer">Extensions a installer</h2>
+<p>Dans VS Code, ouvrir l’onglet Extensions <img src="figs/Extension.png" class="img-fluid"> et installer:</p>
+<ul>
+<li>Python (Microsoft)</li>
+<li>Pylance (Microsoft) - pour l’autocompletion et les diagnostics</li>
+<li>Jupyter (Microssoft) - pour les notebooks</li>
+</ul>
+<p>Optionnel mais utile:</p>
+<ul>
+<li>GitLens</li>
+</ul>
+</section>
+<section id="vérification" class="level2">
+<h2 class="anchored" data-anchor-id="vérification">Vérification</h2>
+<p>Créez un projet de test dans VS Code en créant un nouveau dossier et en ouvrant ce dossier dans VS Code (<code>File &gt; Open Folder</code>).</p>
+<p>Créez un fichier <code>test.py</code> avec le contenu:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello World!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>La version de Python doit être reconnue (en bas à droite) et vous devriez avoir l’autocompletion dans le fichier.</p>
+<p>Pour exécuter le script, vous pouvez faire un clic droit dans l’éditeur et choisir “Run Python File in Terminal”. Vous devriez voir “Hello World!” dans le terminal.</p>
+<p>Vous pouvez également utilisr le bouton run en haut à droite de l’éditeur.</p>
+</section>
+</section>
+<section id="créer-un-environnement-virtuel" class="level1">
+<h1>3) Créer un environnement virtuel</h1>
 <section id="pourquoi" class="level2">
 <h2 class="anchored" data-anchor-id="pourquoi">Pourquoi?</h2>
-<p>Comme <code>renv</code> en R: eviter les conflits de versions entre projets.</p>
+<p>Les environnements virtuels permettent d’isoler les dépendances d’un projet. Cela évite les conflits entre projets et garantit que votre projet est reproductible. Par exemple, si vous avez deux projets qui utilisent des versions différentes de <code>pandas</code> ou de python, les environnements virtuels permettent de gérer cela facilement.</p>
 </section>
-<section id="etapes-dans-le-dossier-du-projet" class="level2">
-<h2 class="anchored" data-anchor-id="etapes-dans-le-dossier-du-projet">Etapes (dans le dossier du projet)</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Activer l’environnement:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">.</span>\<span class="op">.</span><span class="fu">venv</span>\Scripts\Activate<span class="op">.</span><span class="fu">ps1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Si l’activation PowerShell est bloquee, lancer une fois:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-ExecutionPolicy</span> <span class="op">-</span>ExecutionPolicy RemoteSigned <span class="op">-</span>Scope CurrentUser</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Puis reactiver.</p>
-<p>Verification:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Vous devriez voir <code>.venv</code> dans les chemins affiches.</p>
+<section id="depuis-le-terminal" class="level2">
+<h2 class="anchored" data-anchor-id="depuis-le-terminal">Depuis le terminal</h2>
+<p>Vous pouvez ouvrir un terminal dans VS Code depuis le menu (<code>Terminal &gt; New Terminal</code>) ou avec la palette de commandes (<code>Ctrl+Shift+P</code> et chercher “Terminal: Create New Terminal”) et créer un environnement virtuel avec:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> venv .venv</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>L’interface devrait vous dire qu’un environnement virtuel a été détecté et vous proposer de l’activer.</p>
+<p><img src="figs/ActivateEnv.png" class="img-fluid"></p>
+<p>Si ce n’est pas le cas, vous pouvez l’activer manuellement.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">.</span>\<span class="op">.</span><span class="fu">venv</span>\Scripts\Activate<span class="op">.</span><span class="fu">ps1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="selectionner-linterpreteur-dans-vs-code" class="level2">
-<h2 class="anchored" data-anchor-id="selectionner-linterpreteur-dans-vs-code">Selectionner l’interpreteur dans VS Code</h2>
+<section id="depuis-vs-code" class="level2">
+<h2 class="anchored" data-anchor-id="depuis-vs-code">Depuis VS Code</h2>
 <ol type="1">
-<li><code>Ctrl+Shift+P</code></li>
-<li>Taper: <code>Python: Select Interpreter</code></li>
-<li>Choisir l’interpreteur dans <code>.venv</code></li>
+<li>Ouvrez la palette de commandes (<code>Ctrl+Shift+P</code>)</li>
+<li>Tapez: <code>Python: Create Environment</code></li>
+<li>Choisissez <code>venv</code> et suivez les instructions.</li>
 </ol>
 </section>
+<section id="verification-1" class="level2">
+<h2 class="anchored" data-anchor-id="verification-1">Verification</h2>
+<p>Pour commencer, un dossier <code>.venv</code> devrait être créé dans votre projet.</p>
+<p>Vous pouvez vérifier que l’environnement est actif en regardant le terminal. Vous devriez voir le nom de l’environnement (ex: <code>(.venv)</code>) au début de la ligne de commande.</p>
+<pre><code>(.venv) PS C:\Users\Tim\Semaine4&gt; </code></pre>
 </section>
-<section id="installer-les-packages-data-science" class="level1">
-<h1>4) Installer les packages data science</h1>
+</section>
+<section id="installer-des-packages" class="level1">
+<h1>4) Installer des packages</h1>
+<p>De manière similaire à R, python offre certaines fonctionnalités de base, mais sa force réside dans les packages externes. Il en existe une multitude pour la science des données, le machine learning, la visualisation, etc.</p>
 <p>Packages de base pour commencer:</p>
 <ul>
-<li>numpy</li>
-<li>pandas</li>
-<li>matplotlib</li>
-<li>seaborn</li>
-<li>scikit-learn</li>
-<li>jupyterlab</li>
+<li>numpy - pour les calculs numériques et les tableaux</li>
+<li>pandas - pour la manipulation de données</li>
+<li>matplotlib - pour la visualisation de données (basique et parfois un peu compliquée)</li>
+<li>seaborn - pour la visualisation de données (plus avancée)</li>
+<li>scikit-learn - pour le machine learning</li>
+<li>jupyterlab - pour l’environnement de développement interactif</li>
 </ul>
-<p>Installation:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install numpy pandas matplotlib seaborn scikit-learn jupyterlab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Sauvegarder les dependances du projet:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> freeze <span class="op">&gt;</span> requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="test-rapide" class="level2">
-<h2 class="anchored" data-anchor-id="test-rapide">Test rapide</h2>
-<p>Creer un fichier <code>test_env.py</code>:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sklearn</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"OK: environnement Python pret"</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"numpy:"</span>, np.__version__)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"pandas:"</span>, pd.__version__)</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"matplotlib:"</span>, matplotlib.__version__)</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"scikit-learn:"</span>, sklearn.__version__)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Executer:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> test_env.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Installation (assurez-vous que votre environnement virtuel est actif):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install numpy pandas matplotlib seaborn scikit-learn jupyterlab</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Sauvegarder les dépendances du projet:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> freeze <span class="op">&gt;</span> requirements.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Cela permet de garder une trace des versions exactes des packages utilisés dans le projet, ce qui est crucial pour la reproductibilité. Si vous partagez votre projet ou si vous voulez le réinstaller plus tard, vous pouvez utiliser ce fichier pour installer les mêmes versions des packages:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> requirements.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Vous verrez que si vous reprenez des projets faits par d’autres personnes, il y a souvent un fichier <code>requirements.txt</code> qui liste les dépendances du projet.</p>
+</section>
+<section id="analyse-de-data_cannabis.csv" class="level1">
+<h1>5) Analyse de <code>Data_Cannabis.csv</code></h1>
+<p>Vous trouverez sur Github classroom un repo dans lequel se trouve un notebook Jupyter (<code>analyse_cannabis.ipynb</code>) qui couvre une analyse de données complète sur un dataset de cannabis.</p>
+<p>Ce notebook, qui est similaire à un Rmarkdown, couvre:</p>
+<ol type="1">
+<li>importation des données;</li>
+<li>exploration des données;</li>
+<li>ACP (PCA) et visualisation;</li>
+<li>classification supervisée.</li>
+</ol>
+<section id="exécution" class="level2">
+<h2 class="anchored" data-anchor-id="exécution">Exécution</h2>
+<p>Ouvrez le fichier <code>analyse_cannabis.ipynb</code> dans VS Code. Assurez-vous que le kernel Python est bien celui de votre environnement virtuel (<code>.venv</code>).</p>
+<p>Vous devriez ensuite pouvoir exécuter les cellules du notebook une par une (avec le bouton “Run Cell” ou <code>Shift+Enter</code>) et voir les résultats directement dans le notebook.</p>
+<p>Essayez de comprendre chaque étape du code et les résultats affichés. N’hésitez pas à modifier le code pour voir comment cela affecte les résultats (ex: changer les variables utilisées, les paramètres du modèle, etc.).</p>
+<p>Pour aller plus loin, vous pouvez aussi essayer d’ajouter des visualisations supplémentaires ou d’ajouter un étape de prétraitement des données, par exemple en appliquant une étape de normalisation des variables avant l’ACP.</p>
 </section>
 </section>
-<section id="mini-exercice-adapter-un-script" class="level1">
-<h1>5) Mini-exercice: adapter un script</h1>
+<section id="à-vous-de-jouer-mini-exercice" class="level1">
+<h1>6) À vous de jouer: mini-exercice</h1>
 <section id="contexte" class="level2">
 <h2 class="anchored" data-anchor-id="contexte">Contexte</h2>
-<p>Vous recevez un script Python incomplet. Le but est de:</p>
+<p>Vous avez à disposition des analyses issues de différentes saisies faites dans différentes provinces et villes de Suisse. Le but de cet exercice est de voir s’il est possible de séparer chimiquement les échantillons saisies dans les différentes régions, indiquant possiblement des réseaux de distribution différents.</p>
+<p>Deux inconnus sont également à disposition, qui correspondent à des échantillons saisis à la frontière. L’objectif est de voir s’il est possible de déterminer vers quelle région ces échantillons étaient destinés.</p>
+<p>Créez un notebook Jupyter et essayez de faire une analyse similaire à celle du notebook <code>analyse_cannabis.ipynb</code> en suivant les étapes:</p>
 <ol type="1">
 <li>charger un fichier CSV,</li>
-<li>nettoyer des valeurs manquantes,</li>
-<li>entrainer un modele simple,</li>
-<li>afficher une metrique.</li>
+<li>Explorez vos données (dimensions, types de variables, valeurs manquantes, etc.),</li>
+<li>Essayez de visualiser les données (ex: PCA, pairplot, etc.),</li>
+<li>Essayez si besoin de faire une classification supervisée (ex: Random Forest).</li>
+<li>Déterminez à quelle région les échantillons inconnus sont les plus similaires.</li>
 </ol>
 </section>
-<section id="donnees" class="level2">
-<h2 class="anchored" data-anchor-id="donnees">Donnees</h2>
-<p>Utiliser le fichier <code>labs/data/nobel.csv</code>.</p>
-</section>
-<section id="script-de-depart" class="level2">
-<h2 class="anchored" data-anchor-id="script-de-depart">Script de depart</h2>
-<p>Creer un fichier <code>mini_exercice.py</code> avec le code suivant:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Charger les donnees</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"labs/data/nobel.csv"</span>)</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Garder seulement des colonnes utiles</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: adapter si necessaire selon les colonnes presentes</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>cols <span class="op">=</span> [<span class="st">"category"</span>, <span class="st">"sex"</span>, <span class="st">"birth_country"</span>, <span class="st">"year"</span>]</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[cols].copy()</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) Nettoyage simple</span></span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.dropna()</span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 4) Variable cible et variables explicatives</span></span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Exemple: predire la categorie du prix Nobel</span></span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">"category"</span>]</span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> df[[<span class="st">"sex"</span>, <span class="st">"birth_country"</span>, <span class="st">"year"</span>]]</span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 5) Encodage des variables categorielles</span></span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> pd.get_dummies(X, drop_first<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 6) Separation train/test</span></span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>, stratify<span class="op">=</span>y</span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="co"># 7) Modele</span></span>
-<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> RandomForestClassifier(n_estimators<span class="op">=</span><span class="dv">200</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>model.fit(X_train, y_train)</span>
-<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a><span class="co"># 8) Evaluation</span></span>
-<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>pred <span class="op">=</span> model.predict(X_test)</span>
-<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>acc <span class="op">=</span> accuracy_score(y_test, pred)</span>
-<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Accuracy: </span><span class="sc">{</span>acc<span class="sc">:.3f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="votre-travail" class="level2">
-<h2 class="anchored" data-anchor-id="votre-travail">Votre travail</h2>
+<section id="données-à-disposition" class="level2">
+<h2 class="anchored" data-anchor-id="données-à-disposition">Données à disposition</h2>
 <ul>
-<li>Verifier les noms de colonnes avec <code>print(df.columns)</code>.</li>
-<li>Adapter <code>cols</code> si une colonne n’existe pas.</li>
-<li>Remplacer la cible <code>y</code> par une autre variable (ex: <code>sex</code>) et observer l’impact.</li>
-<li>Changer le modele (ex: <code>LogisticRegression</code>) et comparer l’accuracy.</li>
-</ul>
-</section>
-<section id="questions-de-reflection" class="level2">
-<h2 class="anchored" data-anchor-id="questions-de-reflection">Questions de reflection</h2>
-<ol type="1">
-<li>Pourquoi doit-on encoder les variables categorielles?</li>
-<li>Pourquoi separer train/test?</li>
-<li>Pourquoi fixer <code>random_state</code>?</li>
-<li>Que se passe-t-il si on ne retire pas les valeurs manquantes?</li>
-</ol>
-</section>
-</section>
-<section id="bonus-equivalent-dun-notebook" class="level1">
-<h1>Bonus: equivalent d’un notebook</h1>
-<p>Vous pouvez aussi travailler en notebook (<code>.ipynb</code>) dans VS Code.</p>
-<p>Workflow minimal:</p>
-<ol type="1">
-<li>creer un notebook;</li>
-<li>choisir le kernel Python <code>.venv</code>;</li>
-<li>executer les cellules une par une;</li>
-<li>exporter si necessaire.</li>
-</ol>
-</section>
-<section id="recap" class="level1">
-<h1>Recap</h1>
-<p>Si vous retenez 4 choses de ce lab:</p>
-<ol type="1">
-<li>un projet Python = un dossier + un <code>.venv</code>;</li>
-<li>toujours selectionner l’interpreteur du projet dans VS Code;</li>
-<li>installer les dependances dans l’environnement actif;</li>
-<li>figer les dependances (<code>requirements.txt</code>) pour la reproductibilite.</li>
-</ol>
-</section>
-<section id="pour-aller-plus-loin" class="level1">
-<h1>Pour aller plus loin</h1>
-<ul>
-<li>Ajouter un fichier <code>README.md</code> avec les commandes d’installation.</li>
-<li>Apprendre <code>pytest</code> pour les tests unitaires.</li>
-<li>Tester <code>ruff</code> et <code>black</code> pour la qualite de code.</li>
+<li><code>data/saissies.csv</code>: données de saisies avec des variables chimiques et la région de saisie.</li>
+<li><code>data/inconnu.csv</code>: données des échantillons inconnus.</li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
       }
+      return false;
     }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
@@ -541,184 +484,184 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
       return codeEl.innerText;
     }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
-    };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
         }
-        return container.innerHTML
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -726,185 +669,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 </div> <!-- /content -->
 
 

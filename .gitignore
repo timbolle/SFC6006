@@ -21,3 +21,4 @@
 
 # éviter de push la partie classroom
 classroom/
+**/*.quarto_ipynb
