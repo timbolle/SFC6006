@@ -247,21 +247,21 @@
   {
     "objectID": "examen/examen.html",
     "href": "examen/examen.html",
-    "title": "Examen",
+    "title": "Examen H26",
     "section": "",
     "text": "L’examen se compose de 2 exercices. Pour avoir accès aux données et à la feuille de réponse, vous devrez utiliser GitHub et GitHub classroom.\nSur le portail de cours, acceptez l’invitation à rejoindre le projet GitHub Classroom pour l’examen.\nCopiez le lien de repo personnel. Cela devrait ressember à Examen-&lt;votre nom d'utilisateur GitHub&gt;.\nDans RStudio:\n\nFichier &gt; Nouveau Projet\nVersion Control &gt; Git\nDans Repository URL : indiquez l’adresse de repo copiée précédemment\nChoisissez un nom pour le dossier qui sera créé\nChoisissez le dossier où créer le projet\n\nCela va copier les fichiers présents sur GitHub, et les copier dans le dossier spécifié.\nDans RStudio, vous devriez voir le fichier .Rmd listé en bas à droite dans la liste de fichier.\nSi vous cliquez maintenant sur le fichier .Rmd, il va apparaitre dans la zone en haut à gauche. Vous pourrez l’éditer et le “Render/Knit” pour voir le résultat final.\nVeuillez noter que ce que vous écrivez dans le fichier Rmd et ce que vous écrivez dans la console ne communiquent pas (il s’agit de deux environnements différents). Si vous voulez utiliser la console (zone en bas à gauche), il faut retaper les commandes du fichier.\nLe type d’output dans le fichier .Rmd est réglé sur github_document. Cela veut dire que lorsque vous allez knit le document, un fichier .md sera généré avec votre rapport.\nC’est ce fichier .md qui sera évalué. Assurez que vous le pushez bien sur Github (il faudra l’inclure dans vos commit) et que son contenu est “propre”. Enlevez les messages indésirables ou non-utiles et assurez-vous que les graphes et images soient correctement rendue depuis GitHub.\n\n\n\nPipeline propre et reproductible (10%)\nExercice 1 - Analyse de verre (40%) 2.1. Analyse exploratoire (20%) 2.2. Classification (20%) 2.3. Bonus: LR (5%)\nExercice 2 - Analyse d’images (50%) 3.1. Analyse à partir des features (20%) 3.2. Analyse à partir des perceptual hashes (20%) 3.3. Comparaison et evaluation avec la ground truth (10%)"
   },
   {
     "objectID": "examen/examen.html#barème-indicatif",
     "href": "examen/examen.html#barème-indicatif",
-    "title": "Examen",
+    "title": "Examen H26",
     "section": "",
     "text": "Pipeline propre et reproductible (10%)\nExercice 1 - Analyse de verre (40%) 2.1. Analyse exploratoire (20%) 2.2. Classification (20%) 2.3. Bonus: LR (5%)\nExercice 2 - Analyse d’images (50%) 3.1. Analyse à partir des features (20%) 3.2. Analyse à partir des perceptual hashes (20%) 3.3. Comparaison et evaluation avec la ground truth (10%)"
   },
   {
     "objectID": "examen/examen.html#les-données",
     "href": "examen/examen.html#les-données",
-    "title": "Examen",
+    "title": "Examen H26",
     "section": "Les données",
     "text": "Les données\nPour cet exercice, nous allons utiliser des données représentant la composition chimique de morceaux de verre provenant de différentes vitres, fabriquées par deux entreprises. Les données sont présentes dans le fichier data_ex1/glass.csv.\nLes colonnes du jeu de données sont les suivantes:\n\ncompany: Indique si le verre provient de l’entreprise A ou B,\npane: Indique le numéro de la vitre,\nfragment: indique le numéro de fragment pour chaque vitre,\nrep: indique le numéro de réplicat pour chaque mesure de fragment,\n\nLes colonnes suivantes représentes les mesures par LA-ICP-MS des différents composants du verre. Toutes les unités sont en parties par millions (ppm).\nLes analyses de 3 fragments de verre inconnus sont également fournis dans le fichier data_ex1/unknown-glass.csv.\nL’objectif de cet exercice est de déterminer, si possible, pour chaque fragment:\n\nL’entreprise ayant frabriqué la vitre d’origine des fragments\nLa vitre d’origine des fragments\n\nCet exercice se veut plus libre dans l’approche à suivre."
   },
@@ -282,16 +282,16 @@
   {
     "objectID": "examen/examen.html#objectif",
     "href": "examen/examen.html#objectif",
-    "title": "Examen",
+    "title": "Examen H26",
     "section": "Objectif",
     "text": "Objectif\nL’objectif de cet exercice est d’explorer différentes approches pour regrouper des images similaires.\nDeux principales approches sont envisageables:\n\nA partir de features numeriques extraites des images (ex: couleur, texture, etc.)\nA partir de distances entre images basees sur des perceptual hashes (ex: average hash, dhash, phash)\n\nLa partie relative au traitement des images (extraction de features, calcul des hashes) est deja realisée et fournie sous forme de tableaux CSV. Votre travail est d’analyser ces donnees pour identifier des groupes d’images similaires, et de comparer les approches.\nDifférentes images sont fournies pour cet exercice. Ces images sont organisées selon:\n\nLes images de base (ex: cat_1, cat_2, dog_1, etc.) représentent des sujets différents.\nLes images de base transformées (ex: cat_1_crop_large, cat_1_color_jitter, etc.) représentent des variations d’une même image de base.\n\nLes images peuvent être regroupées selon deux niveaux (ground truth):\n\ngt_image: regroupe les images de base et leurs transformations (ex: cat_1 avec cat_1_crop_large, cat_1_color_jitter, etc.)\ngt_type: regroupe les images selon un type global (ex: cat_1 et cat_2_crop_large sont du même type “chat”, tandis que dog_1 est d’un type différent “chien”)."
   },
   {
     "objectID": "examen/examen.html#données-et-fichiers-fournis",
     "href": "examen/examen.html#données-et-fichiers-fournis",
-    "title": "Examen",
+    "title": "Examen H26",
     "section": "Données et fichiers fournis",
-    "text": "Données et fichiers fournis\nLes images sont disponibles dans le dossier image_dataset/.\nCes images ont été traitées pour extraire les features et calculer les distances entre les hashs perceptuels. Les fonctions utilisées pour ce traitement sont disponibles dans Utils.R et les résultats sont fournis sous forme de fichiers CSV dans le dossier exam_data/.\n\nexam_data/features_table.csv : tableau de features extraites des images (ex: couleur moyenne, densité de bords, etc.)\nexam_data/hash_dist_matrix_average_hash.csv : matrice de distances pour le hash average\nexam_data/hash_dist_matrix_dhash.csv : matrice de distances pour le hash dhash\nexam_data/hash_dist_matrix_phash.csv : matrice de distances pour le hash phash\nexam_data/hash_dist_long_average_hash.csv : tableau au formatlong de distances pour le hash average\nexam_data/hash_dist_long_dhash.csv : tableau au format long de distances pour le hash dhash\nexam_data/hash_dist_long_phash.csv : tableau au format long de distances pour le hash phash\nImage_similarity.Rmd (squelette a completer)\n\nLe tableau de features et les tableaux de distance contiennent deux niveaux de ground truth:\n\ngt_image: même image de base (ex: cat_1 avec ses transformations)\ngt_type: même type global (ex: cat_1 et cat_2_crop_large)"
+    "text": "Données et fichiers fournis\nLes images sont disponibles dans le dossier ZIP data_ex2/image_dataset.zip.\nCes images ont été traitées pour extraire les features et calculer les distances entre les hashs perceptuels. Les fonctions utilisées pour ce traitement sont disponibles dans Utils.R et les résultats sont fournis sous forme de fichiers CSV dans le dossier data_ex2/.\n\ndata_ex2/features_table.csv : tableau de features extraites des images (ex: couleur moyenne, densité de bords, etc.)\ndata_ex2/hash_dist_matrix_average_hash.csv : matrice de distances pour le hash average\ndata_ex2/hash_dist_matrix_dhash.csv : matrice de distances pour le hash dhash\ndata_ex2/hash_dist_matrix_phash.csv : matrice de distances pour le hash phash\ndata_ex2/hash_dist_long_average_hash.csv : tableau au formatlong de distances pour le hash average\ndata_ex2/hash_dist_long_dhash.csv : tableau au format long de distances pour le hash dhash\ndata_ex2/hash_dist_long_phash.csv : tableau au format long de distances pour le hash phash\nExamen.Rmd (squelette a completer)\n\nLe tableau de features et les tableaux de distance contiennent deux niveaux de ground truth:\n\ngt_image: même image de base (ex: cat_1 avec ses transformations)\ngt_type: même type global (ex: cat_1 et cat_2_crop_large)"
   },
   {
     "objectID": "examen/examen.html#partie-1---analyse-à-partir-des-features",
@@ -464,21 +464,21 @@
   {
     "objectID": "examen/examen.html#partie-1.1---analyse-exploratoire",
     "href": "examen/examen.html#partie-1.1---analyse-exploratoire",
-    "title": "Examen",
+    "title": "Examen H26",
     "section": "Partie 1.1 - Analyse exploratoire",
     "text": "Partie 1.1 - Analyse exploratoire\nCommencez par une analyse exploratoire (Visualisations, PCA, …).\n\nQuestion - Êtes-vous capable de répondre aux questions posées ?\n\nSi oui, quelle confiance avez vous dans vos conclusions ?"
   },
   {
     "objectID": "examen/examen.html#partie-1.2---classification",
     "href": "examen/examen.html#partie-1.2---classification",
-    "title": "Examen",
+    "title": "Examen H26",
     "section": "Partie 1.2 - Classification",
     "text": "Partie 1.2 - Classification\nUtilisez ensuite un modèle de classification.\n\nQuestion - Êtes-vous capable de répondre aux questions posées ?\n\nSi oui, quelle confiance avez vous dans vos conclusions ?\nBonus: Pour la question concernant l’entreprise d’origine, calculez le LR pour un des fragments inconnu."
   },
   {
     "objectID": "examen/examen.html#partie-2.1---analyse-à-partir-des-features",
     "href": "examen/examen.html#partie-2.1---analyse-à-partir-des-features",
-    "title": "Examen",
+    "title": "Examen H26",
     "section": "Partie 2.1 - Analyse à partir des features",
     "text": "Partie 2.1 - Analyse à partir des features\nLes features extraites sont les suivantes:\n\nMetadonnées géometriques:\n\nwidth, height, aspect_ratio\n\nStatistiques globales de couleur (RGB):\n\nr_mean, g_mean, b_mean\nr_sd, g_sd, b_sd\n\nStatistiques de luminance (niveau de gris):\n\ngray_mean, gray_sd\n\nIndicateurs de texture simples:\n\nedge_density, gray_entropy\n\nHistogrammes normalisés RGB (8 bins par canal):\n\nhist_r_1 a hist_r_8\nhist_g_1 a hist_g_8\nhist_b_1 a hist_b_8\n\n\nLe tableau contient également:\n\nfile (nom du fichier image)\ngt_image (niveau ground truth image)\ngt_type (niveau ground truth type)\n\nLes questions suivantes se veulent assez ouvertes. Il est attendu que vous testiez plusieurs approches d’exploration, de clustering et de visualisation.\nL’objectif est d’identifier des groupes d’images similaires selon les features, et de comprendre ce que ces groupes capturent (ex: couleur, texture, etc.).\nQuestions:\nÀ partir de features_table.csv:\n\nExplorez les variables.\nAppliquez au moins une méthode de clustering hierarchique.\nÀ l’aide de PCA, essayez de voir si les différents cluster sont visibles. Vous pouvez essayer de colorer selon les catégories ou les groupes mais faites attention au nombre de couleurs\nCalculez les matrices de distance et visualisez les selon les ground truth (histogrammes, heatmaps, etc.).\nCommentez ce que les clusters capturent (couleur, texture, etc.).\n\n\n\n\n\n\n\nIndications (Clustering):\n\n\n\nPour le clustering, vous pouvez utiliser tidyclust, notamment la fonction hier_clust(), qui permet de faire du clustering hierarchique a partir d’une matrice de distance ou d’un tableau de features. Les clusters peuvent être visualisés avec des dendrogrammes. Faites attention qu’il faut généralement indiquer le nombre de clusters à extraire, ce qui n’est pas nécessairement connu dans notre type de problème. Ici, vous pouvez connaitre le nombre de clusters mais ça ne serait pas le cas si nous avions un simple dossier avec un nombre n d’images. Dans ce cas, nous ne sommes pas tant intéressés par les clusters mais plutôt par les distances entre les images.\n\n\n\n\n\n\n\n\nIndications (Distances):\n\n\n\nPour les distances, vous pouvez tester plusieurs mesures (euclidienne, manhattan, etc.) et visualiser les matrices de distance selon les ground truth (ex: heatmap des distances colorees par gt_image ou gt_type). Pour calculer les distances, vous pouvez utiliser la fonction dist() de base R. Vous pouvez également trier pour chaque image, trouver les plus proches, et vérifier si ce sont des images de même gt_image ou gt_type.\n\n\nN’hésitez pas à illustrer les résultats avec des exemples d’images.\nVous pouvez explorer différentes approches de preprocessing, sélectionner différentes variables ou combinaisons de variables, etc."
   },
@@ -499,15 +499,113 @@
   {
     "objectID": "examen/examen.html#partie-2.2---analyse-à-partir-des-perceptual-hashes",
     "href": "examen/examen.html#partie-2.2---analyse-à-partir-des-perceptual-hashes",
-    "title": "Examen",
+    "title": "Examen H26",
     "section": "Partie 2.2 - Analyse à partir des perceptual hashes",
     "text": "Partie 2.2 - Analyse à partir des perceptual hashes\nQuestion préliminaire: Expliquez brièvement ce qu’est un perceptual hash. Expliquez brièvement les différences entre average_hash, dhash et phash.\nLes hash ont été extraits et les distances calculées (distance de Hamming pour les hash binaires).\nÀ partir des matrices de distance, vous pouvez reproduire les mêmes types d’analyses que pour les features:\n\n\n\n\n\n\nIndications (format des données hash)\n\n\n\n\nLes fichiers hash_dist_matrix_*.csv sont au format matrice (wide): première colonne = identifiant image, autres colonnes = distances.\nPour un clustering hiérarchique avec tidyclust::hier_clust() (ou hclust()), il faut convertir cette matrice en objet de distance (dist).\nLes fichiers hash_dist_long_*.csv sont déjà pratiques pour les histogrammes et comparaisons par paires (same_gt_image, same_gt_type).\nVous pouvez donc utiliser les deux formats selon la tâche: matrix/wide pour clustering, long pour visualisation/comparaison.\n\n\n\nQuestions:\n\nFaire du clustering hierarchique directement sur les distances.\nVisualiser les distances (heatmap, histogrammes, dendrogrammes).\nComparer les approches (ex: est-ce que les images de même gt_image ont des distances plus faibles que les autres?)."
   },
   {
     "objectID": "examen/examen.html#partie-2.3---comparaison-et-evaluation-avec-la-ground-truth",
     "href": "examen/examen.html#partie-2.3---comparaison-et-evaluation-avec-la-ground-truth",
-    "title": "Examen",
+    "title": "Examen H26",
     "section": "Partie 2.3 - Comparaison et evaluation avec la ground truth",
     "text": "Partie 2.3 - Comparaison et evaluation avec la ground truth\nPour finir, vous devrez comparer les différentes approches explorées jusqu’ici (features vs hashes). Vous avez peut-être déjà fait des comparaisons. Vous pouvez y faire référence ou les reprendre ici.\nPour cela, vous pouvez par exemple produire des histogrammes des distances pour chaque approche, où vous colorez selon si la paire est de même type ou non. N’oubliez pas de discuter des deux types de rapprochements.\nOptionnellement, vous pouvez explorer des mesures chiffrées de performances en fixant des seuils de décisions, ou en choisissant un nombre de clusters dans vos méthodes de clustering."
+  },
+  {
+    "objectID": "labs/Semaine4.html",
+    "href": "labs/Semaine4.html",
+    "title": "Semaine 4 - Demarrer en Python pour la science des donnees",
+    "section": "",
+    "text": "Cette semaine, l’objectif n’est pas de devenir expert Python, mais de savoir demarrer proprement un projet Python en autonomie.\nVous connaissez deja bien R et RStudio. L’idee est de traduire vos reflexes:\n\ncreer un projet,\ninstaller des packages,\nexecuter du code,\net garder un environnement reproductible.\n\nEn fin de lab, vous aurez:\n\ninstalle VS Code et les extensions utiles;\ninstalle Python;\ncree un environnement virtuel;\ninstalle les packages de base pour data science;\nadapte un petit script de base."
+  },
+  {
+    "objectID": "labs/Semaine4.html#installer-vs-code",
+    "href": "labs/Semaine4.html#installer-vs-code",
+    "title": "Semaine 4 - Demarrer en Python pour la science des donnees",
+    "section": "Installer VS Code",
+    "text": "Installer VS Code\nSi ce n’est pas deja fait, telechargez et installez VS Code depuis le site officiel."
+  },
+  {
+    "objectID": "labs/Semaine4.html#extensions-a-installer",
+    "href": "labs/Semaine4.html#extensions-a-installer",
+    "title": "Semaine 4 - Demarrer en Python pour la science des donnees",
+    "section": "Extensions a installer",
+    "text": "Extensions a installer\nDans VS Code, ouvrir l’onglet Extensions et installer:\n\nPython (Microsoft)\nPylance (Microsoft)\nJupyter (Microsoft)\nQuarto (Quarto)\n\nOptionnel mais utile:\n\nError Lens\nGitLens\n\nVerification rapide:\n\nvous ouvrez un fichier .py;\nVS Code affiche la version Python en bas a droite;\nl’autocompletion fonctionne."
+  },
+  {
+    "objectID": "labs/Semaine4.html#windows",
+    "href": "labs/Semaine4.html#windows",
+    "title": "Semaine 4 - Demarrer en Python pour la science des donnees",
+    "section": "Windows",
+    "text": "Windows\nOption simple: installer Python depuis python.org (cocher “Add Python to PATH”).\nOption recommandee en contexte plus avance: Miniconda."
+  },
+  {
+    "objectID": "labs/Semaine4.html#verification",
+    "href": "labs/Semaine4.html#verification",
+    "title": "Semaine 4 - Demarrer en Python pour la science des donnees",
+    "section": "Verification",
+    "text": "Verification\nDans un terminal VS Code:\npython --version\nou selon votre machine:\npy --version\nVous devez voir une version de Python (ex: 3.12.x)."
+  },
+  {
+    "objectID": "labs/Semaine4.html#pourquoi",
+    "href": "labs/Semaine4.html#pourquoi",
+    "title": "Semaine 4 - Demarrer en Python pour la science des donnees",
+    "section": "Pourquoi?",
+    "text": "Pourquoi?\nComme renv en R: eviter les conflits de versions entre projets."
+  },
+  {
+    "objectID": "labs/Semaine4.html#etapes-dans-le-dossier-du-projet",
+    "href": "labs/Semaine4.html#etapes-dans-le-dossier-du-projet",
+    "title": "Semaine 4 - Demarrer en Python pour la science des donnees",
+    "section": "Etapes (dans le dossier du projet)",
+    "text": "Etapes (dans le dossier du projet)\npython -m venv .venv\nActiver l’environnement:\n.\\.venv\\Scripts\\Activate.ps1\nSi l’activation PowerShell est bloquee, lancer une fois:\nSet-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser\nPuis reactiver.\nVerification:\npython --version\npip --version\nVous devriez voir .venv dans les chemins affiches."
+  },
+  {
+    "objectID": "labs/Semaine4.html#selectionner-linterpreteur-dans-vs-code",
+    "href": "labs/Semaine4.html#selectionner-linterpreteur-dans-vs-code",
+    "title": "Semaine 4 - Demarrer en Python pour la science des donnees",
+    "section": "Selectionner l’interpreteur dans VS Code",
+    "text": "Selectionner l’interpreteur dans VS Code\n\nCtrl+Shift+P\nTaper: Python: Select Interpreter\nChoisir l’interpreteur dans .venv"
+  },
+  {
+    "objectID": "labs/Semaine4.html#test-rapide",
+    "href": "labs/Semaine4.html#test-rapide",
+    "title": "Semaine 4 - Demarrer en Python pour la science des donnees",
+    "section": "Test rapide",
+    "text": "Test rapide\nCreer un fichier test_env.py:\nimport numpy as np\nimport pandas as pd\nimport matplotlib\nimport sklearn\n\nprint(\"OK: environnement Python pret\")\nprint(\"numpy:\", np.__version__)\nprint(\"pandas:\", pd.__version__)\nprint(\"matplotlib:\", matplotlib.__version__)\nprint(\"scikit-learn:\", sklearn.__version__)\nExecuter:\npython test_env.py"
+  },
+  {
+    "objectID": "labs/Semaine4.html#contexte",
+    "href": "labs/Semaine4.html#contexte",
+    "title": "Semaine 4 - Demarrer en Python pour la science des donnees",
+    "section": "Contexte",
+    "text": "Contexte\nVous recevez un script Python incomplet. Le but est de:\n\ncharger un fichier CSV,\nnettoyer des valeurs manquantes,\nentrainer un modele simple,\nafficher une metrique."
+  },
+  {
+    "objectID": "labs/Semaine4.html#donnees",
+    "href": "labs/Semaine4.html#donnees",
+    "title": "Semaine 4 - Demarrer en Python pour la science des donnees",
+    "section": "Donnees",
+    "text": "Donnees\nUtiliser le fichier labs/data/nobel.csv."
+  },
+  {
+    "objectID": "labs/Semaine4.html#script-de-depart",
+    "href": "labs/Semaine4.html#script-de-depart",
+    "title": "Semaine 4 - Demarrer en Python pour la science des donnees",
+    "section": "Script de depart",
+    "text": "Script de depart\nCreer un fichier mini_exercice.py avec le code suivant:\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score\n\n# 1) Charger les donnees\ndf = pd.read_csv(\"labs/data/nobel.csv\")\n\n# 2) Garder seulement des colonnes utiles\n# TODO: adapter si necessaire selon les colonnes presentes\ncols = [\"category\", \"sex\", \"birth_country\", \"year\"]\ndf = df[cols].copy()\n\n# 3) Nettoyage simple\ndf = df.dropna()\n\n# 4) Variable cible et variables explicatives\n# Exemple: predire la categorie du prix Nobel\ny = df[\"category\"]\nX = df[[\"sex\", \"birth_country\", \"year\"]]\n\n# 5) Encodage des variables categorielles\nX = pd.get_dummies(X, drop_first=True)\n\n# 6) Separation train/test\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42, stratify=y\n)\n\n# 7) Modele\nmodel = RandomForestClassifier(n_estimators=200, random_state=42)\nmodel.fit(X_train, y_train)\n\n# 8) Evaluation\npred = model.predict(X_test)\nacc = accuracy_score(y_test, pred)\nprint(f\"Accuracy: {acc:.3f}\")"
+  },
+  {
+    "objectID": "labs/Semaine4.html#votre-travail",
+    "href": "labs/Semaine4.html#votre-travail",
+    "title": "Semaine 4 - Demarrer en Python pour la science des donnees",
+    "section": "Votre travail",
+    "text": "Votre travail\n\nVerifier les noms de colonnes avec print(df.columns).\nAdapter cols si une colonne n’existe pas.\nRemplacer la cible y par une autre variable (ex: sex) et observer l’impact.\nChanger le modele (ex: LogisticRegression) et comparer l’accuracy."
+  },
+  {
+    "objectID": "labs/Semaine4.html#questions-de-reflection",
+    "href": "labs/Semaine4.html#questions-de-reflection",
+    "title": "Semaine 4 - Demarrer en Python pour la science des donnees",
+    "section": "Questions de reflection",
+    "text": "Questions de reflection\n\nPourquoi doit-on encoder les variables categorielles?\nPourquoi separer train/test?\nPourquoi fixer random_state?\nQue se passe-t-il si on ne retire pas les valeurs manquantes?"
   }
 ]

@@ -20,6 +20,8 @@ website:
             text: Semaine 2
           - href: labs/Semaine3.qmd
             text: Semaine 3
+          - href: labs/Semaine4.qmd
+            text: Semaine 4
       - href: examen/examen.qmd
         text: Examen
       - about.qmd
